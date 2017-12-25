@@ -4,19 +4,26 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './error/error.component';
-import {MatCardModule} from '@angular/material';
+import {MatButtonModule, MatCardModule, MatInputModule, MatToolbarModule} from '@angular/material';
 import {AppRoutingModule} from './app-routing.module';
+import { IndexComponent } from './index/index.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorComponent
+    ErrorComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
     MatCardModule,
-    AppRoutingModule
+    MatToolbarModule,
+    MatInputModule,
+    MatButtonModule,
+    AppRoutingModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
