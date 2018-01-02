@@ -4,32 +4,35 @@
     <h1 class="headline-primary">Carss</h1>
   </div>
 </mat-toolbar>
-<mat-toolbar color="primary" fxLayoutAlign="center center">
-  <button style="margin-right: 8px;" mat-raised-button color="warn">Mitfahrgelegenheit suchen</button>
-  <button mat-raised-button color="warn">Als Fahrer Registrieren</button>
-</mat-toolbar>
-<mat-card style="margin-bottom: 16px;">
-  <mat-card-title>
-    Papenburg --> Werlte
-  </mat-card-title>
-</mat-card>
-<mat-card style="margin-bottom: 16px;">
-  <mat-card-title>
-    Papenburg --> Werlte
-  </mat-card-title>
-</mat-card>
-<mat-card style="margin-bottom: 16px;">
-  <mat-card-title>
-    Papenburg --> Werlte
-  </mat-card-title>
-</mat-card>
-<mat-card style="margin-bottom: 16px;">
-  <mat-card-title>
-    Papenburg --> Werlte
-  </mat-card-title>
-</mat-card>
-<mat-card style="margin-bottom: 16px;">
-  <mat-card-title>
-    Papenburg --> Werlte
-  </mat-card-title>
+<app-search-toolbar [dataSource]="dataSource"></app-search-toolbar>
+<mat-card style="margin: 8px;">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef> Ziel </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Fahrer </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef> Abfahrt </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.weight}}. Std. </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef> Kosten </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
 </mat-card>
