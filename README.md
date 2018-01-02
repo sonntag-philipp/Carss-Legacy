@@ -15,7 +15,7 @@ Mitfahrgelegenheit anbieten oder abfragen können.
 
 ## Entwicklung
 Verwendete Techniken:
-- [Pure-JSON WebSocket Backend API](https://mmikowski.github.io/json-pure/) zum Verwalten der Nutzerdaten
+- [Firebase](https://firebase.google.com/) zum Verwalten der Nutzerdaten und zur Authentifikation
 - [NodeJS](https://nodejs.org/en/) zum Ausführen der Applikation
 - [Apache2 WebServer](https://httpd.apache.org/) zum Hosten der Produktion Version
 - [JetBrains WebStorm IDE](https://www.jetbrains.com/webstorm/) zur Entwicklung
