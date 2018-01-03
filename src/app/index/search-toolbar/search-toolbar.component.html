@@ -1,11 +1,10 @@
+<div *ngIf="scrollState" style="height: 56px;">
+</div>
 <mat-toolbar [ngClass]="{'sticky-position': scrollState}" color="primary" fxLayoutAlign="center center" style="padding: 8px; height: auto;">
   <span>
     <div class="search-container mat-card">
       <input class="search-input" (keyup)="applyFilter($event.target.value)" style="margin: 0%; padding: 0%;" placeholder="Suche...">
     </div>
-  </span>
-  <span>
-
   </span>
 </mat-toolbar>
 
