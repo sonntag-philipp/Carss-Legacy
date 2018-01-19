@@ -1,38 +1,20 @@
 
-<mat-toolbar style="height: 140px; width: 100%;" color="primary">
-  <div style="width: 100%; ">
-    <h1 class="headline-primary">Carss</h1>
-  </div>
-</mat-toolbar>
-<app-search-toolbar [dataSource]="dataSource"></app-search-toolbar>
-<mat-card style="margin: 8px;">
-  <mat-table #table [dataSource]="dataSource">
-
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef> Ziel </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
-    </ng-container>
-
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Fahrer </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-    </ng-container>
-
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <mat-header-cell *matHeaderCellDef> Abfahrt </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.weight}}. Std. </mat-cell>
-    </ng-container>
-
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <mat-header-cell *matHeaderCellDef> Kosten </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
-    </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
-</mat-card>
+<div fxLayout="row" fxLayoutAlign="center start">
+  <mat-card fxFlex="60" style="margin: 8px;">
+    <mat-card-title class="card-title">
+      Carss
+    </mat-card-title>
+    <mat-card-content>
+      <h3>Hallo,</h3>
+      <p>
+        herzlich willkommen auf der Website von Carss, der Online Mitfahrerzentrale der<br>
+        BBS Papenburg.<br><br>
+        Melde dich bitte zunächst an um fortzufahren.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn">Sign in with Google</button>
+      <button mat-raised-button color="primary">Sign in with Facebook</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -17,6 +17,12 @@ import {environment} from '../environments/environment';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { SearchToolbarComponent } from './index/search-toolbar/search-toolbar.component';
 import {HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {AuthGuardService} from './auth-guard.service';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import { ImpressumComponent } from './info/impressum/impressum.component';
+import { AgbComponent } from './info/agb/agb.component';
+import { DatenschutzComponent } from './info/datenschutz/datenschutz.component';
 
 @NgModule({
   imports: [
@@ -33,15 +39,22 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     FlexLayoutModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   declarations: [
     AppComponent,
     ErrorComponent,
     IndexComponent,
-    SearchToolbarComponent
+    SearchToolbarComponent,
+    DashboardComponent,
+    ImpressumComponent,
+    AgbComponent,
+    DatenschutzComponent
   ],
-  providers: [],
+  providers: [
+    AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

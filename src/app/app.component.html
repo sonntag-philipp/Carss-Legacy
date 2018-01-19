@@ -1,1 +1,12 @@
-<router-outlet class="routing-outlet"></router-outlet>
+<div class="routing-outlet">
+  <router-outlet ></router-outlet>
+</div>
+<mat-toolbar color="primary" style="height: initial;">
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
+    <p class="footer-text">© 2018, Phildev.me</p>
+    <a [routerLink]="['info', 'agb']" class="footer-text">Unsere AGB</a>
+    <a [routerLink]="['info', 'impressum']" class="footer-text">Impressum</a>
+    <a [routerLink]="['info', 'datenschutz']" class="footer-text">Datenschutzerklärungen</a>
+    <a href="https://github.com/sonntag-philipp/Carss" class="footer-text">GitHub</a>
+  </mat-toolbar-row>
+</mat-toolbar>
