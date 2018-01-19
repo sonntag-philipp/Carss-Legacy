@@ -1,23 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './error/error.component';
-import {AppRoutingModule} from './app-routing.module';
+import {AppRoutingModule} from './shared/modules/app-routing.module';
 import { IndexComponent } from './index/index.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {AuthGuardService} from './shared/services/auth-guard.service';
-import { ImpressumComponent } from './info/impressum/impressum.component';
-import { AgbComponent } from './info/agb/agb.component';
-import { DatenschutzComponent } from './info/datenschutz/datenschutz.component';
 import {UtilitiesModule} from './utilities/utilities.module';
 import { FooterComponent } from './footer/footer.component';
-import {MaterialModule} from './material.module';
-import {FirebaseModule} from './firebase.module';
+import {MaterialModule} from './shared/modules/material.module';
+import {FirebaseModule} from './shared/modules/firebase.module';
+import { SettingsComponent } from './dashboard/settings/settings.component';
+import { ContactComponent } from './info/contact/contact.component';
+import { ConditionsComponent } from './info/conditions/conditions.component';
+import { DataSecurityComponent } from './info/data-security/data-security.component';
+import {AccountResolverService} from './shared/services/account-resolver.service';
 
 @NgModule({
   imports: [
@@ -35,13 +36,15 @@ import {FirebaseModule} from './firebase.module';
     ErrorComponent,
     IndexComponent,
     DashboardComponent,
-    ImpressumComponent,
-    AgbComponent,
-    DatenschutzComponent,
-    FooterComponent
+    FooterComponent,
+    SettingsComponent,
+    ContactComponent,
+    ConditionsComponent,
+    DataSecurityComponent
   ],
   providers: [
-    AuthGuardService
+    AuthGuardService,
+    AccountResolverService
   ],
   bootstrap: [AppComponent]
 })

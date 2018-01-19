@@ -6,18 +6,37 @@ import {AngularFireAuth} from 'angularfire2/auth';
 @Injectable()
 export class AuthGuardService implements CanActivate, CanActivateChild {
 
+  private authenticated: boolean;
+
   constructor(private router: Router, private fireAuth: AngularFireAuth) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
-    if (this.fireAuth.auth.currentUser !== null) {
-      if (!this.fireAuth.auth.currentUser.isAnonymous) {
-        return true;
-      }
-    }
+    return Observable.create(observer => {
 
-    this.router.navigate(['/not-found']);
-    return false;
+      this.fireAuth.authState.subscribe(
+        User => {
+          if (User !== null) {
+
+            if (User.isAnonymous) {
+              this.router.navigate(['']);
+              observer.next(false);
+            } else {
+              observer.next(true);
+            }
+          } else {
+            this.router.navigate(['']);
+            observer.next(false);
+          }
+
+        },
+        error => {
+          this.router.navigate(['']);
+          observer.next(false);
+        }
+      );
+
+    });
   }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {

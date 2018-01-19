@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImpressumComponent } from './impressum.component';
+import { DataSecurityComponent } from './data-security.component';
 
-describe('ImpressumComponent', () => {
-  let component: ImpressumComponent;
-  let fixture: ComponentFixture<ImpressumComponent>;
+describe('DataSecurityComponent', () => {
+  let component: DataSecurityComponent;
+  let fixture: ComponentFixture<DataSecurityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ImpressumComponent ]
+      declarations: [ DataSecurityComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImpressumComponent);
+    fixture = TestBed.createComponent(DataSecurityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
