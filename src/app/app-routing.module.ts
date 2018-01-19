@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ErrorComponent} from './error/error.component';
 import {IndexComponent} from './index/index.component';
-import {AuthGuardService} from './auth-guard.service';
+import {AuthGuardService} from './shared/services/auth-guard.service';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ImpressumComponent} from './info/impressum/impressum.component';
 import {AgbComponent} from './info/agb/agb.component';
