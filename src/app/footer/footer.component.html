@@ -1,7 +1,8 @@
 <mat-toolbar color="primary" style="height: initial;">
   <mat-toolbar-row fxLayout="row" fxLayoutAlign="center center">
     <p class="footer-text">© 2018, Phildev.me</p>
-    <a [routerLink]="['dashboard']" class="footer-text" style="color: #f44336;">Home</a>
+    <a [routerLink]="['']" class="footer-text" style="color: #f44336;">Home</a>
+    <a (click)="login();" class="footer-text" style="color: #f44336;">Login</a>
     <a [routerLink]="['info', 'conditions']" class="footer-text">Unsere AGB</a>
     <a [routerLink]="['info', 'contact']" class="footer-text">Impressum</a>
     <a [routerLink]="['info', 'data-security']" class="footer-text">Datenschutzerklärungen</a>

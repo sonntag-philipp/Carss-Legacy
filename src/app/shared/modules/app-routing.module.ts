@@ -1,13 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ErrorComponent} from '../../error/error.component';
-import {IndexComponent} from '../../index/index.component';
-import {AuthGuardService} from '../services/auth-guard.service';
-import {DashboardComponent} from '../../dashboard/dashboard.component';
-import {SettingsComponent} from '../../dashboard/settings/settings.component';
 import {ContactComponent} from '../../info/contact/contact.component';
 import {ConditionsComponent} from '../../info/conditions/conditions.component';
 import {DataSecurityComponent} from '../../info/data-security/data-security.component';
+import {IndexComponent} from '../../index/index.component';
 
 const appRoutes: Routes = [
   {
@@ -28,17 +25,6 @@ const appRoutes: Routes = [
       {
         path: "data-security",
         component: DataSecurityComponent
-      }
-    ]
-  },
-  {
-    path: "dashboard",
-    canActivate: [AuthGuardService],
-    component: DashboardComponent,
-    children: [
-      {
-        path: "settings",
-        component: SettingsComponent
       }
     ]
   },

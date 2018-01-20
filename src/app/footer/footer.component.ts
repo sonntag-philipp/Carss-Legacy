@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
+import * as firebase from "firebase";
 
 @Component({
   selector: 'app-footer',
@@ -13,6 +14,10 @@ export class FooterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+  }
+
+  login(): void {
+    this.fireAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider);
   }
 
 }

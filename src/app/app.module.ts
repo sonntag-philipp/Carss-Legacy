@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ErrorComponent } from './error/error.component';
 import {AppRoutingModule} from './shared/modules/app-routing.module';
-import { IndexComponent } from './index/index.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
@@ -19,6 +18,8 @@ import { ContactComponent } from './info/contact/contact.component';
 import { ConditionsComponent } from './info/conditions/conditions.component';
 import { DataSecurityComponent } from './info/data-security/data-security.component';
 import {AccountResolverService} from './shared/services/account-resolver.service';
+import { IndexComponent } from './index/index.component';
+import { IndexPublicComponent } from './index/index-public/index-public.component';
 
 @NgModule({
   imports: [
@@ -34,13 +35,14 @@ import {AccountResolverService} from './shared/services/account-resolver.service
   declarations: [
     AppComponent,
     ErrorComponent,
-    IndexComponent,
     DashboardComponent,
     FooterComponent,
     SettingsComponent,
     ContactComponent,
     ConditionsComponent,
-    DataSecurityComponent
+    DataSecurityComponent,
+    IndexComponent,
+    IndexPublicComponent
   ],
   providers: [
     AuthGuardService,

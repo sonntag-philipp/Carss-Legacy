@@ -1,17 +1,6 @@
-<mat-card>
-  <mat-card-title class="card-title">
-    Carss
-  </mat-card-title>
-  <mat-card-content>
-    <h3>Hallo,</h3>
-    <p>
-      herzlich willkommen auf der Website von Carss, der Online Mitfahrerzentrale der<br>
-      BBS Papenburg.<br><br>
-      Melde dich bitte zunächst an um fortzufahren.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-raised-button color="warn" (click)="onBtnLoginGoogle();">Anmelden mit Google</button>
-    <button mat-raised-button color="primary" (click)="onBtnLoginFacebook();">Anmelden mit Facebook</button>
-  </mat-card-actions>
-</mat-card>
+<div *ngIf="(authenticated && initialized)">
+  <app-dashboard></app-dashboard>
+</div>
+<div *ngIf="(!authenticated && initialized)" style="height: 100%;">
+  <app-index-public style="height: 100%;"></app-index-public>
+</div>
