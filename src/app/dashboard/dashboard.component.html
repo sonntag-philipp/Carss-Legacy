@@ -1,9 +1,19 @@
-<mat-card>
-  <mat-card-title>Dashboard</mat-card-title>
-  <mat-card-subtitle>
-    Heinz
-  </mat-card-subtitle>
-  <mat-card-content>
-    Shithole
-  </mat-card-content>
-</mat-card>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Dashboard</span>
+    <div fxFlex="auto"></div>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div fxLayout="row" fxLayoutAlign="center start">
+  <mat-card fxFlex="65">
+    <mat-card-title>{{ fireAuth.auth.currentUser.displayName }}</mat-card-title>
+    <mat-card-subtitle>
+      Heinz
+    </mat-card-subtitle>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="onBtnDrive();">Fahren</button>
+      <button mat-button color="primary" (click)="onBtnJoin();">Mitfahren</button>
+      <button mat-button color="primary" (click)="onBtnSettings();">Einstellungen</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

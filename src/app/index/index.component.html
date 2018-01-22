@@ -1,6 +1,6 @@
 <div *ngIf="(authenticated && initialized)">
   <app-dashboard></app-dashboard>
 </div>
-<div *ngIf="(!authenticated && initialized)" style="height: 100%;">
-  <app-index-public style="height: 100%;"></app-index-public>
+<div *ngIf="(!authenticated && initialized)">
+  <app-landing></app-landing>
 </div>

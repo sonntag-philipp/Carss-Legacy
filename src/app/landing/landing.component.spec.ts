@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatCardParagraphComponent } from './mat-card-paragraph.component';
+import { LandingComponent } from './landing.component';
 
-describe('MatCardParagraphComponent', () => {
-  let component: MatCardParagraphComponent;
-  let fixture: ComponentFixture<MatCardParagraphComponent>;
+describe('LandingComponent', () => {
+  let component: LandingComponent;
+  let fixture: ComponentFixture<LandingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MatCardParagraphComponent ]
+      declarations: [ LandingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MatCardParagraphComponent);
+    fixture = TestBed.createComponent(LandingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
