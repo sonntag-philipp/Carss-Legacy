@@ -5,7 +5,7 @@ import {ContactComponent} from '../../info/contact/contact.component';
 import {ConditionsComponent} from '../../info/conditions/conditions.component';
 import {DataSecurityComponent} from '../../info/data-security/data-security.component';
 import {IndexComponent} from '../../index/index.component';
-import {SettingsComponent} from '../../dashboard/settings/settings.component';
+import {DashboardSettingsComponent} from '../../dashboard/dashboard-settings/dashboard-settings.component';
 
 const appRoutes: Routes = [
   {
@@ -14,7 +14,7 @@ const appRoutes: Routes = [
   },
   {
     path: "settings",
-    component: SettingsComponent
+    component: DashboardSettingsComponent
   },
   {
     path: "info",

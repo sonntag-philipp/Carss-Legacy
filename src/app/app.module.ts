@@ -13,13 +13,14 @@ import {UtilitiesModule} from './utilities/utilities.module';
 import { FooterComponent } from './page-navigation/footer/footer.component';
 import {MaterialModule} from './shared/modules/material.module';
 import {FirebaseModule} from './shared/modules/firebase.module';
-import { SettingsComponent } from './dashboard/settings/settings.component';
 import { ContactComponent } from './info/contact/contact.component';
 import { ConditionsComponent } from './info/conditions/conditions.component';
 import { DataSecurityComponent } from './info/data-security/data-security.component';
 import {AccountResolverService} from './shared/services/account-resolver.service';
 import { IndexComponent } from './index/index.component';
 import { LandingComponent } from './landing/landing.component';
+import { DashboardToolbarComponent } from './dashboard/dashboard-toolbar/dashboard-toolbar.component';
+import { DashboardSettingsComponent } from './dashboard/dashboard-settings/dashboard-settings.component';
 
 @NgModule({
   imports: [
@@ -37,12 +38,13 @@ import { LandingComponent } from './landing/landing.component';
     ErrorComponent,
     DashboardComponent,
     FooterComponent,
-    SettingsComponent,
     ContactComponent,
     ConditionsComponent,
     DataSecurityComponent,
     IndexComponent,
-    LandingComponent
+    LandingComponent,
+    DashboardToolbarComponent,
+    DashboardSettingsComponent
   ],
   providers: [
     AuthGuardService,

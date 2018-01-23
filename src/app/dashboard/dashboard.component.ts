@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Router} from '@angular/router';
+import {MatIconRegistry} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,11 +13,9 @@ export class DashboardComponent implements OnInit {
 
   constructor(
     public fireAuth: AngularFireAuth,
-    private router: Router
-  ) { }
-
-  public onBtnSettings(): void {
-    this.router.navigate(['settings']);
+    private iconRegistry: MatIconRegistry
+  ) {
+    iconRegistry.setDefaultFontSetClass("material-icons");
   }
 
   public onBtnJoin(): void {
@@ -27,6 +27,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.iconRegistry.registerFontClassAlias("mat-icons", "material-icons");
   }
 
 }
