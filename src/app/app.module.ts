@@ -22,6 +22,7 @@ import { DashboardToolbarComponent } from './dashboard/dashboard-toolbar/dashboa
 import { DashboardSettingsComponent } from './dashboard/dashboard-settings/dashboard-settings.component';
 import { LandingToolbarComponent } from './landing/landing-toolbar/landing-toolbar.component';
 import { FooterXsComponent } from './page-navigation/footer-xs/footer-xs.component';
+import { InfoToolbarComponent } from './info/info-toolbar/info-toolbar.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { FooterXsComponent } from './page-navigation/footer-xs/footer-xs.compone
     DashboardToolbarComponent,
     DashboardSettingsComponent,
     LandingToolbarComponent,
-    FooterXsComponent
+    FooterXsComponent,
+    InfoToolbarComponent
   ],
   providers: [
     AuthGuardService,
