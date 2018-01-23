@@ -5,3 +5,7 @@
   padding-right: 8px;
   color: white;
 }
+
+mat-toolbar-row {
+  height: 45px;
+}

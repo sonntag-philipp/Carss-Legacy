@@ -6,6 +6,7 @@ import {ConditionsComponent} from '../../info/conditions/conditions.component';
 import {DataSecurityComponent} from '../../info/data-security/data-security.component';
 import {IndexComponent} from '../../index/index.component';
 import {DashboardSettingsComponent} from '../../dashboard/dashboard-settings/dashboard-settings.component';
+import {AuthGuardService} from '../services/auth-guard.service';
 
 const appRoutes: Routes = [
   {
@@ -14,7 +15,8 @@ const appRoutes: Routes = [
   },
   {
     path: "settings",
-    component: DashboardSettingsComponent
+    component: DashboardSettingsComponent,
+    canActivate: [AuthGuardService]
   },
   {
     path: "info",
@@ -37,7 +39,8 @@ const appRoutes: Routes = [
     path: "not-found",
     component: ErrorComponent,
     data: {
-      message: "404 - Inhalt nicht gefunden!"
+      message: "Inhalt nicht gefunden!",
+      statusCode: "404"
     }
   },
   {

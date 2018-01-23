@@ -10,13 +10,8 @@ import * as firebase from 'firebase';
 export class LandingComponent implements OnInit {
 
   constructor(
-    private fireAuth: AngularFireAuth
   ) { }
 
   ngOnInit() {
-  }
-
-  public onBtnGetStarted(): void {
-    this.fireAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
   }
 }

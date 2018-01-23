@@ -1,4 +1,8 @@
 .routing-outlet {
-  box-sizing: border-box;
-  height: 100%;
+  margin-bottom: 32px;
+  min-height: calc(100vh - 96px);
+}
+
+.routing-outlet-xs {
+  min-height: 100vh;
 }

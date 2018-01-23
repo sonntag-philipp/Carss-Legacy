@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.iconRegistry.registerFontClassAlias("mat-icons", "material-icons");
+
   }
 
 }

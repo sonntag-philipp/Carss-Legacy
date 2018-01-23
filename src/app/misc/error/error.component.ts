@@ -9,6 +9,8 @@ import {ActivatedRoute, Data} from '@angular/router';
 export class ErrorComponent implements OnInit {
 
   public message: string;
+  public statusCode: string;
+  public subtitle: string;
 
   constructor(
     private route: ActivatedRoute
@@ -18,6 +20,8 @@ export class ErrorComponent implements OnInit {
     this.route.data.subscribe(
       (data: Data) => {
         this.message = data['message'];
+        this.statusCode = data['statusCode'];
+        this.subtitle = data['subtitle'];
       }
     );
   }
