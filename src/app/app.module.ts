@@ -15,7 +15,6 @@ import { FirebaseModule } from './shared/modules/firebase.module';
 import { AccountResolverService } from './shared/services/account-resolver.service';
 import { DashboardToolbarComponent } from './dashboard/dashboard-toolbar/dashboard-toolbar.component';
 import { DashboardSettingsComponent } from './dashboard/dashboard-settings/dashboard-settings.component';
-import { FooterXsComponent } from './page-navigation/footer-xs/footer-xs.component';
 import { LoadingComponent } from './loading/loading.component';
 import { DashboardDriveCardComponent } from './dashboard/dashboard-drive-card/dashboard-drive-card.component';
 import { DashboardRideCardComponent } from './dashboard/dashboard-ride-card/dashboard-ride-card.component';
@@ -37,7 +36,6 @@ import { DashboardRideCardComponent } from './dashboard/dashboard-ride-card/dash
     FooterComponent,
     DashboardToolbarComponent,
     DashboardSettingsComponent,
-    FooterXsComponent,
     LoadingComponent,
     DashboardDriveCardComponent,
     DashboardRideCardComponent

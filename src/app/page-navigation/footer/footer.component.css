@@ -1,7 +1,20 @@
 .footer-text {
   font-weight: normal;
   font-size: 10pt;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding: 8px;
   color: white;
+  margin: 0;
+}
+
+.footer-xs {
+  height: fit-content;
+}
+
+.footer-default {
+  background-color: #363bb2;
+  font-family: 'Roboto';
+}
+
+.footer {
+  height: 96px;
 }

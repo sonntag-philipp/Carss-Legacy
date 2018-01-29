@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @Component({
   selector: 'app-ftr-dash-index',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FtrDashIndexComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public fireAuth: AngularFireAuth
+  ) { }
 
   ngOnInit() {
   }
