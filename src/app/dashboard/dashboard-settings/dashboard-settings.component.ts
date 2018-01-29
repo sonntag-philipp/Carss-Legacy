@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @Component({
   selector: 'app-dashboard-settings',
@@ -7,9 +8,15 @@ import {Component, OnInit} from '@angular/core';
 })
 export class DashboardSettingsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private fireAuth: AngularFireAuth
+  ) { }
 
   ngOnInit() {
+  }
+
+  public onBtnSignOut(): void {
+    this.fireAuth.auth.signOut();
   }
 
 }

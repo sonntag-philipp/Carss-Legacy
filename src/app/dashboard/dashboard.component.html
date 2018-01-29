@@ -1,13 +1,10 @@
 <app-dashboard-toolbar title="Dashboard"></app-dashboard-toolbar>
 <div fxLayout="row" fxLayoutAlign="center start">
-  <mat-card fxFlex="65" fxFlex.xs="100">
-    <mat-card-title>{{ fireAuth.auth.currentUser.displayName }}</mat-card-title>
-    <mat-card-subtitle>
-      Herzlich Willkommen in Carss
-    </mat-card-subtitle>
-    <mat-card-actions>
-      <button mat-button color="primary" (click)="onBtnDrive();">Fahren</button>
-      <button mat-button color="primary" (click)="onBtnJoin();">Mitfahren</button>
-    </mat-card-actions>
-  </mat-card>
+  <div fxLayout="column" fxLayoutAlign="start" fxFlex="65" fxFlex.xs="100">
+    <h1>{{ fireAuth.auth.currentUser.displayName }}</h1>
+    <div fxLayout="row" fxLayoutAlign="start start">
+      <app-dashboard-drive-card fxFlex="50"></app-dashboard-drive-card>
+      <app-dashboard-ride-card fxFlex="50"></app-dashboard-ride-card>
+    </div>
+  </div>
 </div>

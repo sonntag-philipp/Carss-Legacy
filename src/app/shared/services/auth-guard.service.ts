@@ -41,6 +41,29 @@ export class AuthGuardService implements CanActivate, CanActivateChild {
   }
 
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    return false;
+
+    return Observable.create(observer => {
+      this.fireAuth.authState.subscribe(
+        User => {
+          if (User !== null) {
+
+            if (User.isAnonymous) {
+              this.router.navigate(['']);
+              observer.next(false);
+            } else {
+              observer.next(true);
+            }
+          } else {
+            this.router.navigate(['']);
+            observer.next(false);
+          }
+
+        },
+        error => {
+          this.router.navigate(['']);
+          observer.next(false);
+        }
+      );
+    });
   }
 }
