@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardSettingsComponent } from './dashboard-settings.component';
+import { FtrDashSettingsComponent } from './ftr-dash-settings.component';
 
-describe('DashboardSettingsComponent', () => {
-  let component: DashboardSettingsComponent;
-  let fixture: ComponentFixture<DashboardSettingsComponent>;
+describe('FtrDashSettingsComponent', () => {
+  let component: FtrDashSettingsComponent;
+  let fixture: ComponentFixture<FtrDashSettingsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardSettingsComponent ]
+      declarations: [ FtrDashSettingsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardSettingsComponent);
+    fixture = TestBed.createComponent(FtrDashSettingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-title>Fahrer</mat-card-title>
+  <mat-card-subtitle>Fahrer die Personen mitnehmen können.</mat-card-subtitle>
+  <mat-card-content>
+    <mat-table #table [dataSource]="tableDataSource" style="overflow: auto; max-height: 40vh;">
+      <mat-header-row *matHeaderRowDef="displayedColumns" style="position: sticky; top: 0; background-color: white;"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+      <ng-container matColumnDef="driverName">
+        <mat-header-cell *matHeaderCellDef>Fahrer</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.driverName }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="destination">
+        <mat-header-cell *matHeaderCellDef>Route</mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <div fxFlex="row" fxLayoutAlign="start center">
+            {{ element.start }} <mat-icon mat-fab>arrow_forward</mat-icon> {{ element.destination }}
+          </div>
+        </mat-cell>
+      </ng-container>
+    </mat-table>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button style="width: 100%;" color="primary">Fahrer werden</button>
+  </mat-card-actions>
+</mat-card>

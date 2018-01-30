@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardToolbarComponent } from './dashboard-toolbar.component';
+import { FtrDashIndexDriveComponent } from './ftr-dash-index-drive.component';
 
-describe('DashboardToolbarComponent', () => {
-  let component: DashboardToolbarComponent;
-  let fixture: ComponentFixture<DashboardToolbarComponent>;
+describe('FtrDashIndexDriveComponent', () => {
+  let component: FtrDashIndexDriveComponent;
+  let fixture: ComponentFixture<FtrDashIndexDriveComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardToolbarComponent ]
+      declarations: [ FtrDashIndexDriveComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardToolbarComponent);
+    fixture = TestBed.createComponent(FtrDashIndexDriveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

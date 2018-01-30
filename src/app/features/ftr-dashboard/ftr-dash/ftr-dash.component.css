@@ -6,3 +6,8 @@ mat-toolbar {
 .ftr-dash-routing-outlet {
   margin: 8px;
 }
+
+.toolbar-title {
+  color: white;
+  text-decoration: none;
+}

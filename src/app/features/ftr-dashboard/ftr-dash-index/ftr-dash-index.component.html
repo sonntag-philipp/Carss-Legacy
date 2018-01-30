@@ -1,6 +1,5 @@
-
-<h1 class="dashboard-title">Hi, {{ fireAuth.auth.currentUser.displayName }}</h1>
-<button mat-button>Fahren</button>
-<mat-card>
-  <mat-card-title>Nogger</mat-card-title>
-</mat-card>
+<h1 class="dashboard-title">Moin, {{ fireAuth.auth.currentUser.displayName }}</h1>
+<div fxLayout="row" fxLayout.xs="column">
+  <app-ftr-dash-index-drive style="margin-right: 8px;" fxFlex="50"></app-ftr-dash-index-drive>
+  <app-ftr-dash-index-ride style="margin-left: 8px;" fxFlex="50"></app-ftr-dash-index-ride>
+</div>
