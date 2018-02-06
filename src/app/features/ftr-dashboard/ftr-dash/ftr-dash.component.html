@@ -1,13 +1,5 @@
 <div fxLayout="column">
-  <mat-toolbar color="primary">
-    <a class="toolbar-title" [routerLink]="['../dashboard']">Dashboard</a>
-    <div fxFlex="auto"></div>
-    <button mat-icon-button aria-label="Settings" [routerLink]="['settings']">
-      <mat-icon>
-        settings
-      </mat-icon>
-    </button>
-  </mat-toolbar>
+  <app-ftr-dash-toolbar></app-ftr-dash-toolbar>
   <div fxFlex="row" fxLayoutAlign="center">
     <div fxFlex="65" fxFlex.xs="100" class="ftr-dash-routing-outlet">
       <router-outlet></router-outlet>

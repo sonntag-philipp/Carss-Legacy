@@ -1,27 +1,48 @@
-<h1 class="dashboard-title">Einstellungen</h1>
 
-<mat-divider></mat-divider>
-<div style="margin-bottom: 8px;">
-  <h2 class="dashboard-title" style="margin-bottom: 0; margin-top: 8px;">IServ</h2>
-  <mat-form-field>
-    <input matInput placeholder="IServ E-Mail" type="text">
-  </mat-form-field>
-</div>
-<mat-divider></mat-divider>
-<div style="margin-bottom: 8px;">
-  <h2 class="dashboard-title" style="margin-bottom: 0; margin-top: 8px;">Mein Auto</h2>
-  <mat-form-field>
-    <input matInput placeholder="Sitzplätze" type="number">
-  </mat-form-field>
-</div>
-<mat-divider></mat-divider>
-<div style="margin-bottom: 8px;">
-  <h2 class="dashboard-title" style="margin-bottom: 0; margin-top: 8px;">Privatsphäre</h2>
+<h1 class="dashboard-title margin-container">Einstellungen</h1>
+<div class="margin-container">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Persönliches Auto
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-ftr-dash-settings-car></app-ftr-dash-settings-car>
+    </mat-expansion-panel>
 
-  <p>Beispiel-Input</p>
-</div>
-<div>
-  <button mat-button color="warn">Speichern</button>
-  <div fxFlex="auto"></div>
-  <button mat-button color="primary">Einstellungen zurücksetzen</button>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Externe Plattformen
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-ftr-dash-settings-platforms></app-ftr-dash-settings-platforms>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Persönliches
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-ftr-dash-settings-personal></app-ftr-dash-settings-personal>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Datenschutz, Sicherheit
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-ftr-dash-settings-security></app-ftr-dash-settings-security>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div>
+    <mat-card style="padding: 8px;">
+      <button mat-button color="primary" (click)="onBtnSave();">Speichern</button>
+      <div fxFlex="auto"></div>
+      <button mat-button color="warn" (click)="fireAuth.auth.signOut()" matTooltip="Abmelden"><mat-icon>exit_to_app</mat-icon></button>
+    </mat-card>
+  </div>
 </div>

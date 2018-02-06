@@ -1,3 +1,17 @@
 .dashboard-title {
   font-family: "Roboto Light";
 }
+
+mat-card {
+  margin: 8px;
+  outline: none;
+}
+
+.margin-container {
+  margin: 8px;
+}
+
+.mat-options-card:hover {
+  background: rgba(0,0,0,.04);
+  cursor: pointer;
+}

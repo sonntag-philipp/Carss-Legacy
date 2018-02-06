@@ -22,6 +22,11 @@ const appRoutes: Routes = [
     canActivateChild: [AuthGuardService]
   },
   {
+    path: "profile",
+    loadChildren: "./features/ftr-profile/ftr-profile.module#FtrProfileModule",
+    canActivateChild: [AuthGuardService]
+  },
+  {
     path: "",
     loadChildren: "./features/ftr-information/ftr-information.module#FtrInformationModule"
   },

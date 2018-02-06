@@ -4,15 +4,20 @@ import { FtrDashIndexComponent } from './ftr-dash-index/ftr-dash-index.component
 import { FtrDashboardRoutingModule } from './ftr-dashboard-routing.module';
 import { FtrDashComponent } from './ftr-dash/ftr-dash.component';
 import {
-  MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, MatInputModule, MatTableModule,
-  MatToolbarModule
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatDividerModule, MatExpansionModule, MatIconModule, MatInputModule, MatRadioModule,
+  MatTableModule,
+  MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {FtrInformationRoutingModule} from '../ftr-information/ftr-information-routing.module';
-import { FtrDashIndexDriveComponent } from './ftr-dash-index/ftr-dash-index-drive/ftr-dash-index-drive.component';
-import { FtrDashIndexRideComponent } from './ftr-dash-index/ftr-dash-index-ride/ftr-dash-index-ride.component';
 import { FtrDashSettingsComponent } from './ftr-dash-settings/ftr-dash-settings.component';
+import { FtrDashToolbarComponent } from './ftr-dash-toolbar/ftr-dash-toolbar.component';
+import { FtrDashSettingsCarComponent } from './ftr-dash-settings/ftr-dash-settings-car/ftr-dash-settings-car.component';
+import { FtrDashSettingsPlatformsComponent } from './ftr-dash-settings/ftr-dash-settings-platforms/ftr-dash-settings-platforms.component';
+import { FtrDashSettingsPersonalComponent } from './ftr-dash-settings/ftr-dash-settings-personal/ftr-dash-settings-personal.component';
+import { FtrDashSettingsSecurityComponent } from './ftr-dash-settings/ftr-dash-settings-security/ftr-dash-settings-security.component';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AccountService} from './shared/services/account.service';
 
 @NgModule({
   imports: [
@@ -24,9 +29,14 @@ import { FtrDashSettingsComponent } from './ftr-dash-settings/ftr-dash-settings.
     MatIconModule,
     MatInputModule,
     MatDividerModule,
+    MatTooltipModule,
+    MatExpansionModule,
+    MatCheckboxModule,
+    MatRadioModule,
 
     // AngularFire:
     AngularFireAuthModule,
+    AngularFirestoreModule,
 
     // Miscellaneous:
     CommonModule,
@@ -36,9 +46,15 @@ import { FtrDashSettingsComponent } from './ftr-dash-settings/ftr-dash-settings.
   declarations: [
     FtrDashIndexComponent,
     FtrDashComponent,
-    FtrDashIndexDriveComponent,
-    FtrDashIndexRideComponent,
-    FtrDashSettingsComponent
+    FtrDashSettingsComponent,
+    FtrDashToolbarComponent,
+    FtrDashSettingsCarComponent,
+    FtrDashSettingsPlatformsComponent,
+    FtrDashSettingsPersonalComponent,
+    FtrDashSettingsSecurityComponent
+  ],
+  providers: [
+    AccountService
   ],
   bootstrap: [
     FtrDashComponent

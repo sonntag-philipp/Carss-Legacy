@@ -1,5 +1,25 @@
-<h1 class="dashboard-title">Moin, {{ fireAuth.auth.currentUser.displayName }}</h1>
-<div fxLayout="row" fxLayout.xs="column">
-  <app-ftr-dash-index-drive style="margin-right: 8px;" fxFlex="50"></app-ftr-dash-index-drive>
-  <app-ftr-dash-index-ride style="margin-left: 8px;" fxFlex="50"></app-ftr-dash-index-ride>
+<h1 class="dashboard-title margin-container">Moin, {{ fireAuth.auth.currentUser.displayName }}</h1>
+<div fxLayout="column">
+  <div fxLayout="row" fxLayout.xs="column">
+    <mat-card fxFlex="33" class="mat-options-card" [routerLink]="['../drive']">
+      <mat-card-title>Fahren</mat-card-title>
+      <mat-card-subtitle>Selber Fahrer werden</mat-card-subtitle>
+    </mat-card>
+    <mat-card fxFlex="33" class="mat-options-card" [routerLink]="['../ride']">
+      <mat-card-title>Mitfahren</mat-card-title>
+      <mat-card-subtitle>Einen Fahrer finden</mat-card-subtitle>
+    </mat-card>
+    <mat-card fxFlex="33" class="mat-options-card" [routerLink]="['settings']">
+      <mat-card-title>Einstellungen</mat-card-title>
+      <mat-card-subtitle>IServ, Persönliches Auto, Datenschutz, ...</mat-card-subtitle>
+    </mat-card>
+  </div>
+  <div fxLayout="row" fxLayout.xs="column">
+    <mat-card fxFlex="100" class="mat-options-card" [routerLink]="['settings']">
+      <mat-card-title>Dein Profil</mat-card-title>
+      <mat-card-subtitle>IServ, Persönliches Auto, Datenschutz, ...</mat-card-subtitle>
+    </mat-card>
+  </div>
+  <mat-divider  class="margin-container"></mat-divider>
+  <h1 class="dashboard-title margin-container">Nachrichten</h1>
 </div>

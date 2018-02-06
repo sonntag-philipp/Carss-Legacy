@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FtrDashIndexRideComponent } from './ftr-dash-index-ride.component';
+import { FtrDashSettingsCarComponent } from './ftr-dash-settings-car.component';
 
-describe('FtrDashIndexRideComponent', () => {
-  let component: FtrDashIndexRideComponent;
-  let fixture: ComponentFixture<FtrDashIndexRideComponent>;
+describe('FtrDashSettingsCarComponent', () => {
+  let component: FtrDashSettingsCarComponent;
+  let fixture: ComponentFixture<FtrDashSettingsCarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FtrDashIndexRideComponent ]
+      declarations: [ FtrDashSettingsCarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FtrDashIndexRideComponent);
+    fixture = TestBed.createComponent(FtrDashSettingsCarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

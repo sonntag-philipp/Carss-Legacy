@@ -13,6 +13,7 @@ import { MaterialModule } from './shared/modules/material.module';
 import { FirebaseModule } from './shared/modules/firebase.module';
 import { AccountResolverService } from './shared/services/account-resolver.service';
 import { LoadingComponent } from './loading/loading.component';
+import { InfoDialogComponent } from './misc/info-dialog/info-dialog.component';
 
 @NgModule({
   imports: [
@@ -29,10 +30,14 @@ import { LoadingComponent } from './loading/loading.component';
     ErrorComponent,
     FooterComponent,
     LoadingComponent,
+    InfoDialogComponent,
   ],
   providers: [
     AuthGuardService,
     AccountResolverService
+  ],
+  entryComponents: [
+    InfoDialogComponent
   ],
   bootstrap: [AppComponent]
 })
