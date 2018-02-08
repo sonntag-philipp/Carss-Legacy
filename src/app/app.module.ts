@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ErrorComponent } from './misc/error/error.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -12,8 +11,8 @@ import { FooterComponent } from './page-navigation/footer/footer.component';
 import { MaterialModule } from './shared/modules/material.module';
 import { FirebaseModule } from './shared/modules/firebase.module';
 import { AccountResolverService } from './shared/services/account-resolver.service';
-import { LoadingComponent } from './loading/loading.component';
 import { InfoDialogComponent } from './misc/info-dialog/info-dialog.component';
+import { MiscModule } from './shared/modules/misc.module';
 
 @NgModule({
   imports: [
@@ -23,13 +22,12 @@ import { InfoDialogComponent } from './misc/info-dialog/info-dialog.component';
     FlexLayoutModule,
     MaterialModule,
     FirebaseModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MiscModule
   ],
   declarations: [
     AppComponent,
-    ErrorComponent,
     FooterComponent,
-    LoadingComponent,
     InfoDialogComponent,
   ],
   providers: [

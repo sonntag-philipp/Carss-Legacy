@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {SettingsService} from '../shared/services/settings.service';
 
 @Component({
   selector: 'app-ftr-dash-settings',
@@ -10,11 +9,9 @@ import {SettingsService} from '../shared/services/settings.service';
 export class FtrDashSettingsComponent implements OnInit {
 
   constructor(
-    public fireAuth: AngularFireAuth,
-    public settings: SettingsService
+    public fireAuth: AngularFireAuth
   ) { }
 
   ngOnInit() {
-    this.settings.observeAccountDoc();
   }
 }
