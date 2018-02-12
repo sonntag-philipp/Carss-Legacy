@@ -1,8 +1,12 @@
+import {CharacteristicsModel} from './characteristics.model';
 import {CarModel} from './car.model';
 
 export class ProfileModel {
+
   public car: CarModel;
-  public home: string;
+  public characteristics: CharacteristicsModel;
+  public form: string;
   public name: string;
-  public biography: string;
+  public school: string;
+
 }

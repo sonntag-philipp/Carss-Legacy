@@ -1,0 +1,29 @@
+.plus-chip {
+  animation: fadein 0.3s;
+  padding: 0px;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.chip-container-xs {
+  width: calc(100vw - 16px);
+  height: 32px;
+  padding-bottom: 16px;
+  overflow-x: auto;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+
+.inline-block-xs {
+  display: inline-block;
+}
+
+.inline-block {
+  padding: 0;
+  display: inline-flex;
+  margin: 4px 4px 0 0;
+}

@@ -8,7 +8,7 @@ import {AuthGuardService} from './shared/services/auth-guard.service';
 const appRoutes: Routes = [
   {
     path: "dashboard",
-    loadChildren: "./features/ftr-dashboard/ftr-dashboard.module#FtrDashboardModule",
+    loadChildren: "./features/dashboard/dashboard.module#DashboardModule",
     canActivateChild: [AuthGuardService]
   },
   {
@@ -18,12 +18,12 @@ const appRoutes: Routes = [
   },
   {
     path: "drive",
-    loadChildren: "./features/ftr-drive/ftr-drive.module#FtrDriveModule",
+    loadChildren: "./features/drive/drive.module#DriveModule",
     canActivateChild: [AuthGuardService]
   },
   {
     path: "profile",
-    loadChildren: "./features/ftr-profile/ftr-profile.module#FtrProfileModule",
+    loadChildren: "./features/profile/profile.module#ProfileModule",
     canActivateChild: [AuthGuardService]
   },
   {

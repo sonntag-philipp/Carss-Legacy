@@ -1,0 +1,41 @@
+<div ngClass.xs="heading-container-xs" ngClass="heading-container">
+  <h1 role="heading" class="heading">{{ (profile | async)?.name }}</h1>
+</div>
+<app-profile-chips
+  [chips]="chips"
+></app-profile-chips>
+<app-profile-paragraph title="Person:">
+  <div fxFlex="initial" fxLayout="column">
+    <b class="table-entry">Alter:</b>
+    <b class="table-entry">Wohnort:</b>
+    <b class="table-entry">Geschlecht:</b>
+  </div>
+  <div fxFlex="initial" fxLayout="column">
+    <div class="table-entry">{{ (profile | async)?.characteristics.age }}</div>
+    <div class="table-entry">{{ (profile | async)?.characteristics.hometown }}</div>
+    <div class="table-entry">{{ (profile | async)?.characteristics.sex }}</div>
+  </div>
+</app-profile-paragraph>
+<app-profile-paragraph title="Auto:" fxLayout="row">
+  <div fxFlex="initial" fxLayout="column">
+    <b class="table-entry">Marke:</b>
+    <b class="table-entry">Modell:</b>
+    <b class="table-entry">Sitze:</b>
+    <b class="table-entry">Farbe:</b>
+    <b class="table-entry">Türen:</b>
+    <b class="table-entry">Baujahr:</b>
+    <b class="table-entry">Sonstiges:</b>
+  </div>
+  <div fxFlex="initial" fxLayout="column">
+    <div class="table-entry">{{ (profile | async)?.car.brand }}</div>
+    <div class="table-entry">{{ (profile | async)?.car.model }}</div>
+    <div class="table-entry">{{ (profile | async)?.car.seats }}</div>
+    <div class="table-entry">{{ (profile | async)?.car.color }}</div>
+    <div class="table-entry">{{ (profile | async)?.car.doors }}</div>
+    <div class="table-entry">{{ (profile | async)?.car.year }}</div>
+    <div class="table-entry">{{ (profile | async)?.car.misc }}</div>
+  </div>
+</app-profile-paragraph>
+<div>
+  <button *ngIf="ownProfile" mat-raised-button color="primary" [routerLink]="['edit']">Bearbeiten</button>
+</div>

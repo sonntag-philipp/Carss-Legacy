@@ -9,4 +9,6 @@ export class CarModel {
   public seats: number;
   public year: string;
   public misc: string;
+  public doors: number;
+
 }

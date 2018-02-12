@@ -1,0 +1,17 @@
+.table-entry {
+  padding: 2px;
+}
+
+.heading {
+  font-family: 'Roboto Light', sans-serif;
+  margin: 0 0 8px 0;
+  font-size: 30pt;
+}
+
+.heading-container {
+  margin-top: 48px;
+}
+
+.heading-container-xs {
+  margin-top: 0;
+}

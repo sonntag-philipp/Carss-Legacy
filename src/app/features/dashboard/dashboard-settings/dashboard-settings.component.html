@@ -1,0 +1,21 @@
+
+<h1 class="dashboard-title margin-container">Einstellungen</h1>
+<div class="margin-container">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Datenschutz, Sicherheit
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-dashboard-settings-security></app-dashboard-settings-security>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <div>
+    <mat-card style="padding: 8px;">
+      <button mat-button color="primary" (click)="onBtnSave();">Speichern</button>
+      <div fxFlex="auto"></div>
+      <button mat-button color="warn" (click)="fireAuth.auth.signOut()" matTooltip="Abmelden"><mat-icon>exit_to_app</mat-icon></button>
+    </mat-card>
+  </div>
+</div>
