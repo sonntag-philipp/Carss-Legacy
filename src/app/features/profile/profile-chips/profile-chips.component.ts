@@ -8,7 +8,8 @@ import {ChipModel} from '../../../shared/models/chip.model';
 })
 export class ProfileChipsComponent implements OnInit {
 
-  @Input() chips: ChipModel[];
+  @Input() userChips: string[];
+  @Input() systemChips: string[];
 
   constructor() { }
 

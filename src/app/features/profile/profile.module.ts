@@ -14,6 +14,8 @@ import {ProfileChipsComponent} from './profile-chips/profile-chips.component';
 import { ProfileParagraphComponent } from './profile-paragraph/profile-paragraph.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { ProfileInputComponent } from './profile-input/profile-input.component';
+import {FormsModule} from '@angular/forms';
+import {ProfileService} from './profile.service';
 
 @NgModule({
   imports: [
@@ -32,8 +34,12 @@ import { ProfileInputComponent } from './profile-input/profile-input.component';
 
     // Miscellaneous:
     CommonModule,
+    FormsModule,
     ProfileRoutingModule,
     FlexLayoutModule
+  ],
+  providers: [
+    ProfileService
   ],
   declarations: [
     ProfilePresenterComponent,

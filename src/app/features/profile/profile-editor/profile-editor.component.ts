@@ -4,6 +4,7 @@ import {ActivatedRoute} from '@angular/router';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
+import {ProfileService} from '../profile.service';
 
 @Component({
   selector: 'app-profile-editor',
@@ -12,29 +13,18 @@ import {Observable} from 'rxjs/Observable';
 })
 export class ProfileEditorComponent implements OnInit {
 
-  public profile: Observable<ProfileModel>;
   public id: string;
 
   constructor(
     private route: ActivatedRoute,
-    private db: AngularFirestore,
-    private auth: AngularFireAuth) { }
+    public profileService: ProfileService) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
-    this.profile = this.db.collection("users").doc(this.id).collection("user_docs").doc<ProfileModel>("profile").valueChanges();
+    this.profileService.load(this.id);
   }
 
-  public chips = [
-    {
-      name: "Admin",
-      description: "Gehört zum Team von Carss",
-      system: true
-    },
-    {
-      name: "GYT16-1",
-      description: "Geht in die Klasse GYT16-1",
-      system: false
-    }
-  ];
+  logForm(form: any) {
+    console.log(form);
+  }
 }

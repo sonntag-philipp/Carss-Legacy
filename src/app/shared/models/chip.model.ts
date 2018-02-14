@@ -1,7 +1,7 @@
 export class ChipModel {
 
-  name: string;
-  description: string;
-  system: boolean;
+  public name: string;
+  public description: string;
+  public verified: boolean;
 
 }

@@ -2,7 +2,8 @@
   <h1 role="heading" class="heading">{{ (profile | async)?.name }}</h1>
 </div>
 <app-profile-chips
-  [chips]="chips"
+  [systemChips]="(user | async)?.systemChips"
+  [userChips]="(user | async)?.userChips"
 ></app-profile-chips>
 <app-profile-paragraph title="Person:">
   <div fxFlex="initial" fxLayout="column">
