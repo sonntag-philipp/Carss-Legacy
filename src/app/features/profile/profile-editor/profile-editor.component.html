@@ -1,48 +1,50 @@
-<!--
-<form #form="ngForm" (ngSubmit)="logForm(form);">
-
-  <div class="heading-container">
-    <h1 role="heading" class="heading"></h1>
-    <input ngModel name="name" [value]="(profile | async)?.name" class="heading" placeholder="Name:" matInput maxlength="20" type="text">
-  </div>
-
-  <app-profile-chips [systemChips]="profileService.chips"></app-profile-chips>
-
-  <app-profile-paragraph title="Person:">
-    <div fxFlex="initial" fxLayout="column">
-      <b class="table-entry">Alter:</b>
-      <b class="table-entry">Wohnort:</b>
-      <b class="table-entry">Geschlecht:</b>
+<div *ngIf="ready">
+  <form (ngSubmit)="submitChanges(f);" #f="ngForm">
+    <div role="heading">
+      <div class="heading-container">
+        <h1 role="heading" class="heading"></h1>
+        <input name="name" [(ngModel)]="profile.name" class="heading" placeholder="Name des Profils:" matInput maxlength="20" type="text">
+      </div>
     </div>
-    <div fxFlex="initial" fxLayout="column">
-      <input ngModel name="age" [value]="(profile | async)?.characteristics.age" class="table-entry" matInput maxlength="20" type="text">
-      <input ngModel name="hometown" [value]="(profile | async)?.characteristics.hometown" class="table-entry" matInput maxlength="20" type="text">
-      <input ngModel name="sex" [value]="(profile | async)?.characteristics.sex" class="table-entry" matInput maxlength="20" type="text">
+    <div role="banner">
+      <app-profile-chips [systemChips]="user.systemChips" [userChips]="user.userChips"></app-profile-chips>
     </div>
-  </app-profile-paragraph>
-
-  <app-profile-paragraph title="Auto:" fxLayout="row">
-    <div fxFlex="initial" fxLayout="column">
-      <b class="table-entry">Marke:</b>
-      <b class="table-entry">Modell:</b>
-      <b class="table-entry">Sitze:</b>
-      <b class="table-entry">Farbe:</b>
-      <b class="table-entry">Türen:</b>
-      <b class="table-entry">Baujahr:</b>
-      <b class="table-entry">Sonstiges:</b>
+    <div>
+      <app-profile-paragraph title="Person:">
+        <div fxFlex="initial" fxLayout="column">
+          <label class="table-key">Alter:</label>
+          <label class="table-key">Wohnort:</label>
+          <label class="table-key">Geschlecht:</label>
+        </div>
+        <div fxFlex="initial" fxLayout="column">
+          <input name="charAge" id="charAge" [(ngModel)]="profile.characteristics.age" class="table-entry" matInput maxlength="20" type="text">
+          <input name="charHometown" id="charHometown" [(ngModel)]="profile.characteristics.hometown" class="table-entry" matInput maxlength="20" type="text">
+          <input name="charSex" [(ngModel)]="profile.characteristics.sex" class="table-entry" matInput maxlength="20" type="text">
+        </div>
+      </app-profile-paragraph>
     </div>
-    <div fxFlex="initial" fxLayout="column"><!--
-      <input [(ngModel)]="profileService.profile?.car.brand" class="table-entry" matInput maxlength="20" type="text">
-      <input [(ngModel)]="profileService.profile?.car.model" class="table-entry" matInput maxlength="20" type="text">
-      <input [(ngModel)]="profileService.profile?.car.seats" class="table-entry" matInput maxlength="20" type="number">
-      <input [(ngModel)]="profileService.profile?.car.color" class="table-entry" matInput maxlength="20" type="text">
-      <input [(ngModel)]="profileService.profile?.car.doors" class="table-entry" matInput maxlength="20" type="number">
-      <input [(ngModel)]="profileService.profile?.car.year" class="table-entry" matInput maxlength="20" type="text">
-      <input [(ngModel)]="profileService.profile?.car.misc" class="table-entry" matInput maxlength="20" type="text">
+    <div>
+      <app-profile-paragraph title="Auto:" fxLayout="row">
+        <div fxFlex="initial" fxLayout="column">
+          <label class="table-key">Marke:</label>
+          <label class="table-key">Modell:</label>
+          <label class="table-key">Sitze:</label>
+          <label class="table-key">Farbe:</label>
+          <label class="table-key">Türen:</label>
+          <label class="table-key">Baujahr:</label>
+          <label class="table-key">Sonstiges:</label>
+        </div>
+        <div fxFlex="initial" fxLayout="column">
+          <input name="carBrand" [(ngModel)]="profile.car.brand" class="table-entry" matInput maxlength="20" type="text">
+          <input name="carModel" [(ngModel)]="profile.car.model" class="table-entry" matInput maxlength="20" type="text">
+          <input name="carSeats" [(ngModel)]="profile.car.seats" class="table-entry" matInput maxlength="20" type="number">
+          <input name="carColor" [(ngModel)]="profile.car.color" class="table-entry" matInput maxlength="20" type="text">
+          <input name="carDoors" [(ngModel)]="profile.car.doors" class="table-entry" matInput maxlength="20" type="number">
+          <input name="carYear" [(ngModel)]="profile.car.year" class="table-entry" matInput maxlength="20" type="text">
+          <input name="carMisc" [(ngModel)]="profile.car.misc" class="table-entry" matInput maxlength="20" type="text">
+        </div>
+      </app-profile-paragraph>
     </div>
-  </app-profile-paragraph>
-  <div>
-    <button mat-raised-button color="primary" type="submit">Speichern</button>
-  </div>
-</form>
--->
+    <button type="submit" mat-raised-button color="primary">Speichern</button>
+  </form>
+</div>

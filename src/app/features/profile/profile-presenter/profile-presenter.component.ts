@@ -6,6 +6,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 import {ProfileModel} from '../../../shared/models/profile.model';
 import {UserModel} from '../../../shared/models/user.model';
+import {ProfileService} from '../profile.service';
 
 @Component({
   selector: 'app-profile-presenter',
@@ -27,10 +28,11 @@ export class ProfilePresenterComponent implements OnInit {
   public profile: Observable<ProfileModel>;
   public user: Observable<UserModel>;
 
+
   constructor(
     private route: ActivatedRoute,
-    private db: AngularFirestore,
     private auth: AngularFireAuth,
+    private db: AngularFirestore,
     private router: Router
   ) { }
 

@@ -1,6 +1,12 @@
 .table-entry {
-  padding: 2px;
+  padding: 2.5px;
   margin: 2px;
+}
+
+.table-key {
+  padding: 3px 3px 3px 0;
+  margin: 2px 2px 2px 0;
+  font-weight: bold;
 }
 
 .heading {
