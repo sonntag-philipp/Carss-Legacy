@@ -45,7 +45,6 @@ export class ProfilePresenterComponent implements OnInit {
     this.user = this.db.collection("users").doc<UserModel>(this.id).valueChanges();
     this.user.subscribe(
       next => {
-        console.log(next);
       },
       error => {
         this.router.navigate(['not-found']);
@@ -55,7 +54,6 @@ export class ProfilePresenterComponent implements OnInit {
     this.profile = this.db.collection("users").doc(this.id).collection("user_docs").doc<ProfileModel>("profile").valueChanges();
     this.profile.subscribe(
       next => {
-        console.log(next);
       },
       error => {
         this.router.navigate(['not-found']);

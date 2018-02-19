@@ -4,8 +4,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {UserModel} from '../../../shared/models/user.model';
-import {UUID} from 'angular2-uuid';
-import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -16,7 +14,6 @@ export class ProfileEditorComponent implements OnInit {
 
   public id: string;
   public ready: boolean;
-  private uuid: string;
 
   public profile: ProfileModel;
   public user: UserModel;
@@ -51,9 +48,23 @@ export class ProfileEditorComponent implements OnInit {
     );
   }
 
-  public submitChanges(form: NgForm): void {
-    this.uuid = UUID.UUID();
 
-    this.db.collection("users").doc(this.id).collection("tokens").add({token: this.uuid});
+  public onSubmit(form: any) {
+
+    if (form === undefined) {
+      return false;
+    }
+
+    if (form.touched && form.valid) {
+      /**
+       * Sicherheit, Sicherheit, was ist Sicherheit? xD
+       */
+      this.db.collection("users").doc(this.id).collection("user_docs").doc("profile").update(this.profile).then(
+        () => {
+          this.router.navigate(["../"], {relativeTo: this.route});
+        }
+      );
+    }
+    return false;
   }
 }

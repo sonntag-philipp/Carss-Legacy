@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 import {InfoDialogComponent} from '../../../misc/info-dialog/info-dialog.component';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @Component({
   selector: 'app-dashboard-toolbar',
@@ -9,14 +10,18 @@ import {InfoDialogComponent} from '../../../misc/info-dialog/info-dialog.compone
 })
 export class DashboardToolbarComponent implements OnInit {
 
+  public uid: string;
+
   constructor(
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private auth: AngularFireAuth
   ) { }
 
   ngOnInit() {
+    this.uid = this.auth.auth.currentUser.uid;
   }
 
-  public onBtnMessages(): void {
+  public onBtnSettings(): void {
     this.dialog.open(InfoDialogComponent, {
       data: {
         title: "Noch nicht verfügbar",

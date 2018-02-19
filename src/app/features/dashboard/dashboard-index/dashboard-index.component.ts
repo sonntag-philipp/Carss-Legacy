@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {Observable} from 'rxjs/Observable';
+import {ProfileModel} from '../../../shared/models/profile.model';
 
 @Component({
   selector: 'app-dashboard-index',
@@ -9,10 +12,18 @@ import {AngularFireAuth} from 'angularfire2/auth';
 export class DashboardIndexComponent implements OnInit {
 
   constructor(
-    public fireAuth: AngularFireAuth
+    public fireAuth: AngularFireAuth,
+    private firestore: AngularFirestore
   ) { }
 
+  public profile: Observable<ProfileModel>;
+
   ngOnInit() {
+    this.profile = this.firestore.collection("users")
+                                  .doc(this.fireAuth.auth.currentUser.uid)
+                                    .collection("user_docs")
+                                      .doc<ProfileModel>("profile").valueChanges();
+
   }
 
 }

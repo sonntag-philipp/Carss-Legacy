@@ -1,13 +1,10 @@
-<mat-chip-list (mouseenter)="showPlus = true;" (mouseleave)="showPlus = false;">
+<mat-chip-list>
   <div ngClass.xs="chip-container-xs" style="margin-bottom: 24px;">
     <div ngClass.xs="inline-block-xs" ngClass="inline-block" *ngFor="let chip of systemChips;">
       <mat-chip color="warn" [selected]="true">{{ chip }}</mat-chip>
     </div>
     <div ngClass.xs="inline-block-xs" ngClass="inline-block" *ngFor="let chip of userChips;">
       <mat-chip>{{ chip }}</mat-chip>
-    </div>
-    <div ngClass.xs="inline-block-xs" ngClass="inline-block" *ngIf="showPlus">
-      <mat-chip>+</mat-chip>
     </div>
   </div>
 </mat-chip-list>

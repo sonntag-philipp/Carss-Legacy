@@ -14,8 +14,9 @@ import {ProfileChipsComponent} from './profile-chips/profile-chips.component';
 import { ProfileParagraphComponent } from './profile-paragraph/profile-paragraph.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { ProfileInputComponent } from './profile-input/profile-input.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProfileService} from './profile.service';
+import {BrowserModule} from '@angular/platform-browser';
 
 @NgModule({
   imports: [

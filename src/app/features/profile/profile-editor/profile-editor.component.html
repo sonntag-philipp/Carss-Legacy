@@ -1,5 +1,5 @@
 <div *ngIf="ready">
-  <form (ngSubmit)="submitChanges(f);" #f="ngForm">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form);">
     <div role="heading">
       <div class="heading-container">
         <h1 role="heading" class="heading"></h1>
@@ -17,7 +17,7 @@
           <label class="table-key">Geschlecht:</label>
         </div>
         <div fxFlex="initial" fxLayout="column">
-          <input name="charAge" id="charAge" [(ngModel)]="profile.characteristics.age" class="table-entry" matInput maxlength="20" type="text">
+          <input name="charAge" id="charAge" [(ngModel)]="profile.characteristics.age" class="table-entry" matInput type="number">
           <input name="charHometown" id="charHometown" [(ngModel)]="profile.characteristics.hometown" class="table-entry" matInput maxlength="20" type="text">
           <input name="charSex" [(ngModel)]="profile.characteristics.sex" class="table-entry" matInput maxlength="20" type="text">
         </div>
@@ -45,6 +45,8 @@
         </div>
       </app-profile-paragraph>
     </div>
-    <button type="submit" mat-raised-button color="primary">Speichern</button>
+    <div>
+      <button type="submit" mat-raised-button color="primary" (click)="onSubmit(form);">Speichern</button>
+    </div>
   </form>
 </div>

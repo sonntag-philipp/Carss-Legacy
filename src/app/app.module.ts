@@ -13,6 +13,7 @@ import { FirebaseModule } from './shared/modules/firebase.module';
 import { AccountResolverService } from './shared/services/account-resolver.service';
 import { InfoDialogComponent } from './misc/info-dialog/info-dialog.component';
 import { MiscModule } from './shared/modules/misc.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -23,7 +24,9 @@ import { MiscModule } from './shared/modules/misc.module';
     MaterialModule,
     FirebaseModule,
     AppRoutingModule,
-    MiscModule
+    MiscModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
