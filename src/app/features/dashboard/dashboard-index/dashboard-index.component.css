@@ -3,12 +3,7 @@
 }
 
 mat-card {
-  margin: 8px;
   outline: none;
-}
-
-.margin-container {
-  margin: 8px;
 }
 
 .mat-options-card:hover {

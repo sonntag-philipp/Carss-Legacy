@@ -9,7 +9,7 @@ import {ToolbarService} from '../../shared/services/toolbar.service';
 export class ToolbarComponent implements OnInit {
 
   constructor(
-    private service: ToolbarService
+    public service: ToolbarService
   ) { }
 
   ngOnInit() {

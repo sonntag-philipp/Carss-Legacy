@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
+import {ToolbarService} from '../../../shared/services/toolbar.service';
 
 @Component({
   selector: 'app-dashboard-settings',
@@ -9,9 +10,11 @@ import {AngularFireAuth} from 'angularfire2/auth';
 export class DashboardSettingsComponent implements OnInit {
 
   constructor(
-    public fireAuth: AngularFireAuth
+    public fireAuth: AngularFireAuth,
+    private toolbarService: ToolbarService
   ) { }
 
   ngOnInit() {
+    this.toolbarService.title = "Einstellungen";
   }
 }

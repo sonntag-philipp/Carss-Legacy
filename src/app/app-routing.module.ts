@@ -13,7 +13,7 @@ const appRoutes: Routes = [
   },
   {
     path: "ride",
-    loadChildren: "./features/ftr-ride/ftr-ride.module#FtrRideModule",
+    loadChildren: "./features/ride/ride.module#RideModule",
     canActivateChild: [AuthGuardService]
   },
   {

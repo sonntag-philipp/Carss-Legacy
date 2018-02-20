@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FtrInformationRoutingModule} from './information-routing.module';
+import {InformationRoutingModule} from './information-routing.module';
 import {MatButtonModule, MatCardModule, MatToolbarModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -22,7 +22,7 @@ import {InformationSecurityComponent} from './information-security/information-s
 
     // Miscellaneous:
     CommonModule,
-    FtrInformationRoutingModule,
+    InformationRoutingModule,
     FlexLayoutModule
   ],
   declarations: [

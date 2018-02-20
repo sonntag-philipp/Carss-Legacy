@@ -1,11 +1,18 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {FtrRideIndexComponent} from './ftr-ride-index/ftr-ride-index.component';
+import {RideIndexComponent} from './ride-index/ride-index.component';
+import {RideComponent} from './ride/ride.component';
 
 const appRoutes: Routes = [
   {
     path: "",
-    component: FtrRideIndexComponent
+    component: RideComponent,
+    children: [
+      {
+        path: "",
+        component: RideIndexComponent
+      }
+    ]
   },
   {
     path: "**",
@@ -21,4 +28,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class FtrRideRoutingModule { }
+export class RideRoutingModule { }

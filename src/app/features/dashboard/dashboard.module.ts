@@ -15,7 +15,6 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {DashboardIndexComponent} from './dashboard-index/dashboard-index.component';
 import {DashboardSettingsSecurityComponent} from './dashboard-settings/dashboard-settings-security/dashboard-settings-security.component';
 import {DashboardRoutingModule} from './dashboard-routing.module';
-import { DashboardSettingsDialogComponent } from './dashboard-settings-dialog/dashboard-settings-dialog.component';
 
 @NgModule({
   imports: [
@@ -47,11 +46,7 @@ import { DashboardSettingsDialogComponent } from './dashboard-settings-dialog/da
     DashboardIndexComponent,
     DashboardComponent,
     DashboardSettingsComponent,
-    DashboardSettingsSecurityComponent,
-    DashboardSettingsDialogComponent
-  ],
-  entryComponents: [
-    DashboardSettingsDialogComponent
+    DashboardSettingsSecurityComponent
   ],
   providers: [
   ],

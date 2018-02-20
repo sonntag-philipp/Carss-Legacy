@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FtrRideIndexComponent } from './ftr-ride-index.component';
+import { RideComponent } from './ride.component';
 
-describe('FtrRideIndexComponent', () => {
-  let component: FtrRideIndexComponent;
-  let fixture: ComponentFixture<FtrRideIndexComponent>;
+describe('RideComponent', () => {
+  let component: RideComponent;
+  let fixture: ComponentFixture<RideComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FtrRideIndexComponent ]
+      declarations: [ RideComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FtrRideIndexComponent);
+    fixture = TestBed.createComponent(RideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

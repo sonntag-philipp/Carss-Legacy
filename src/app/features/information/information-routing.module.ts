@@ -43,4 +43,4 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class FtrInformationRoutingModule { }
+export class InformationRoutingModule { }
