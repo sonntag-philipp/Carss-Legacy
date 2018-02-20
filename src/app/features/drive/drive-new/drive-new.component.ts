@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GoogleMapsAPIWrapper} from '@agm/core';
 
 @Component({
   selector: 'app-drive-new',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DriveNewComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private mapsApi: GoogleMapsAPIWrapper
+  ) { }
 
   ngOnInit() {
   }

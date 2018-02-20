@@ -3,6 +3,7 @@ import {LoadingComponent} from '../../misc/loading/loading.component';
 import {ErrorComponent} from '../../misc/error/error.component';
 import {MaterialModule} from './material.module';
 import {RouterModule} from '@angular/router';
+import {AgmDirectionsComponent} from '../../misc/agm-directions/agm-directions.component';
 
 
 @NgModule({
@@ -12,11 +13,13 @@ import {RouterModule} from '@angular/router';
   ],
   exports: [
     LoadingComponent,
-    ErrorComponent
+    ErrorComponent,
+    AgmDirectionsComponent
   ],
   declarations: [
     LoadingComponent,
-    ErrorComponent
+    ErrorComponent,
+    AgmDirectionsComponent
   ]
 })
 export class MiscModule { }

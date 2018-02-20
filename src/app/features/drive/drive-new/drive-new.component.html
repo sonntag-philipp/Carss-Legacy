@@ -6,12 +6,28 @@
     <mat-horizontal-stepper>
       <mat-step>
         <ng-template matStepLabel>Startpunkt auswählen</ng-template>
+        <agm-map [latitude]="53.082923" [longitude]="7.402409" style="height: 40vh;">
+          <agm-marker [latitude]="53.082923" [longitude]="7.402409"></agm-marker>
+        </agm-map>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Zielpunkt auswählen</ng-template>
+        <agm-map>
+          <agm-directions
+            [origin]="{longitude: 7.809007, latitude: 51.678418}"
+            [destination]="{longitude: 7.402409, latitude: 53.082923}"
+            style="height: 400px;">
+          </agm-directions>
+        </agm-map>
+        <agm-map [latitude]="53.082923" [longitude]="7.402409" style="height: 40vh;">
+          <agm-marker [latitude]="53.082923" [longitude]="7.402409"></agm-marker>
+        </agm-map>
       </mat-step>
       <mat-step>
-        <ng-template matStepLabel>Termin auswählen</ng-template>
+        <ng-template matStepLabel>Daten eintragen</ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Absenden</ng-template>
       </mat-step>
     </mat-horizontal-stepper>
   </mat-card-content>

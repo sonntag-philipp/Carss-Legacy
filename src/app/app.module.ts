@@ -34,7 +34,7 @@ import {ToolbarService} from './shared/services/toolbar.service';
     AppComponent,
     FooterComponent,
     InfoDialogComponent,
-    ToolbarComponent,
+    ToolbarComponent
   ],
   providers: [
     AuthGuardService,

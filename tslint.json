@@ -125,9 +125,10 @@
       "camelCase"
     ],
     "component-selector": [
-      true,
+      false,
       "element",
       "app",
+      "agm",
       "kebab-case"
     ],
     "angular-whitespace": [true, "check-interpolation"],

@@ -11,6 +11,8 @@ import {FormsModule} from '@angular/forms';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatStepperModule} from '@angular/material';
 import {AgmCoreModule} from '@agm/core';
+import {MiscModule} from '../../shared/modules/misc.module';
+import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
 
 @NgModule({
   imports: [
@@ -32,7 +34,11 @@ import {AgmCoreModule} from '@agm/core';
     CommonModule,
     FormsModule,
     DriveRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MiscModule
+  ],
+  providers: [
+    GoogleMapsAPIWrapper
   ],
   declarations: [
     DriveIndexComponent,
