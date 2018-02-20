@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FtrDashToolbarComponent } from './dashboard-toolbar.component';
+import { ToolbarComponent } from './toolbar.component';
 
-describe('FtrDashToolbarComponent', () => {
-  let component: FtrDashToolbarComponent;
-  let fixture: ComponentFixture<FtrDashToolbarComponent>;
+describe('ToolbarComponent', () => {
+  let component: ToolbarComponent;
+  let fixture: ComponentFixture<ToolbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FtrDashToolbarComponent ]
+      declarations: [ ToolbarComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FtrDashToolbarComponent);
+    fixture = TestBed.createComponent(ToolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

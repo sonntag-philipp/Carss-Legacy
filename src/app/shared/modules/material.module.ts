@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import {
-  MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatIconModule, MatInputModule, MatProgressSpinnerModule,
+  MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatIconModule, MatInputModule, MatMenuModule, MatProgressSpinnerModule,
   MatTableModule, MatTabsModule,
   MatToolbarModule
 } from '@angular/material';
@@ -17,7 +17,8 @@ import {
     MatDividerModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule { }

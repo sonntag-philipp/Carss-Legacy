@@ -16,3 +16,28 @@ mat-card {
 * {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.heading {
+  font-family: 'Roboto Light', sans-serif;
+  margin: 0 0 8px 0;
+  font-size: 30pt;
+  font-weight: normal;
+}
+
+.heading-container {
+  margin-top: 16px;
+}
+
+.heading-container-xs {
+  margin-top: 0;
+}
+
+/* Material Toolbar Styles */
+mat-toolbar {
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+}
+
+.toolbar-title {
+  color: white;
+  text-decoration: none;
+}

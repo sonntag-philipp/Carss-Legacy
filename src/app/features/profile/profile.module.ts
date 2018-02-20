@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
-  MatCardModule, MatChipsModule, MatDividerModule, MatInputModule, MatToolbarModule, MatTooltipModule
+  MatCardModule, MatChipsModule, MatDividerModule, MatIconModule, MatInputModule, MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -14,9 +14,8 @@ import {ProfileChipsComponent} from './profile-chips/profile-chips.component';
 import { ProfileParagraphComponent } from './profile-paragraph/profile-paragraph.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { ProfileInputComponent } from './profile-input/profile-input.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {ProfileService} from './profile.service';
-import {BrowserModule} from '@angular/platform-browser';
 
 @NgModule({
   imports: [
@@ -28,6 +27,7 @@ import {BrowserModule} from '@angular/platform-browser';
     MatDividerModule,
     MatButtonModule,
     MatInputModule,
+    MatIconModule,
 
     // AngularFire:
     AngularFireAuthModule,

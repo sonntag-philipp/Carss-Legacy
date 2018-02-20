@@ -14,6 +14,8 @@ import { AccountResolverService } from './shared/services/account-resolver.servi
 import { InfoDialogComponent } from './misc/info-dialog/info-dialog.component';
 import { MiscModule } from './shared/modules/misc.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ToolbarComponent } from './page-navigation/toolbar/toolbar.component';
+import {ToolbarService} from './shared/services/toolbar.service';
 
 @NgModule({
   imports: [
@@ -32,10 +34,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     FooterComponent,
     InfoDialogComponent,
+    ToolbarComponent,
   ],
   providers: [
     AuthGuardService,
-    AccountResolverService
+    AccountResolverService,
+    ToolbarService
   ],
   entryComponents: [
     InfoDialogComponent

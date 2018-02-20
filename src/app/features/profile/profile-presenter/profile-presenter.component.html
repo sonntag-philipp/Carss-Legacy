@@ -1,6 +1,6 @@
-<div ngClass.xs="heading-container-xs" ngClass="heading-container">
-  <h1 role="heading" class="heading">{{ (profile | async)?.name }}</h1>
-</div>
+<h1 role="heading" ngClass.xs="heading-container-xs" class="heading" ngClass="heading-container">
+  {{ (profile | async)?.name }}
+</h1>
 <app-profile-chips
   [systemChips]="(user | async)?.systemChips"
   [userChips]="(user | async)?.userChips"

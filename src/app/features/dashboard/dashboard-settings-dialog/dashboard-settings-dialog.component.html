@@ -1,0 +1,30 @@
+<div style="height: initial;">
+  <h1 mat-dialog-title style="font-weight: bold;">Einstellungen</h1>
+  <mat-dialog-content style="font-family: Roboto;">
+    <div style="padding-bottom: 8px;">
+      <h3 style="margin: 0; font-weight: normal;">Wer darf meine Profile sehen?</h3>
+      <div style="height: 100%; overflow: hidden;">
+        <mat-radio-group>
+          <tr>
+            <td>
+              <mat-radio-button value="1">Jeder</mat-radio-button>
+            </td>
+          </tr>
+          <tr>
+            <td fxFlex="100">
+              <mat-radio-button value="2">IServ Benutzer</mat-radio-button>
+            </td>
+          </tr>
+        </mat-radio-group>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div>
+      <h3 style="margin: 0; font-weight: normal;">IServ-Email:</h3>
+    </div>
+
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close color="warn">Speichern</button>
+  </mat-dialog-actions>
+</div>
