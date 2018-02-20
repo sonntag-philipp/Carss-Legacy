@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {InformationContactComponent} from './information-contact.component';
 
-import { FtrInfoComponent } from './ftr-info.component';
 
-describe('FtrInfoComponent', () => {
-  let component: FtrInfoComponent;
-  let fixture: ComponentFixture<FtrInfoComponent>;
+describe('FtrInfoContactComponent', () => {
+  let component: InformationContactComponent;
+  let fixture: ComponentFixture<InformationContactComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FtrInfoComponent ]
+      declarations: [ InformationContactComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FtrInfoComponent);
+    fixture = TestBed.createComponent(InformationContactComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

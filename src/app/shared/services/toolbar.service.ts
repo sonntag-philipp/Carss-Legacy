@@ -9,5 +9,5 @@ export class ToolbarService {
   ) { }
 
   public title: string;
-  public hidden: boolean;
+  public hidden = false;
 }

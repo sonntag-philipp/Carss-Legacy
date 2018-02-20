@@ -28,7 +28,7 @@ const appRoutes: Routes = [
   },
   {
     path: "",
-    loadChildren: "./features/ftr-information/ftr-information.module#FtrInformationModule"
+    loadChildren: "./features/information/information.module#InformationModule"
   },
   {
     path: "not-found",

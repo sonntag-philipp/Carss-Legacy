@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { FtrInfoConditionsComponent } from './ftr-info-conditions.component';
+import {InformationConditionsComponent} from './information-conditions.component';
 
 describe('FtrInfoConditionsComponent', () => {
-  let component: FtrInfoConditionsComponent;
-  let fixture: ComponentFixture<FtrInfoConditionsComponent>;
+  let component: InformationConditionsComponent;
+  let fixture: ComponentFixture<InformationConditionsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FtrInfoConditionsComponent ]
+      declarations: [ InformationConditionsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FtrInfoConditionsComponent);
+    fixture = TestBed.createComponent(InformationConditionsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

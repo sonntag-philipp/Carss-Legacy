@@ -1,20 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { FtrInfoDataSecurityComponent } from './ftr-info-data-security.component';
+import {InformationSecurityComponent} from './information-security.component';
 
 describe('FtrInfoDataSecurityComponent', () => {
-  let component: FtrInfoDataSecurityComponent;
-  let fixture: ComponentFixture<FtrInfoDataSecurityComponent>;
+  let component: InformationSecurityComponent;
+  let fixture: ComponentFixture<InformationSecurityComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FtrInfoDataSecurityComponent ]
+      declarations: [ InformationSecurityComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(FtrInfoDataSecurityComponent);
+    fixture = TestBed.createComponent(InformationSecurityComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
