@@ -11,11 +11,13 @@
       </mat-expansion-panel-header>
       <app-dashboard-settings-security></app-dashboard-settings-security>
     </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Verbundene Konten
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-dashboard-settings-accounts></app-dashboard-settings-accounts>
+    </mat-expansion-panel>
   </mat-accordion>
-  <div>
-    <mat-card style="padding: 8px;">
-      <div fxFlex="auto"></div>
-      <button mat-button color="warn" (click)="fireAuth.auth.signOut()" matTooltip="Abmelden"><mat-icon>exit_to_app</mat-icon></button>
-    </mat-card>
-  </div>
 </div>

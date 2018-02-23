@@ -1,15 +1,15 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import * as firebase from "firebase";
 import {AngularFireAuth} from 'angularfire2/auth';
-import {Router} from '@angular/router';
-import {ToolbarService} from '../../../shared/services/toolbar.service';
+import {ToolbarService} from '../shared/services/toolbar.service';
 
 @Component({
-  selector: 'app-information-index',
-  templateUrl: './information-index.component.html',
-  styleUrls: ['./information-index.component.css']
+  selector: 'app-index',
+  templateUrl: './index.component.html',
+  styleUrls: ['./index.component.css']
 })
-export class InformationIndexComponent implements OnInit, OnDestroy{
+export class IndexComponent implements OnInit, OnDestroy {
 
   public initialized = false;
   public authenticated = false;

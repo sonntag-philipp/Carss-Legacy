@@ -13,10 +13,6 @@ const appRoutes: Routes = [
         component: RideIndexComponent
       }
     ]
-  },
-  {
-    path: "**",
-    redirectTo: "/not-found"
   }
 ];
 

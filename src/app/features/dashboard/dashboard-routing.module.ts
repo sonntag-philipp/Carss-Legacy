@@ -18,10 +18,6 @@ const appRoutes: Routes = [
         component: DashboardSettingsComponent
       }
     ]
-  },
-  {
-    path: "**",
-    redirectTo: "/not-found"
   }
 ];
 

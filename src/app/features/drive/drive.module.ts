@@ -4,7 +4,6 @@ import {DriveIndexComponent} from './drive-index/drive-index.component';
 import {DriveRoutingModule} from './drive-routing.module';
 import { DriveComponent } from './drive/drive.component';
 import { DriveEditorComponent } from './drive-editor/drive-editor.component';
-import { DriveNewComponent } from './drive-new/drive-new.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {FormsModule} from '@angular/forms';
@@ -23,7 +22,8 @@ import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
     MatStepperModule,
     MatCardModule,
     AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8"
+      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
+      libraries: ["places"]
     }),
 
     // AngularFire:
@@ -43,8 +43,7 @@ import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
   declarations: [
     DriveIndexComponent,
     DriveComponent,
-    DriveEditorComponent,
-    DriveNewComponent
+    DriveEditorComponent
   ]
 })
 export class DriveModule { }

@@ -1,0 +1,14 @@
+<div style="width: 100%;" fxLayout="column">
+  <form #f="ngForm" (submit)="onIServSubmitted(f)" fxLayout="row">
+    <mat-form-field fxFlex="40">
+      <input [(ngModel)]="input" name="address" required matInput pattern="[a-z, A-Z, 0-9]+.[a-z, A-Z, 0-9]+@bbs-papenburg.eu" type="email" placeholder="IServ Mail Adresse">
+    </mat-form-field>
+    <button matTooltip="Speichern" type="submit" mat-icon-button><mat-icon>save</mat-icon></button>
+  </form>
+  <form #f="ngForm" (submit)="onIServSubmitted(f)" fxLayout="row">
+    <mat-form-field fxFlex="40">
+      <input [(ngModel)]="input" name="address" required matInput pattern="[a-z, A-Z, 0-9]+.[a-z, A-Z, 0-9]+@bbs-papenburg.eu" type="email" placeholder="IServ Mail Adresse">
+    </mat-form-field>
+    <button matTooltip="Speichern" type="submit" mat-icon-button><mat-icon>save</mat-icon></button>
+  </form>
+</div>

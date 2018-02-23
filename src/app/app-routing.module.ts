@@ -2,10 +2,15 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ErrorComponent} from './misc/error/error.component';
 import {AuthGuardService} from './shared/services/auth-guard.service';
+import {IndexComponent} from './index/index.component';
 
 // Lazy Loading the modules.
 
 const appRoutes: Routes = [
+  {
+    path: "",
+    component: IndexComponent
+  },
   {
     path: "dashboard",
     loadChildren: "./features/dashboard/dashboard.module#DashboardModule",
@@ -27,7 +32,7 @@ const appRoutes: Routes = [
     canActivateChild: [AuthGuardService]
   },
   {
-    path: "",
+    path: "info",
     loadChildren: "./features/information/information.module#InformationModule"
   },
   {
@@ -35,7 +40,8 @@ const appRoutes: Routes = [
     component: ErrorComponent,
     data: {
       message: "Inhalt nicht gefunden!",
-      statusCode: "404"
+      statusCode: "404",
+      subtitle: "Schicksal, kann man nix machen."
     }
   },
   {

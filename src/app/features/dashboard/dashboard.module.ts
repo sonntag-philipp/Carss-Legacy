@@ -15,6 +15,8 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {DashboardIndexComponent} from './dashboard-index/dashboard-index.component';
 import {DashboardSettingsSecurityComponent} from './dashboard-settings/dashboard-settings-security/dashboard-settings-security.component';
 import {DashboardRoutingModule} from './dashboard-routing.module';
+import { DashboardSettingsAccountsComponent } from './dashboard-settings/dashboard-settings-accounts/dashboard-settings-accounts.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -39,6 +41,7 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
 
     // Miscellaneous:
     CommonModule,
+    FormsModule,
     DashboardRoutingModule,
     FlexLayoutModule
   ],
@@ -46,7 +49,8 @@ import {DashboardRoutingModule} from './dashboard-routing.module';
     DashboardIndexComponent,
     DashboardComponent,
     DashboardSettingsComponent,
-    DashboardSettingsSecurityComponent
+    DashboardSettingsSecurityComponent,
+    DashboardSettingsAccountsComponent
   ],
   providers: [
   ],

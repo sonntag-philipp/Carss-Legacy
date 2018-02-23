@@ -1,25 +1,24 @@
 import {NgModule} from '@angular/core';
-import {LoadingComponent} from '../../misc/loading/loading.component';
 import {ErrorComponent} from '../../misc/error/error.component';
 import {MaterialModule} from './material.module';
 import {RouterModule} from '@angular/router';
-import {AgmDirectionsComponent} from '../../misc/agm-directions/agm-directions.component';
+import {DirectionsMapDirective} from '../../misc/agm-directions/agm-directions.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
   imports: [
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   exports: [
-    LoadingComponent,
     ErrorComponent,
-    AgmDirectionsComponent
+    DirectionsMapDirective
   ],
   declarations: [
-    LoadingComponent,
     ErrorComponent,
-    AgmDirectionsComponent
+    DirectionsMapDirective
   ]
 })
 export class MiscModule { }

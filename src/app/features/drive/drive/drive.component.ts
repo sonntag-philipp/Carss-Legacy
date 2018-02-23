@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ToolbarService} from '../../../shared/services/toolbar.service';
 
 @Component({
   selector: 'app-drive',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DriveComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private toolbarService: ToolbarService
+  ) { }
 
   ngOnInit() {
+    this.toolbarService.title = "Fahren";
   }
 
 }

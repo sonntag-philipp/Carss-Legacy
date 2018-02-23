@@ -10,12 +10,12 @@ import { AuthGuardService } from './shared/services/auth-guard.service';
 import { FooterComponent } from './page-navigation/footer/footer.component';
 import { MaterialModule } from './shared/modules/material.module';
 import { FirebaseModule } from './shared/modules/firebase.module';
-import { AccountResolverService } from './shared/services/account-resolver.service';
 import { InfoDialogComponent } from './misc/info-dialog/info-dialog.component';
 import { MiscModule } from './shared/modules/misc.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ToolbarComponent } from './page-navigation/toolbar/toolbar.component';
 import {ToolbarService} from './shared/services/toolbar.service';
+import { IndexComponent } from './index/index.component';
 
 @NgModule({
   imports: [
@@ -34,11 +34,11 @@ import {ToolbarService} from './shared/services/toolbar.service';
     AppComponent,
     FooterComponent,
     InfoDialogComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    IndexComponent
   ],
   providers: [
     AuthGuardService,
-    AccountResolverService,
     ToolbarService
   ],
   entryComponents: [

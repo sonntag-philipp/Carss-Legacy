@@ -1,16 +1,9 @@
-<div style="position: fixed; top: 16px; left: 16px;">
-  <h1 style="font-weight: lighter; font-size: 75pt; margin: 0;">{{ statusCode }}</h1>
-</div>
-<div style="height: 100vh; background-color: #ffe6e6;" fxLayout="row" fxLayoutAlign="center center">
-  <mat-card fxFlex="25">
-    <mat-card-title>
-      {{ message }}
-    </mat-card-title>
-    <mat-card-subtitle>
-      {{ subtitle }}
-    </mat-card-subtitle>
-    <mat-card-actions>
-      <button mat-raised-button [routerLink]="['']" color="primary" >Zurück</button>
-    </mat-card-actions>
-  </mat-card>
+<div fxFlex="row" fxLayoutAlign="center">
+  <div fxFlex="55" fxFlex.sm="80" fxFlex.md="70" fxFlex.xs="96">
+    <h1 ngClass.xs="heading-container-xs" class="heading" ngClass="heading-container">
+      {{ statusCode }} - {{ message }}
+    </h1>
+    <h3 class="heading-subtitle">{{ subtitle }}</h3>
+    <button mat-button color="warn" [routerLink]="['/']">Zurück</button>
+  </div>
 </div>

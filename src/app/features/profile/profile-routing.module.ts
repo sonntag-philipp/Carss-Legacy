@@ -18,10 +18,6 @@ const appRoutes: Routes = [
         component: ProfileEditorComponent
       }
     ]
-  },
-  {
-    path: "**",
-    redirectTo: "/not-found"
   }
 ];
 
