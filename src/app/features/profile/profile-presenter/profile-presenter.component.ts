@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AngularFirestore} from 'angularfire2/firestore';
+import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 import {ProfileModel} from '../../../shared/models/profile.model';
 import {UserModel} from '../../../shared/models/user.model';
+import {CarModelId} from '../profile-editor/profile-editor.component';
+import {CarModel} from '../../../shared/models/car.model';
 
 @Component({
   selector: 'app-profile-presenter',
@@ -25,6 +27,8 @@ export class ProfilePresenterComponent implements OnInit {
 
   public profile: Observable<ProfileModel>;
   public user: Observable<UserModel>;
+
+  private cars: Observable<CarModel[]>;
 
 
   constructor(
@@ -48,6 +52,10 @@ export class ProfilePresenterComponent implements OnInit {
         this.router.navigate(['not-found']);
       }
     );
+
+
+    this.cars = this.db.collection("users").doc(this.id).collection<CarModel>("cars").valueChanges();
+
 
     this.profile = this.db.collection("users").doc(this.id).collection("user_docs").doc<ProfileModel>("profile").valueChanges();
     this.profile.subscribe(

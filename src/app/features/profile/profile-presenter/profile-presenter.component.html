@@ -8,16 +8,16 @@
 <app-profile-paragraph title="Person:">
   <div fxFlex="initial" fxLayout="column">
     <b class="table-entry">Alter:</b>
-    <b class="table-entry">Wohnort:</b>
+    <b class="table-entry">Addresse:</b>
     <b class="table-entry">Geschlecht:</b>
   </div>
   <div fxFlex="initial" fxLayout="column">
-    <div class="table-entry">{{ (profile | async)?.characteristics.age }}</div>
-    <div class="table-entry">{{ (profile | async)?.characteristics.hometown }}</div>
-    <div class="table-entry">{{ (profile | async)?.characteristics.sex }}</div>
+    <div class="table-entry">{{ (profile | async)?.age }}</div>
+    <div class="table-entry">{{ (profile | async)?.address }}</div>
+    <div class="table-entry">{{ (profile | async)?.sex }}</div>
   </div>
 </app-profile-paragraph>
-<app-profile-paragraph title="Auto:" fxLayout="row">
+<app-profile-paragraph *ngFor="let item of cars | async" [title]="item.model" fxLayout="row">
   <div fxFlex="initial" fxLayout="column">
     <b class="table-entry">Marke:</b>
     <b class="table-entry">Modell:</b>
@@ -28,13 +28,13 @@
     <b class="table-entry">Sonstiges:</b>
   </div>
   <div fxFlex="initial" fxLayout="column">
-    <div class="table-entry">{{ (profile | async)?.car.brand }}</div>
-    <div class="table-entry">{{ (profile | async)?.car.model }}</div>
-    <div class="table-entry">{{ (profile | async)?.car.seats }}</div>
-    <div class="table-entry">{{ (profile | async)?.car.color }}</div>
-    <div class="table-entry">{{ (profile | async)?.car.doors }}</div>
-    <div class="table-entry">{{ (profile | async)?.car.year }}</div>
-    <div class="table-entry">{{ (profile | async)?.car.misc }}</div>
+    <div class="table-entry">{{ item.brand }}</div>
+    <div class="table-entry">{{ item.model }}</div>
+    <div class="table-entry">{{ item.seats }}</div>
+    <div class="table-entry">{{ item.color }}</div>
+    <div class="table-entry">{{ item.doors }}</div>
+    <div class="table-entry">{{ item.year }}</div>
+    <div class="table-entry">{{ item.misc }}</div>
   </div>
 </app-profile-paragraph>
 <div>
