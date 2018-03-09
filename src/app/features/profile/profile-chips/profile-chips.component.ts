@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ChipModel} from '../../../shared/models/chip.model';
 
 @Component({
   selector: 'app-profile-chips',

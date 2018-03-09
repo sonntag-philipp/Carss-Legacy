@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AgmDirectionsComponent } from './agm-directions.component';
+import { DriveIndexFormComponent } from './drive-index-form.component';
 
-describe('AgmDirectionsComponent', () => {
-  let component: AgmDirectionsComponent;
-  let fixture: ComponentFixture<AgmDirectionsComponent>;
+describe('DriveIndexFormComponent', () => {
+  let component: DriveIndexFormComponent;
+  let fixture: ComponentFixture<DriveIndexFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AgmDirectionsComponent ]
+      declarations: [ DriveIndexFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AgmDirectionsComponent);
+    fixture = TestBed.createComponent(DriveIndexFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,12 +1,17 @@
-import {CharacteristicsModel} from './characteristics.model';
-import {CarModel} from './car.model';
+export interface ProfileModel {
+  // Name-information
+  name: string;
+  surname: string;
 
-export class ProfileModel {
+  // Personal-information
+  sex: string;
+  age: number;
+  address: string;
 
-  public car: CarModel;
-  public characteristics: CharacteristicsModel;
-  public form: string;
-  public name: string;
-  public school: string;
+  // School-information
+  school: string;
+  class: string;
 
+  // Description of the user. Lines are separated with \n.
+  description: string;
 }

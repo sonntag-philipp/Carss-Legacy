@@ -1,0 +1,50 @@
+<form #f="ngForm">
+  <div fxLayout="row">
+    <div fxFlex="55" fxLayout="column">
+      <div fxLayout="row">
+        <mat-form-field fxFlex="50">
+          <input name="start" [(ngModel)]="start" matInput type="text" placeholder="Titel" maxlength="40">
+        </mat-form-field>
+        <mat-form-field fxFlex="50" style="padding-left: 4px;">
+          <mat-select placeholder="Fahrzeug">
+            <mat-option value="Benzer">
+              Nagelneuer Benzer
+            </mat-option>
+            <mat-option value="BMW">
+              Alter BMW
+            </mat-option>
+            <mat-option value="Audi">
+              Schneller Audi
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field fxFlex="25">
+          <input matInput [matDatepicker]="picker" placeholder="Datum">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field fxFlex="25" style="padding-left: 4px;">
+          <input matInput type="number" placeholder="Stunde">
+        </mat-form-field>
+        <mat-form-field fxFlex="50" style="padding-left: 4px;">
+          <mat-select placeholder="Startpunkt">
+            <mat-option value="Benzer">
+              BBS Papenburg
+            </mat-option>
+            <mat-option value="BMW">
+              Zuhause
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field fxFlex="100">
+          <textarea matInput matTextareaAutosize matAutosizeMaxRows="5" placeholder="Beschreibung"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+</form>

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import {ProfileModel} from '../../../shared/models/profile.model';
 import {ActivatedRoute, Router} from '@angular/router';
-import {AngularFirestore} from 'angularfire2/firestore';
+import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {UserModel} from '../../../shared/models/user.model';
+import {CarModel} from '../../../shared/models/car.model';
+import {Observable} from 'rxjs/Observable';
 
 @Component({
   selector: 'app-profile-editor',
@@ -17,6 +19,9 @@ export class ProfileEditorComponent implements OnInit {
 
   public profile: ProfileModel;
   public user: UserModel;
+  public cars: Observable<CarModelId[]>;
+
+  private carCollection: AngularFirestoreCollection<CarModel>;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,6 +51,16 @@ export class ProfileEditorComponent implements OnInit {
         this.router.navigate(['not-found']);
       }
     );
+
+    this.carCollection = this.db.collection("users").doc(this.id).collection<CarModelId>("cars");
+    this.cars = this.carCollection.snapshotChanges().map(actions => {
+      return actions.map(a => {
+        const uid = this.id;
+        const data = a.payload.doc.data() as CarModel;
+        const id = a.payload.doc.id;
+        return { id, uid, ...data };
+      });
+    });
   }
 
 
@@ -56,9 +71,6 @@ export class ProfileEditorComponent implements OnInit {
     }
 
     if (form.touched && form.valid) {
-      /**
-       * Sicherheit, Sicherheit, was ist Sicherheit? xD
-       */
       this.db.collection("users").doc(this.id).collection("user_docs").doc("profile").update(this.profile).then(
         () => {
           this.router.navigate(["../"], {relativeTo: this.route});
@@ -67,4 +79,13 @@ export class ProfileEditorComponent implements OnInit {
     }
     return false;
   }
+
+  public btnAddCar(): void {
+    this.db.collection("users").doc(this.id).collection("cars").add({model: "New"});
+  }
+}
+
+export interface CarModelId extends CarModel {
+  id: string;
+  uid: string;
 }

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AngularFirestore} from 'angularfire2/firestore';
-import {CharacteristicsModel} from '../../../shared/models/characteristics.model';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Observable} from 'rxjs/Observable';
 import {ProfileModel} from '../../../shared/models/profile.model';
 import {UserModel} from '../../../shared/models/user.model';
-import {ProfileService} from '../profile.service';
 
 @Component({
   selector: 'app-profile-presenter',

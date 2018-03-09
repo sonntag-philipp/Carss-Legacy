@@ -15,6 +15,10 @@ import { ProfileParagraphComponent } from './profile-paragraph/profile-paragraph
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import {FormsModule} from '@angular/forms';
 import {ProfileService} from './profile.service';
+import {MiscModule} from '../../misc/misc.module';
+import {AgmCoreModule} from '@agm/core';
+import { ProfileEditorPersonalComponent } from './profile-editor/profile-editor-personal/profile-editor-personal.component';
+import { ProfileEditorCarComponent } from './profile-editor/profile-editor-car/profile-editor-car.component';
 
 @NgModule({
   imports: [
@@ -28,6 +32,10 @@ import {ProfileService} from './profile.service';
     MatInputModule,
     MatIconModule,
     MatSelectModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
+      libraries: ["places"]
+    }),
 
     // AngularFire:
     AngularFireAuthModule,
@@ -37,6 +45,7 @@ import {ProfileService} from './profile.service';
     CommonModule,
     FormsModule,
     ProfileRoutingModule,
+    MiscModule,
     FlexLayoutModule
   ],
   providers: [
@@ -47,7 +56,9 @@ import {ProfileService} from './profile.service';
     ProfileComponent,
     ProfileChipsComponent,
     ProfileParagraphComponent,
-    ProfileEditorComponent
+    ProfileEditorComponent,
+    ProfileEditorPersonalComponent,
+    ProfileEditorCarComponent
   ]
 })
 export class ProfileModule { }
