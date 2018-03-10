@@ -19,6 +19,7 @@ import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
 import { DriveIndexFormComponent } from './drive-index/drive-index-form/drive-index-form.component';
 import { DriveIndexSubmitComponent } from './drive-index/drive-index-submit/drive-index-submit.component';
 import { DriveIndexMapComponent } from './drive-index/drive-index-map/drive-index-map.component';
+import { DriveIndexRouteComponent } from './drive-index/drive-index-route/drive-index-route.component';
 
 @NgModule({
   imports: [
@@ -57,7 +58,8 @@ import { DriveIndexMapComponent } from './drive-index/drive-index-map/drive-inde
     DriveEditorComponent,
     DriveIndexFormComponent,
     DriveIndexSubmitComponent,
-    DriveIndexMapComponent
+    DriveIndexMapComponent,
+    DriveIndexRouteComponent
   ]
 })
 export class DriveModule { }

@@ -21,7 +21,7 @@ export class ProfileEditorComponent implements OnInit {
   public user: UserModel;
   public cars: Observable<CarModelId[]>;
 
-  private carCollection: AngularFirestoreCollection<CarModel>;
+  private carCollection: AngularFirestoreCollection<CarModelId>;
 
   constructor(
     private route: ActivatedRoute,
@@ -61,23 +61,6 @@ export class ProfileEditorComponent implements OnInit {
         return { id, uid, ...data };
       });
     });
-  }
-
-
-  public onSubmit(form: any) {
-
-    if (form === undefined) {
-      return false;
-    }
-
-    if (form.touched && form.valid) {
-      this.db.collection("users").doc(this.id).collection("user_docs").doc("profile").update(this.profile).then(
-        () => {
-          this.router.navigate(["../"], {relativeTo: this.route});
-        }
-      );
-    }
-    return false;
   }
 
   public btnAddCar(): void {

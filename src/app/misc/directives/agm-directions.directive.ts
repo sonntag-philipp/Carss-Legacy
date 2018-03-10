@@ -1,5 +1,5 @@
 import {GoogleMapsAPIWrapper} from '@agm/core';
-import { Directive,  Input, Output } from '@angular/core';
+import {Directive, EventEmitter, Input, Output} from '@angular/core';
 declare var google: any;
 
 
@@ -8,30 +8,26 @@ declare var google: any;
  */
 
 @Directive({
-  selector: 'misc-agm-directions'
+  selector: 'agm-directions'
 })
 export class AgmDirectionsDirective {
-  @Input() origin: any ;
+  @Input() origin: any;
   @Input() destination: any;
-  @Input() originPlaceId: any;
-  @Input() destinationPlaceId: any;
   @Input() waypoints: any;
   @Input() directionsDisplay: any;
-  @Input() estimatedTime: any;
-  @Input() estimatedDistance: any;
+
+  public estimatedDistance = "";
+  public estimatedTime = "";
 
   constructor(private gmapsApi: GoogleMapsAPIWrapper) { }
 
   updateDirections() {
     this.gmapsApi.getNativeMap().then(map => {
-      if (!this.originPlaceId || !this.destinationPlaceId ) {
+      if (this.origin === undefined || this.destination === undefined ) {
         return;
       }
 
       const directionsService = new google.maps.DirectionsService;
-      const me = this;
-      const latLngA = new google.maps.LatLng({lat: this.origin.latitude, lng: this.origin.longitude });
-      const latLngB = new google.maps.LatLng({lat: this.destination.latitude, lng: this.destination.longitude });
       this.directionsDisplay.setMap(map);
       this.directionsDisplay.setOptions({
         polylineOptions: {
@@ -42,20 +38,22 @@ export class AgmDirectionsDirective {
       });
       this.directionsDisplay.setDirections({routes: []});
       directionsService.route({
-        origin: {placeId : this.originPlaceId },
-        destination: {placeId : this.destinationPlaceId },
+        origin: {placeId : this.origin.id },
+        destination: {placeId : this.destination.id },
         avoidHighways: true,
         travelMode: google.maps.DirectionsTravelMode.DRIVING
         // travelMode: 'DRIVING'
-      }, function(response: any, status: any) {
+      }, (resp: any, status: any) => {
         if (status === 'OK') {
-          me.directionsDisplay.setDirections(response);
+          this.directionsDisplay.setDirections(resp);
           map.setZoom(30);
           // console.log(me.getcomputeDistance (latLngA, latLngB));
-          const point = response.routes[ 0 ].legs[ 0 ];
-          me.estimatedTime = point.duration.text ;
-          me.estimatedDistance = point.distance.text;
-          console.log(me.estimatedTime);
+          const point = resp.routes[ 0 ].legs[ 0 ];
+
+          this.estimatedTime = point.duration.text;
+          this.estimatedDistance = point.distance.text;
+
+          console.log(this.estimatedTime);
           console.log( 'Estimated travel time: ' + point.duration.text + ' (' + point.distance.text + ')' );
 
         } else {

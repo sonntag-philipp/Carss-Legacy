@@ -3,31 +3,14 @@
 </h1>
 <mat-card>
   <mat-card-content>
-    <mat-horizontal-stepper><!--
-      <mat-step>
-        <ng-template matStepLabel>Route erstellen</ng-template>
-        <div>
-          <!--<mat-form-field>
-            <input matInput placeholder="Ziel" spellcheck="false" type="text" class="form-control" #pickupOutput [formControl]="destinationOutput" >
-          </mat-form-field>
-        </div>
-        <div>
-          <div style="position: absolute; z-index: 5; width: 35%;">
-            <div class="maps-input-container" style="width: 100%;">
-              <input class="maps-input" placeholder="Startpunkt..." spellcheck="false" type="text" #pickupInput [formControl]="destinationInput">
-            </div>
-            <div class="maps-input-container" style="width: 100%;">
-              <input class="maps-input" placeholder="Ziel..." spellcheck="false" type="text" #pickupOutput [formControl]="destinationOutput">
-            </div>
-          </div>
-          <agm-map style="height: 50vh;" [latitude]="latitude" [longitude]="longitude" [zoom]="10" [styles]="mapCustomStyles">
-            <misc-agm-directions [origin]="origin" [destination]="destination"></misc-agm-directions>
-          </agm-map>
-        </div>
-      </mat-step>-->
+    <mat-horizontal-stepper>
       <mat-step>
         <ng-template matStepLabel>Eingabe der Fahrtdaten</ng-template>
         <app-drive-index-form></app-drive-index-form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Route erstellen</ng-template>
+        <app-drive-index-route></app-drive-index-route>
       </mat-step>
       <mat-step>
         <ng-template matStepLabel>Absenden</ng-template>

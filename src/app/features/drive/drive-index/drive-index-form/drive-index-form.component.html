@@ -1,20 +1,14 @@
 <form #f="ngForm">
   <div fxLayout="row">
-    <div fxFlex="55" fxLayout="column">
+    <div fxFlex="100" fxLayout="column">
       <div fxLayout="row">
         <mat-form-field fxFlex="50">
           <input name="start" [(ngModel)]="start" matInput type="text" placeholder="Titel" maxlength="40">
         </mat-form-field>
         <mat-form-field fxFlex="50" style="padding-left: 4px;">
           <mat-select placeholder="Fahrzeug">
-            <mat-option value="Benzer">
-              Nagelneuer Benzer
-            </mat-option>
-            <mat-option value="BMW">
-              Alter BMW
-            </mat-option>
-            <mat-option value="Audi">
-              Schneller Audi
+            <mat-option *ngFor="let item of cars | async" [value]="item.model">
+              {{ item.model }}
             </mat-option>
           </mat-select>
         </mat-form-field>
