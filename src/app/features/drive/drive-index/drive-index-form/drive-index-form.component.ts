@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import {AngularFirestore, AngularFirestoreCollection} from 'angularfire2/firestore';
+import {AngularFirestore} from 'angularfire2/firestore';
 import {CarModel} from '../../../../shared/models/car.model';
-import {CarModelId} from '../../../profile/profile-editor/profile-editor.component';
 import {Observable} from 'rxjs/Observable';
 import {AngularFireAuth} from 'angularfire2/auth';
 

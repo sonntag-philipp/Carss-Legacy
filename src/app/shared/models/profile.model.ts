@@ -1,17 +1,21 @@
 export interface ProfileModel {
+
+  // Google user ID of the profile.
+  id: string;
+
+  // Profile-Image URL.
+  image_url: string;
+
   // Name-information
   name: string;
   surname: string;
 
-  // Personal-information
-  sex: string;
-  age: number;
-  address: string;
-
-  // School-information
-  school: string;
-  class: string;
-
   // Description of the user. Lines are separated with \n.
   description: string;
+
+  // Rating of the profile given by the users.
+  rating: number;
+
+  // Address of the profile saved as an google maps place id.
+  place_id: string;
 }

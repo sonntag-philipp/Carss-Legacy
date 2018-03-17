@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import {DriveIndexComponent} from './drive-index/drive-index.component';
 import {DriveRoutingModule} from './drive-routing.module';
 import { DriveComponent } from './drive/drive.component';
-import { DriveEditorComponent } from './drive-editor/drive-editor.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -18,7 +17,6 @@ import {MiscModule} from '../../misc/misc.module';
 import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
 import { DriveIndexFormComponent } from './drive-index/drive-index-form/drive-index-form.component';
 import { DriveIndexSubmitComponent } from './drive-index/drive-index-submit/drive-index-submit.component';
-import { DriveIndexMapComponent } from './drive-index/drive-index-map/drive-index-map.component';
 import { DriveIndexRouteComponent } from './drive-index/drive-index-route/drive-index-route.component';
 
 @NgModule({
@@ -55,10 +53,8 @@ import { DriveIndexRouteComponent } from './drive-index/drive-index-route/drive-
   declarations: [
     DriveIndexComponent,
     DriveComponent,
-    DriveEditorComponent,
     DriveIndexFormComponent,
     DriveIndexSubmitComponent,
-    DriveIndexMapComponent,
     DriveIndexRouteComponent
   ]
 })

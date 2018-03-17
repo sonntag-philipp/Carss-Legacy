@@ -1,0 +1,13 @@
+.card-subcontainer {
+  padding: 16px;
+}
+
+.card-subcontainer-title {
+  font-size: 15pt;
+  font-weight: normal;
+  margin: 0;
+}
+
+.card-subcontainer-paragraph {
+  font-size: 12pt;
+}

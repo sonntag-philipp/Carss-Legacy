@@ -1,14 +1,8 @@
-/**
- * Represents the Car Class which is exchanged with the database.
- */
 export interface CarModel {
 
-  brand: string;
-  model: string;
-  color: string;
-  seats: number;
-  year: string;
-  misc: string;
-  doors: number;
-
+  id: number;
+  profile_id: string;
+  name: string;
+  description: string;
+  image_url: string;
 }

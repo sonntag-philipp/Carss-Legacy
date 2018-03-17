@@ -1,13 +1,9 @@
-.table-entry {
-  padding: 2px;
-}
-
 .card-subcontainer {
   padding: 16px;
 }
 
 .edit-box {
-  position: absolute;
+  position: relative;
   z-index: 10;
   right: 16px;
   bottom: 16px;

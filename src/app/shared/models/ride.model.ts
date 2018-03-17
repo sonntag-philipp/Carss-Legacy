@@ -15,4 +15,10 @@ export interface RideModel {
 
   // Car defined in the new ride editor.
   car: CarModel;
+
+  // The google uid of the driver.
+  driver: string;
+
+  // The other users that share the ride.
+  members: string[];
 }

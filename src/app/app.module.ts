@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToolbarComponent } from './page-navigation/toolbar/toolbar.component';
 import { ToolbarService } from './shared/services/toolbar.service';
 import { IndexComponent } from './index/index.component';
+import {Globals} from './shared/services/globals';
 
 @NgModule({
   imports: [
@@ -39,7 +40,8 @@ import { IndexComponent } from './index/index.component';
   ],
   providers: [
     AuthGuardService,
-    ToolbarService
+    ToolbarService,
+    Globals
   ],
   entryComponents: [
     InfoDialogComponent

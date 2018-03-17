@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatButtonModule,
-  MatCardModule, MatChipsModule, MatDividerModule, MatIconModule, MatInputModule, MatSelectModule, MatToolbarModule, MatTooltipModule
+  MatCardModule, MatChipsModule, MatDividerModule, MatIconModule, MatInputModule, MatMenuModule, MatSelectModule, MatToolbarModule,
+  MatTooltipModule
 } from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -10,15 +11,12 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {ProfileRoutingModule} from './profile-routing.module';
 import {ProfilePresenterComponent} from './profile-presenter/profile-presenter.component';
 import {ProfileComponent} from './profile/profile.component';
-import {ProfileChipsComponent} from './profile-chips/profile-chips.component';
-import { ProfileParagraphComponent } from './profile-paragraph/profile-paragraph.component';
-import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import {FormsModule} from '@angular/forms';
 import {ProfileService} from './profile.service';
 import {MiscModule} from '../../misc/misc.module';
 import {AgmCoreModule} from '@agm/core';
-import { ProfileEditorPersonalComponent } from './profile-editor/profile-editor-personal/profile-editor-personal.component';
-import { ProfileEditorCarComponent } from './profile-editor/profile-editor-car/profile-editor-car.component';
+import { ProfilePresenterCarComponent } from './profile-presenter/profile-presenter-car/profile-presenter-car.component';
+import { ProfilePresenterMapComponent } from './profile-presenter/profile-presenter-map/profile-presenter-map.component';
 
 @NgModule({
   imports: [
@@ -32,6 +30,7 @@ import { ProfileEditorCarComponent } from './profile-editor/profile-editor-car/p
     MatInputModule,
     MatIconModule,
     MatSelectModule,
+    MatMenuModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
       libraries: ["places"]
@@ -54,11 +53,8 @@ import { ProfileEditorCarComponent } from './profile-editor/profile-editor-car/p
   declarations: [
     ProfilePresenterComponent,
     ProfileComponent,
-    ProfileChipsComponent,
-    ProfileParagraphComponent,
-    ProfileEditorComponent,
-    ProfileEditorPersonalComponent,
-    ProfileEditorCarComponent
+    ProfilePresenterCarComponent,
+    ProfilePresenterMapComponent
   ]
 })
 export class ProfileModule { }

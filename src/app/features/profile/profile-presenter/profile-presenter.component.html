@@ -1,42 +1,27 @@
-<h1 role="heading" ngClass.xs="heading-container-xs" class="heading" ngClass="heading-container">
-  {{ (profile | async)?.name }}
-</h1>
-<app-profile-chips
-  [systemChips]="(user | async)?.systemChips"
-  [userChips]="(user | async)?.userChips"
-></app-profile-chips>
-<app-profile-paragraph title="Person:">
-  <div fxFlex="initial" fxLayout="column">
-    <b class="table-entry">Alter:</b>
-    <b class="table-entry">Addresse:</b>
-    <b class="table-entry">Geschlecht:</b>
+<mat-card style="padding: 0; margin-top: 24px; margin-bottom: 24px;">
+  <mat-toolbar color="warn" style="border-radius: 3px 3px 0 0; height: 56px;">
+    <span>{{ profileService.profile.name }} {{ profileService.profile.surname }}</span>
+    <div fxFlex="auto"></div>
+    <button mat-icon-button matTooltip="Profil bearbeiten">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-toolbar>
+  <div class="card-subcontainer" fxLayout="row">
+    <div fxFlex="85">
+      <h1 class="card-subcontainer-title">Moin,</h1>
+      <p class="card-subcontainer-paragraph">
+        {{ profileService.profile.description }}
+      </p>
+    </div>
+    <div fxFlex="15">
+      <img src="{{ profileService.profile.image_url }}" style="border-radius: 50%;" width="100%;" alt="">
+    </div>
   </div>
-  <div fxFlex="initial" fxLayout="column">
-    <div class="table-entry">{{ (profile | async)?.age }}</div>
-    <div class="table-entry">{{ (profile | async)?.address }}</div>
-    <div class="table-entry">{{ (profile | async)?.sex }}</div>
+  <div style="padding: 8px 16px 8px 16px;">
+    <mat-chip-list>
+      <mat-chip *ngFor="let item of profileService.profile.tags" matTooltip="Von: {{ item.creator }} / {{ item.timestamp }}">{{ item.content }}</mat-chip>
+    </mat-chip-list>
   </div>
-</app-profile-paragraph>
-<app-profile-paragraph *ngFor="let item of cars | async" [title]="item.model" fxLayout="row">
-  <div fxFlex="initial" fxLayout="column">
-    <b class="table-entry">Marke:</b>
-    <b class="table-entry">Modell:</b>
-    <b class="table-entry">Sitze:</b>
-    <b class="table-entry">Farbe:</b>
-    <b class="table-entry">Türen:</b>
-    <b class="table-entry">Baujahr:</b>
-    <b class="table-entry">Sonstiges:</b>
-  </div>
-  <div fxFlex="initial" fxLayout="column">
-    <div class="table-entry">{{ item.brand }}</div>
-    <div class="table-entry">{{ item.model }}</div>
-    <div class="table-entry">{{ item.seats }}</div>
-    <div class="table-entry">{{ item.color }}</div>
-    <div class="table-entry">{{ item.doors }}</div>
-    <div class="table-entry">{{ item.year }}</div>
-    <div class="table-entry">{{ item.misc }}</div>
-  </div>
-</app-profile-paragraph>
-<div>
-  <button *ngIf="ownProfile" mat-raised-button color="primary" [routerLink]="['edit']">Bearbeiten</button>
-</div>
+  <app-profile-presenter-map></app-profile-presenter-map>
+  <app-profile-presenter-car [car]="item" *ngFor="let item of profileService.cars"></app-profile-presenter-car>
+</mat-card>

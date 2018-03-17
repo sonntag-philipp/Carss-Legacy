@@ -13,7 +13,7 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.toolbarService.title = "Profile";
+    this.toolbarService.title = "";
   }
 
 }
