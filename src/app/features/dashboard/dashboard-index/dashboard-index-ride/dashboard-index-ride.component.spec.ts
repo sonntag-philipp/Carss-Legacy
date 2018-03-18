@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DriveIndexFormComponent } from './drive-index-form.component';
+import { DashboardIndexRideComponent } from './dashboard-index-ride.component';
 
-describe('DriveIndexFormComponent', () => {
-  let component: DriveIndexFormComponent;
-  let fixture: ComponentFixture<DriveIndexFormComponent>;
+describe('DashboardIndexRideComponent', () => {
+  let component: DashboardIndexRideComponent;
+  let fixture: ComponentFixture<DashboardIndexRideComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DriveIndexFormComponent ]
+      declarations: [ DashboardIndexRideComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DriveIndexFormComponent);
+    fixture = TestBed.createComponent(DashboardIndexRideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

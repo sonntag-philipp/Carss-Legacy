@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  MatButtonModule, MatCardModule, MatCheckboxModule, MatDialogModule, MatDividerModule, MatExpansionModule, MatIconModule, MatInputModule,
+  MAT_DATE_FORMATS, MAT_DATE_LOCALE,
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatChipsModule, MatDatepickerModule, MatDialogModule, MatDividerModule,
+  MatExpansionModule, MatIconModule,
+  MatInputModule,
   MatMenuModule,
-  MatRadioModule,
-  MatTableModule,
+  MatRadioModule, MatSelectModule,
+  MatTableModule, MatTabsModule,
   MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import {AngularFireAuthModule} from 'angularfire2/auth';
@@ -17,6 +20,11 @@ import {DashboardSettingsSecurityComponent} from './dashboard-settings/dashboard
 import {DashboardRoutingModule} from './dashboard-routing.module';
 import { DashboardSettingsAccountsComponent } from './dashboard-settings/dashboard-settings-accounts/dashboard-settings-accounts.component';
 import {FormsModule} from '@angular/forms';
+import {AgmCoreModule} from '@agm/core';
+import { DashboardIndexDriveComponent } from './dashboard-index/dashboard-index-drive/dashboard-index-drive.component';
+import { DashboardIndexRideComponent } from './dashboard-index/dashboard-index-ride/dashboard-index-ride.component';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
+import {MaterialTimeControlModule} from '../../misc/material-time-control.module';
 
 @NgModule({
   imports: [
@@ -34,6 +42,18 @@ import {FormsModule} from '@angular/forms';
     MatRadioModule,
     MatDialogModule,
     MatMenuModule,
+    MatChipsModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatTabsModule,
+    MaterialTimeControlModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
+      libraries: ["places"]
+    }),
 
     // AngularFire:
     AngularFireAuthModule,
@@ -50,9 +70,15 @@ import {FormsModule} from '@angular/forms';
     DashboardComponent,
     DashboardSettingsComponent,
     DashboardSettingsSecurityComponent,
-    DashboardSettingsAccountsComponent
+    DashboardSettingsAccountsComponent,
+    DashboardIndexDriveComponent,
+    DashboardIndexRideComponent
   ],
   providers: [
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'de',
+    }
   ],
   bootstrap: [
     DashboardComponent

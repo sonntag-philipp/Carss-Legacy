@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DriveIndexRouteComponent } from './drive-index-route.component';
+import { WTimeComponent } from './w-time.component';
 
-describe('DriveIndexRouteComponent', () => {
-  let component: DriveIndexRouteComponent;
-  let fixture: ComponentFixture<DriveIndexRouteComponent>;
+describe('WTimeComponent', () => {
+  let component: WTimeComponent;
+  let fixture: ComponentFixture<WTimeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DriveIndexRouteComponent ]
+      declarations: [ WTimeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DriveIndexRouteComponent);
+    fixture = TestBed.createComponent(WTimeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

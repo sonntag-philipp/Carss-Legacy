@@ -1,0 +1,65 @@
+<mat-card style="padding: 0;">
+  <mat-toolbar color="primary" style="border-radius: 3px 3px 0 0; height: 46px;">
+    <span>Fahren</span>
+  </mat-toolbar>
+  <div class="card-subcontainer">
+    <div fxLayout="row">
+      <mat-form-field fxFlex="49">
+        <mat-select [(value)]="originSelect" placeholder="Startpunkt" (selectionChange)="originChanged($event);">
+          <mat-option [value]="1">
+            Meine Adresse
+          </mat-option>
+          <mat-option [value]="2">
+            BBS Papenburg
+          </mat-option>
+          <mat-option [value]="3">
+            Neue Adresse...
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div fxLayoutAlign="center center">
+        <mat-icon color="accent" style="padding: 4px;">arrow_forward</mat-icon>
+      </div>
+      <mat-form-field fxFlex="49">
+      <mat-select [(value)]="destinationSelect" placeholder="Ziel" (selectionChange)="destinationChanged($event);">
+        <mat-option [value]="1">
+          Meine Adresse
+        </mat-option>
+        <mat-option [value]="2">
+          BBS Papenburg
+        </mat-option>
+        <mat-option [value]="3">
+          Neue Adresse...
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>
+    <div style="padding-bottom: 24px;" *ngIf="(originSelect === 3) || (destinationSelect === 3)">
+      <agm-map style="height: 35vh;"></agm-map>
+      <mat-divider style="margin-top: 16px;"></mat-divider>
+    </div>
+    <div>
+      <div fxLayout="row">
+        <mat-form-field fxFlex="49">
+          <input matInput [matDatepicker]="picker" placeholder="Datum">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <div fxFlex="auto"></div>
+        <w-mat-timepicker fxFlex="49" color="primary" [(userTime)]="exportTime"></w-mat-timepicker>
+      </div>
+      <mat-checkbox>Wöchentlich wiederholen</mat-checkbox>
+    </div>
+  </div>
+  <div style="padding: 8px 16px 8px 16px;">
+    <mat-chip-list>
+      <mat-chip>Papenburg</mat-chip>
+      <mat-chip>Bunte</mat-chip>
+      <mat-chip>Papenburg</mat-chip>
+    </mat-chip-list>
+  </div>
+  <mat-divider></mat-divider>
+  <div style="padding: 8px 0 8px 8px;">
+    <button style="padding-right: 8px;" color="primary" mat-button>Erstellen</button>
+  </div>
+</mat-card>

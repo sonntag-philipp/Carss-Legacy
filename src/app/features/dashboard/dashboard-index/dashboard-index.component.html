@@ -3,14 +3,9 @@
 </h1>
 <div fxLayout="column">
   <div fxLayout="row" fxLayout.xs="column">
-    <mat-card fxFlex="50" class="mat-options-card" [routerLink]="['/drive']">
-      <mat-card-title>Fahren</mat-card-title>
-      <mat-card-subtitle>Selber Fahrer werden</mat-card-subtitle>
-    </mat-card>
+
+    <app-dashboard-index-drive fxFlex="50"></app-dashboard-index-drive>
     <span style="padding: 8px;"> </span>
-    <mat-card fxFlex="50" class="mat-options-card" [routerLink]="['/ride']">
-      <mat-card-title>Mitfahren</mat-card-title>
-      <mat-card-subtitle>Einen Fahrer finden</mat-card-subtitle>
-    </mat-card>
+    <app-dashboard-index-ride fxFlex="50"></app-dashboard-index-ride>
   </div>
 </div>
