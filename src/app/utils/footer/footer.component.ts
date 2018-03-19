@@ -3,7 +3,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from "firebase";
 
 @Component({
-  selector: 'app-footer',
+  selector: 'carss-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })

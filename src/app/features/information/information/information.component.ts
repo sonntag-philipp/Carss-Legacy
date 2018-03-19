@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Router} from '@angular/router';
-import {ToolbarService} from '../../../shared/services/toolbar.service';
+import {ToolbarService} from '../../../services/toolbar.service';
 
 @Component({
   selector: 'app-information',

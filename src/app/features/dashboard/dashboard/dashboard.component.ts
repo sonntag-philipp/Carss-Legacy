@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ToolbarService} from '../../../shared/services/toolbar.service';
+import {ToolbarService} from '../../../services/toolbar.service';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'carss-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

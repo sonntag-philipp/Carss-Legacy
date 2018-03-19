@@ -13,7 +13,6 @@ import {ProfilePresenterComponent} from './profile-presenter/profile-presenter.c
 import {ProfileComponent} from './profile/profile.component';
 import {FormsModule} from '@angular/forms';
 import {ProfileService} from './profile.service';
-import {MiscModule} from '../../misc/misc.module';
 import {AgmCoreModule} from '@agm/core';
 import { ProfilePresenterCarComponent } from './profile-presenter/profile-presenter-car/profile-presenter-car.component';
 import { ProfilePresenterMapComponent } from './profile-presenter/profile-presenter-map/profile-presenter-map.component';
@@ -44,7 +43,6 @@ import { ProfilePresenterMapComponent } from './profile-presenter/profile-presen
     CommonModule,
     FormsModule,
     ProfileRoutingModule,
-    MiscModule,
     FlexLayoutModule
   ],
   providers: [

@@ -119,17 +119,23 @@
       "check-type"
     ],
     "directive-selector": [
-      false,
+      true,
       "attribute",
-      "app",
-      "camelCase",
-      "agm"
+      [
+        "app",
+        "carss",
+        "agm"
+      ],
+      "camelCase"
     ],
     "component-selector": [
-      false,
+      true,
       "element",
-      "app",
-      "agm",
+      [
+        "app",
+        "carss",
+        "agm"
+      ],
       "kebab-case"
     ],
     "angular-whitespace": [true, "check-interpolation"],

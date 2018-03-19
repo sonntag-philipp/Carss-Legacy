@@ -8,7 +8,7 @@ declare var google: any;
  */
 
 @Directive({
-  selector: 'agm-directions'
+  selector: '[agmDirections]'
 })
 export class AgmDirectionsDirective {
   @Input() origin: any;

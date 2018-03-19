@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dashboard-index-drive',
+  selector: 'carss-dashboard-index-drive',
   templateUrl: './dashboard-index-drive.component.html',
   styleUrls: ['./dashboard-index-drive.component.css']
 })

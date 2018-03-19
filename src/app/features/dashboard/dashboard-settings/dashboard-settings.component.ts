@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {ToolbarService} from '../../../shared/services/toolbar.service';
+import {ToolbarService} from '../../../services/toolbar.service';
 
 @Component({
   selector: 'app-dashboard-settings',

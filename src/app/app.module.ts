@@ -6,45 +6,35 @@ import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthGuardService } from './shared/services/auth-guard.service';
-import { FooterComponent } from './page-navigation/footer/footer.component';
-import { MaterialModule } from './shared/modules/material.module';
-import { FirebaseModule } from './shared/modules/firebase.module';
-import { InfoDialogComponent } from './misc/components/info-dialog/info-dialog.component';
-import { MiscModule } from './misc/misc.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ToolbarComponent } from './page-navigation/toolbar/toolbar.component';
-import { ToolbarService } from './shared/services/toolbar.service';
 import { IndexComponent } from './index/index.component';
-import {Globals} from './shared/services/globals';
+import { ServicesModule } from './services/services.module';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { UtilsModule } from './utils/utils.module';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { MatToolbarModule } from '@angular/material';
 
 @NgModule({
   imports: [
+    MatToolbarModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MaterialModule,
-    FirebaseModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
     AppRoutingModule,
-    MiscModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ServicesModule,
+    UtilsModule
   ],
   declarations: [
     AppComponent,
-    FooterComponent,
-    InfoDialogComponent,
-    ToolbarComponent,
     IndexComponent
-  ],
-  providers: [
-    AuthGuardService,
-    ToolbarService,
-    Globals
-  ],
-  entryComponents: [
-    InfoDialogComponent
   ],
   bootstrap: [AppComponent]
 })

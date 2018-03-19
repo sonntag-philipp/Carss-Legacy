@@ -5,12 +5,10 @@ import {RideRoutingModule} from './ride-routing.module';
 import { RideComponent } from './ride/ride.component';
 import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatStepperModule, MatTableModule} from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {DriveRoutingModule} from '../drive/drive-routing.module';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AgmCoreModule} from '@agm/core';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {FormsModule} from '@angular/forms';
-import {MiscModule} from '../../misc/misc.module';
 
 @NgModule({
   imports: [
@@ -34,8 +32,7 @@ import {MiscModule} from '../../misc/misc.module';
     CommonModule,
     FormsModule,
     RideRoutingModule,
-    FlexLayoutModule,
-    MiscModule
+    FlexLayoutModule
   ],
   declarations: [
     RideIndexComponent,

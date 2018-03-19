@@ -1,6 +1,6 @@
 import { Directive, ElementRef, AfterContentInit, Output, EventEmitter } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
-import {PlaceModel} from '../../shared/models/place.model';
+import {PlaceModel} from '../models/place.model';
 
 declare const google: any;
 

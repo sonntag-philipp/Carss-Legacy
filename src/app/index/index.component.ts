@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import * as firebase from "firebase";
 import {AngularFireAuth} from 'angularfire2/auth';
-import {ToolbarService} from '../shared/services/toolbar.service';
+import {ToolbarService} from '../services/toolbar.service';
 
 @Component({
   selector: 'app-index',

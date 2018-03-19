@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ErrorComponent} from './misc/components/error/error.component';
-import {AuthGuardService} from './shared/services/auth-guard.service';
+import {ErrorComponent} from './utils/error/error.component';
+import {AuthGuardService} from './services/auth-guard.service';
 import {IndexComponent} from './index/index.component';
 
 // Lazy Loading the modules.

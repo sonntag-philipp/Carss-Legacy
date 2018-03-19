@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {ProfileModel} from '../../shared/models/profile.model';
-import {TagModel} from '../../shared/models/tag.model';
-import {CarModel} from '../../shared/models/car.model';
+import {ProfileModel} from '../../models/profile.model';
+import {TagModel} from '../../models/tag.model';
+import {CarModel} from '../../models/car.model';
 import {HttpClient} from '@angular/common/http';
-import {Globals} from '../../shared/services/globals';
+import {Globals} from '../../services/globals';
 
 @Injectable()
 export class ProfileService {

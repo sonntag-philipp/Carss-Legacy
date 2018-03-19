@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {Observable} from 'rxjs/Observable';
-import {ProfileModel} from '../../../shared/models/profile.model';
+import {ProfileModel} from '../../../models/profile.model';
 
 @Component({
-  selector: 'app-dashboard-index',
+  selector: 'carss-dashboard-index',
   templateUrl: './dashboard-index.component.html',
   styleUrls: ['./dashboard-index.component.css']
 })

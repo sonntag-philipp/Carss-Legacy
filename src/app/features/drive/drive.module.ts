@@ -13,7 +13,6 @@ import {
   MatStepperModule
 } from '@angular/material';
 import {AgmCoreModule} from '@agm/core';
-import {MiscModule} from '../../misc/misc.module';
 import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
 
 @NgModule({
@@ -41,8 +40,7 @@ import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
     FormsModule,
     ReactiveFormsModule,
     DriveRoutingModule,
-    FlexLayoutModule,
-    MiscModule
+    FlexLayoutModule
   ],
   providers: [
     GoogleMapsAPIWrapper
