@@ -43,7 +43,15 @@ export class IndexComponent implements OnInit, OnDestroy {
   }
 
   public onBtnGetStarted(): void {
-    this.fireAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+
+    const githubAuthProvier = new firebase.auth.GithubAuthProvider();
+    const authProvider = new firebase.auth.GoogleAuthProvider();
+
+    authProvider.addScope("profile");
+    authProvider.addScope("email");
+
+    this.fireAuth.auth.signInWithRedirect(authProvider);
+
   }
 
 }

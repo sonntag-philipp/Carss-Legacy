@@ -3,7 +3,6 @@ import {ProfileModel} from '../../models/profile.model';
 import {TagModel} from '../../models/tag.model';
 import {CarModel} from '../../models/car.model';
 import {HttpClient} from '@angular/common/http';
-import {Globals} from '../../services/globals';
 
 @Injectable()
 export class ProfileService {
@@ -85,8 +84,7 @@ export class ProfileService {
 
 
   constructor(
-    private http: HttpClient,
-    private globals: Globals
+    private http: HttpClient
   ) { }
 }
 

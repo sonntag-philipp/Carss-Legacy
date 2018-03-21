@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToolbarService } from './toolbar.service';
-import { Globals } from './globals';
+import { GlobalsService } from './globals.service';
 import { AuthGuardService } from './auth-guard.service';
+import { ProfilesService } from './profiles.service';
+import { UsersService } from './users.service';
 
 /**
  * This module provides the services used in the entire application.
@@ -14,8 +16,10 @@ import { AuthGuardService } from './auth-guard.service';
   ],
   providers: [
     AuthGuardService,
+    GlobalsService,
+    ProfilesService,
     ToolbarService,
-    Globals
+    UsersService
   ]
 })
 export class ServicesModule { }
