@@ -1,7 +1,8 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {ProfileComponent} from './profile/profile.component';
-import {ProfilePresenterComponent} from './profile-presenter/profile-presenter.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfilePresenterComponent } from './profile-presenter/profile-presenter.component';
+import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 
 const appRoutes: Routes = [
   {
@@ -11,6 +12,10 @@ const appRoutes: Routes = [
       {
         path: ":id",
         component: ProfilePresenterComponent
+      },
+      {
+        path: ":id/edit",
+        component: ProfileEditorComponent
       }
     ]
   }

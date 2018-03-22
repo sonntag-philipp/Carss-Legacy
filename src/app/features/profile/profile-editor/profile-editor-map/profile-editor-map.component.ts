@@ -4,11 +4,11 @@ import { MapsAPILoader } from '@agm/core';
 declare const google: any;
 
 @Component({
-  selector: 'carss-profile-presenter-map',
-  templateUrl: './profile-presenter-map.component.html',
-  styleUrls: ['./profile-presenter-map.component.css']
+  selector: 'carss-profile-editor-map',
+  templateUrl: './profile-editor-map.component.html',
+  styleUrls: ['./profile-editor-map.component.css']
 })
-export class ProfilePresenterMapComponent implements OnInit {
+export class ProfileEditorMapComponent implements OnInit {
 
   /**
    * The google-uid of the presented profile.

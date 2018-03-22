@@ -1,9 +1,5 @@
-.table-entry {
-  padding: 2px;
-}
-
-.card-subcontainer {
-  padding: 16px;
+button {
+  margin-left: 8px;
 }
 
 .profile-card-toolbar {
@@ -12,4 +8,16 @@
   z-index: 10;
   border-radius: 3px 3px 0 0;
   height: 54px;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.image:hover {
+
+}
+
+.textarea {
+  color: #000;
 }

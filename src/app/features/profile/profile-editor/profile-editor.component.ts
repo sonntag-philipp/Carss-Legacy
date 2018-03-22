@@ -1,20 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../profile.service';
-
-declare const google: any;
+import { VehicleModel } from '../../../models/vehicle.model';
 
 @Component({
-  selector: 'carss-profile-presenter',
-  templateUrl: './profile-presenter.component.html',
-  styleUrls: ['./profile-presenter.component.css']
+  selector: 'carss-profile-editor',
+  templateUrl: './profile-editor.component.html',
+  styleUrls: ['./profile-editor.component.css']
 })
-export class ProfilePresenterComponent implements OnInit {
+export class ProfileEditorComponent implements OnInit {
 
   /**
    * The google-uid of the presented profile.
    */
   public uid: string;
+
+  public vehicles: VehicleModel[];
 
   constructor(
     private route: ActivatedRoute,
@@ -22,10 +23,10 @@ export class ProfilePresenterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
     this.uid = this.route.snapshot.params['id'];
 
     this.profileService.getProfile(this.uid);
+    this.vehicles = this.profileService.vehicles;
   }
 
 }

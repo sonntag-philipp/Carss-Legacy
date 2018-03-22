@@ -1,12 +1,13 @@
-import {AngularFirestoreDocument} from 'angularfire2/firestore';
-import {RideModel} from './ride.model';
+export interface UserModel {
 
-export class UserModel {
-
-  public registerDate: string;
-  public rides: AngularFirestoreDocument<RideModel>[];
-  public securityLevel: number;
-  public systemChips: string[];
-  public userChips: string[];
-
+  permission_group: string;
+  id: string;
+  registration: string;
+  last_login: string;
+  name: string;
+  surname: string;
+  description: string;
+  address: string;
+  avatar: string;
+  rating: number;
 }

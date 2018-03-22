@@ -1,15 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ChipContainerComponent } from './chip-container/chip-container.component';
 import { ErrorComponent } from './error/error.component';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { AgmDirectionsDirective } from './agm-directions.directive';
 import { AgmInputDirective } from './agm-input.directive';
 import { RouterModule } from '@angular/router';
-import { MatButtonModule, MatDialogModule, MatIconModule, MatMenuModule, MatToolbarModule } from '@angular/material';
+import {
+  MatButtonModule, MatChipsModule, MatDialogModule, MatIconModule, MatInputModule, MatMenuModule, MatToolbarModule,
+  MatTooltipModule
+} from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './footer/footer.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { DescriptionContainerComponent } from './description-container/description-container.component';
+import { ImageContainerComponent } from './image-container/image-container.component';
+import { TagContainerComponent } from './tag-container/tag-container.component';
+import { InputDialogComponent } from './input-dialog/input-dialog.component';
 
 /**
  * The Utils module contains components and directives that can and should
@@ -26,25 +32,37 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     MatIconModule,
     MatButtonModule,
     MatMenuModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatInputModule
   ],
   declarations: [
-    ChipContainerComponent,
     ErrorComponent,
     InfoDialogComponent,
     AgmDirectionsDirective,
     AgmInputDirective,
     FooterComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    DescriptionContainerComponent,
+    ImageContainerComponent,
+    TagContainerComponent,
+    InputDialogComponent
+  ],
+  entryComponents: [
+    InputDialogComponent,
+    InfoDialogComponent
   ],
   exports: [
-    ChipContainerComponent,
     ErrorComponent,
     InfoDialogComponent,
     AgmDirectionsDirective,
     AgmInputDirective,
     FooterComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    DescriptionContainerComponent,
+    ImageContainerComponent,
+    TagContainerComponent
   ]
 })
 export class UtilsModule { }

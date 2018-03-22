@@ -1,0 +1,13 @@
+<div *ngIf="!showCreators" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
+  <mat-chip-list>
+    <mat-chip *ngFor="let item of tags">{{ item.name }}</mat-chip>
+    <mat-chip *ngIf="(mouseOver || tags === undefined || tags.length === 0)" matTooltip="Tag hinzufügen" (click)="addTag()">+</mat-chip>
+  </mat-chip-list>
+</div>
+<div *ngIf="showCreators" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
+  <mat-chip-list>
+    <mat-chip *ngFor="let item of tags" matTooltip="Von: {{ item.creator_id }} / {{ item.creation }}">{{ item.name }}</mat-chip>
+    <mat-chip *ngIf="(mouseOver || tags === undefined || tags.length === 0)" matTooltip="Tag hinzufügen" (click)="addTag()">+</mat-chip>
+  </mat-chip-list>
+</div>
+

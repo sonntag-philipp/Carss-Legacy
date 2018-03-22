@@ -1,28 +1,26 @@
-<!--<mat-card style="padding: 0; margin-top: 24px; margin-bottom: 24px;">
-  <mat-toolbar color="warn" style="border-radius: 3px 3px 0 0; height: 56px;">
-    <span>{{ profileService.profile.name }} {{ profileService.profile.surname }}</span>
+<mat-card *ngIf="profileService.initialized.user" style="padding: 0; margin-top: 24px; margin-bottom: 24px;">
+  <mat-toolbar class="profile-card-toolbar" color="primary">
+    <span>{{ profileService.user?.name }} {{ profileService.user?.surname }}</span>
     <div fxFlex="auto"></div>
-    <button mat-icon-button matTooltip="Profil bearbeiten">
+    <button mat-icon-button [routerLink]="['edit']" matTooltip="Profil bearbeiten">
       <mat-icon>edit</mat-icon>
     </button>
   </mat-toolbar>
   <div class="card-subcontainer" fxLayout="row">
     <div fxFlex="85">
-      <h1 class="card-subcontainer-title">Moin,</h1>
-      <p class="card-subcontainer-paragraph">
-        {{ profileService.profile.description }}
-      </p>
+      <div class="card-subcontainer-paragraph">
+        <carss-description-container [content]="profileService.user.description"></carss-description-container>
+      </div>
     </div>
     <div fxFlex="15">
-      <img src="{{ profileService.profile.image_url }}" style="border-radius: 50%;" width="100%;" alt="">
+      <carss-image-container [url]="profileService.user.avatar"></carss-image-container>
     </div>
   </div>
   <div style="padding: 8px 16px 8px 16px;">
-    <mat-chip-list>
-      <mat-chip *ngFor="let item of profileService.profile.tags" matTooltip="Von: {{ item.creator }} / {{ item.timestamp }}">{{ item.content }}</mat-chip>
-    </mat-chip-list>
+    <carss-tag-container [tags]="profileService.userTags" [id]="profileService.user.id" type="users"></carss-tag-container>
   </div>
-  <app-profile-presenter-map></app-profile-presenter-map>
-  <app-profile-presenter-car [car]="item" *ngFor="let item of profileService.cars"></app-profile-presenter-car>
+  <carss-profile-presenter-map *ngIf="profileService.initialized.user" [address]="profileService.user.address"></carss-profile-presenter-map>
+  <div *ngIf="profileService.initialized.vehicles">
+    <carss-profile-presenter-car [vehicle]="item" *ngFor="let item of profileService.vehicles"></carss-profile-presenter-car>
+  </div>
 </mat-card>
--->

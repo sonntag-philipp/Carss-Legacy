@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ChipContainerComponent } from './chip-container.component';
+import { ImageContainerComponent } from './image-container.component';
 
-describe('ChipContainerComponent', () => {
-  let component: ChipContainerComponent;
-  let fixture: ComponentFixture<ChipContainerComponent>;
+describe('ImageContainerComponent', () => {
+  let component: ImageContainerComponent;
+  let fixture: ComponentFixture<ImageContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChipContainerComponent ]
+      declarations: [ ImageContainerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ChipContainerComponent);
+    fixture = TestBed.createComponent(ImageContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

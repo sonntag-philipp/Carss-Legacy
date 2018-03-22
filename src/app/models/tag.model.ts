@@ -1,8 +1,7 @@
 export interface TagModel {
   id: number;
+  user_id: string;
+  creator_id: string;
   name: string;
-  content: string;
-  creator: string;
-  timestamp: string;
-  profile_id: string;
+  creation: string;
 }

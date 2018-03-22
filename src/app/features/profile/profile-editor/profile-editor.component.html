@@ -1,0 +1,41 @@
+<mat-card style="padding: 0; margin-top: 24px; margin-bottom: 24px;">
+  <div *ngIf="profileService.initialized.user">
+    <mat-toolbar class="profile-card-toolbar" color="primary">
+      <span>{{ profileService.user?.name }} {{ profileService.user?.surname }}</span>
+    </mat-toolbar>
+    <div class="card-subcontainer" fxLayout="row">
+      <div fxFlex="85" fxLayout="column" style="padding-right: 16px;">
+        <div>
+          <mat-form-field fxFlex="49">
+            <input matInput [(ngModel)]="profileService.user.name" name="" type="text" placeholder="Vorname">
+          </mat-form-field>
+          <div fxFlex="auto"></div>
+          <mat-form-field fxFlex="49">
+            <input matInput [(ngModel)]="profileService.user.surname" type="text" placeholder="Name">
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <textarea matInput class="textarea" [(ngModel)]="profileService.user.description" placeholder="Beschreibung" rows="10"></textarea>
+        </mat-form-field>
+      </div>
+      <div fxFlex="15">
+        <carss-image-container [editable]="true" [url]="profileService.user.avatar"></carss-image-container>
+      </div>
+    </div>
+    <div style="padding: 8px 16px 8px 16px;">
+      <carss-tag-container [tags]="profileService.userTags" [id]="profileService.user.id" type="users"></carss-tag-container>
+    </div>
+    <div style="padding: 8px 8px 8px 0;">
+      <button mat-button color="primary" (click)="profileService.putUser();">Persönliches speichern</button>
+    </div>
+  </div>
+  <carss-profile-editor-map *ngIf="profileService.initialized.user" [address]="profileService.user.address"></carss-profile-editor-map>
+  <mat-divider></mat-divider>
+  <div style="padding: 8px 8px 8px 0;">
+    <button mat-button color="primary" (click)="profileService.postVehicle();">Auto hinzufügen</button>
+  </div>
+  <div *ngIf="profileService.initialized.vehicles">
+    <carss-profile-editor-car [vehicle]="item" *ngFor="let item of profileService.vehicles"></carss-profile-editor-car>
+  </div>
+  <mat-divider></mat-divider>
+</mat-card>

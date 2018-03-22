@@ -1,15 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { VehicleModel } from '../../../../models/vehicle.model';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BackendService } from '../../../../services/backend.service';
 import { TagModel } from '../../../../models/tag.model';
 import { ProfileService } from '../../profile.service';
+import { VehicleModel } from '../../../../models/vehicle.model';
 
 @Component({
-  selector: 'carss-profile-presenter-car',
-  templateUrl: './profile-presenter-car.component.html',
-  styleUrls: ['./profile-presenter-car.component.css']
+  selector: 'carss-profile-editor-car',
+  templateUrl: './profile-editor-car.component.html',
+  styleUrls: ['./profile-editor-car.component.css']
 })
-export class ProfilePresenterCarComponent implements OnInit {
+export class ProfileEditorCarComponent implements OnInit {
 
   @Input()
   vehicle: VehicleModel;
@@ -30,9 +30,5 @@ export class ProfilePresenterCarComponent implements OnInit {
         this._tags = next;
       }
     );
-  }
-
-  public btnSave() {
-
   }
 }

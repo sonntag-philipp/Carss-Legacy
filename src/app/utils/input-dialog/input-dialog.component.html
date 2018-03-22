@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<mat-dialog-content style="font-family: Roboto;">
+  <mat-form-field>
+    <input matInput #input placeholder="Eingabe" type="text">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="btnOkay(input.value);" color="warn">{{ data.button }}</button>
+</mat-dialog-actions>

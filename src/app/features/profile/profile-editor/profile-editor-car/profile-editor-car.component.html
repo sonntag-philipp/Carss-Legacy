@@ -1,0 +1,24 @@
+<mat-divider></mat-divider>
+<div>
+  <div class="card-subcontainer" fxLayout="row">
+    <div fxFlex="85">
+      <mat-form-field style="width: 95%;">
+        <input matInput [(ngModel)]="vehicle.name" placeholder="Name" type="text">
+      </mat-form-field>
+      <mat-form-field style="width: 95%;">
+        <textarea matInput [(ngModel)]="vehicle.description" placeholder="Beschreibung" rows="5" type="text"></textarea>
+      </mat-form-field>
+    </div>
+    <div fxFlex="15">
+      <carss-image-container [editable]="true" [url]="vehicle.image_url"></carss-image-container>
+    </div>
+  </div>
+  <div style="padding: 8px 16px 8px 16px;">
+    <carss-tag-container [tags]="tags" [id]="vehicle.id" type="vehicles"></carss-tag-container>
+  </div>
+  <div style="padding: 8px 16px 8px 8px;">
+    <button mat-button color="primary" (click)="profileService.putVehicle(vehicle);">Fahrzeug speichern</button>
+    <button mat-button color="primary" (click)="profileService.deleteVehicle(vehicle);">Fahrzeug löschen</button>
+  </div>
+</div>
+
