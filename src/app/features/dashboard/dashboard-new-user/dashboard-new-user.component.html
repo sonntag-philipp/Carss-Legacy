@@ -1,0 +1,10 @@
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxLayout="column" fxLayoutAlign="start center">
+    <h1 ngClass.xs="heading-container-xs" style="font-size: 45pt;" class="heading" ngClass="heading-container">
+      Herzlich Willkommen bei Carss!
+    </h1>
+    <button mat-raised-button color="warn" [routerLink]="['/profile', auth.auth.currentUser.uid, 'edit']">
+      Profil erstellen
+    </button>
+  </div>
+</div>

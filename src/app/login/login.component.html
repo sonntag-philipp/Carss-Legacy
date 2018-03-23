@@ -1,0 +1,28 @@
+<div fxLayout="row" fxLayoutAlign="center center" style="padding: 16px; height: 80vh;">
+  <div fxFlex="20">
+    <mat-card style="padding: 0;">
+
+      <div class="card-subcontainer" style="font-size: 12pt;">
+        <h4 class="card-subcontainer-title">Anmeldung per E-Mail:</h4>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="E-Mail" type="text">
+        </mat-form-field>
+        <mat-form-field style="width: 100%;">
+          <input matInput placeholder="Passwort" type="password">
+        </mat-form-field>
+      </div>
+      <mat-divider></mat-divider>
+      <div class="card-subcontainer">
+        <button mat-raised-button (click)="btnGoogle();" style="width: 100%; margin-bottom: 8px;" color="warn">
+          Anmelden über Google
+        </button>
+        <button mat-raised-button (click)="btnFacebook();" [disabled]="true" style="width: 100%; margin-bottom: 8px;" color="primary">
+          Anmelden über Facebook
+        </button>
+        <button mat-raised-button (click)="btnGitHub();" style="width: 100%;">
+          Anmelden über GitHub
+        </button>
+      </div>
+    </mat-card>
+  </div>
+</div>

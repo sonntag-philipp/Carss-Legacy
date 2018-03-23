@@ -50,8 +50,6 @@ export class CarssNoun<T> {
 
   public post(item: any): Observable<any> {
 
-    console.log(this.path);
-
     return Observable.create((observer: Observer<any>) => {
 
       this.auth.auth.currentUser.getIdToken().then(

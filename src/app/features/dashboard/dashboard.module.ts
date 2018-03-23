@@ -35,6 +35,7 @@ import { DashboardIndexDriveComponent } from './dashboard-index/dashboard-index-
 import { DashboardIndexRideComponent } from './dashboard-index/dashboard-index-ride/dashboard-index-ride.component';
 import { MatMomentDateModule} from '@angular/material-moment-adapter';
 import { MatTimeControlModule } from '../../modules/mat-time-control/mat-time-control.module';
+import { DashboardNewUserComponent } from './dashboard-new-user/dashboard-new-user.component';
 
 @NgModule({
   imports: [
@@ -82,7 +83,8 @@ import { MatTimeControlModule } from '../../modules/mat-time-control/mat-time-co
     DashboardSettingsSecurityComponent,
     DashboardSettingsAccountsComponent,
     DashboardIndexDriveComponent,
-    DashboardIndexRideComponent
+    DashboardIndexRideComponent,
+    DashboardNewUserComponent
   ],
   providers: [
     {

@@ -14,11 +14,16 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { UtilsModule } from './utils/utils.module';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
-import { MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatDividerModule, MatInputModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   imports: [
     MatToolbarModule,
+    MatCardModule,
+    MatSnackBarModule,
+    MatInputModule,
+    MatDividerModule,
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -30,12 +35,15 @@ import { MatToolbarModule } from '@angular/material';
     FormsModule,
     ReactiveFormsModule,
     ServicesModule,
-    UtilsModule
+    UtilsModule,
+    MatButtonModule
   ],
   declarations: [
     AppComponent,
-    IndexComponent
+    IndexComponent,
+    LoginComponent
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

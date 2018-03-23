@@ -1,8 +1,8 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import * as firebase from "firebase";
-import {AngularFireAuth} from 'angularfire2/auth';
-import {ToolbarService} from '../services/toolbar.service';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { ToolbarService } from '../services/toolbar.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-index',
@@ -14,15 +14,16 @@ export class IndexComponent implements OnInit, OnDestroy {
   public initialized = false;
   public authenticated = false;
 
-  constructor(
-    private fireAuth: AngularFireAuth,
-    private router: Router,
-    private toolbarService: ToolbarService
-  ) { }
+  private authSubscribtion: any;
+
+  constructor(private fireAuth: AngularFireAuth,
+              private router: Router,
+              private toolbarService: ToolbarService) {
+  }
 
   ngOnInit(): void {
     this.toolbarService.hidden = true;
-    this.fireAuth.authState.subscribe(
+    this.authSubscribtion = this.fireAuth.authState.subscribe(
       next => {
 
         if (next !== null) {
@@ -40,18 +41,6 @@ export class IndexComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.toolbarService.hidden = false;
+    this.authSubscribtion.unsubscribe();
   }
-
-  public onBtnGetStarted(): void {
-
-    const githubAuthProvier = new firebase.auth.GithubAuthProvider();
-    const authProvider = new firebase.auth.GoogleAuthProvider();
-
-    authProvider.addScope("profile");
-    authProvider.addScope("email");
-
-    this.fireAuth.auth.signInWithRedirect(authProvider);
-
-  }
-
 }
