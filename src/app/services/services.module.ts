@@ -4,7 +4,6 @@ import { ToolbarService } from './toolbar.service';
 import { GlobalsService } from './globals.service';
 import { AuthGuardService } from './auth-guard.service';
 import { UsersService } from './users.service';
-import { BackendService } from './backend.service';
 
 /**
  * This module provides the services used in the entire application.
@@ -18,8 +17,7 @@ import { BackendService } from './backend.service';
     AuthGuardService,
     GlobalsService,
     ToolbarService,
-    UsersService,
-    BackendService
+    UsersService
   ]
 })
 export class ServicesModule { }

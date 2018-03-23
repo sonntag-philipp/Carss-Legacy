@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { MatButtonModule, MatCardModule, MatDividerModule, MatInputModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
+import { BackendModule } from './backend/backend.module';
 
 @NgModule({
   imports: [
@@ -36,7 +37,8 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     ServicesModule,
     UtilsModule,
-    MatButtonModule
+    MatButtonModule,
+    BackendModule
   ],
   declarations: [
     AppComponent,

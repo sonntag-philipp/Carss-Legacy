@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { TagModel } from '../../models/tag.model';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatSnackBar } from '@angular/material';
 import { InputDialogComponent } from '../input-dialog/input-dialog.component';
-import { BackendService } from '../../services/backend.service';
-import { Observable } from 'rxjs/Observable';
+import { BackendService } from '../../backend/backend.service';
 
 @Component({
   selector: 'carss-tag-container',
@@ -28,7 +27,8 @@ export class TagContainerComponent implements OnInit {
 
   constructor(
     private dialog: MatDialog,
-    private backend: BackendService
+    private backend: BackendService,
+    private snackBar: MatSnackBar
   ) { }
 
 
@@ -46,11 +46,19 @@ export class TagContainerComponent implements OnInit {
         if (next === undefined) {
           return;
         }
-        this.backend.noun(this.type).verb(this.id).noun("tags").post({
-          name: next
+        this.backend.chainNoun(this.type).chainVerb(this.id).chainNoun("tags").post<TagModel>({
+          name: next,
+          creator_id: null,
+          id: null,
+          creation: null,
+          user_id: null
         }).subscribe(
           next => {
-            this.tags.push(next.body);
+            if (next.status !== 201) {
+              this.snackBar.open("Tag konnte nicht erstellt werden!", "Okay");
+            } else {
+              this.tags.push(next.body);
+            }
           }
         );
       }

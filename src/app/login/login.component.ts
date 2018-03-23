@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToolbarService } from '../services/toolbar.service';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import * as firebase from "firebase";
-import { BackendService } from '../services/backend.service';
 import { MatSnackBar } from '@angular/material';
+import { BackendService } from '../backend/backend.service';
+import { UserModel } from '../models/user.model';
 
 @Component({
   selector: 'carss-login',
@@ -66,10 +67,24 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private afterLogin(result: any) {
 
+    // I have to do this so the backend service is satisfied. :/
+    const user: UserModel = {
+      id: null,
+      description: null,
+      name: null,
+      address: null,
+      avatar: null,
+      last_login: null,
+      permission_group: null,
+      rating: null,
+      registration: null,
+      surname: null
+    };
+
     if (result.additionalUserInfo.isNewUser) {
-      this.backend.noun("users").post({}).subscribe(
+      this.backend.chainNoun("users").post<UserModel>(user).subscribe(
         next => {
-          if (next.id === this.auth.auth.currentUser.uid) {
+          if ((next.id + "") === this.auth.auth.currentUser.uid) {
             this.router.navigate(["/dashboard/new-user"]);
           } else {
             this.snackBar.open("Hat nicht funktioniert. Kannst du das vielleicht den Admins sagen?", "Okay");

@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { VehicleModel } from '../../../../models/vehicle.model';
-import { BackendService } from '../../../../services/backend.service';
 import { TagModel } from '../../../../models/tag.model';
 import { ProfileService } from '../../profile.service';
+import { BackendService } from '../../../../backend/backend.service';
 
 @Component({
   selector: 'carss-profile-presenter-car',
@@ -25,7 +25,7 @@ export class ProfilePresenterCarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.backend.noun("vehicles").verb(this.vehicle.id + "").noun<TagModel>("tags").get().subscribe(
+    this.backend.chainNoun("vehicles").chainVerb(this.vehicle.id + "").chainNoun<TagModel>("tags").get().subscribe(
       next => {
         this._tags = next;
       }

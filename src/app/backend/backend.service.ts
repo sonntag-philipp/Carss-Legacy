@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { GlobalsService } from '../services/globals.service';
 import { HttpClient } from '@angular/common/http';
-import { CarssNoun } from '../classes/CarssNoun';
-import { GlobalsService } from './globals.service';
 import { AngularFireAuth } from 'angularfire2/auth';
+import { RestNoun } from './classes/rest-noun';
 
 @Injectable()
 export class BackendService {
@@ -13,9 +13,7 @@ export class BackendService {
     private auth: AngularFireAuth
   ) { }
 
-  public noun<T>(path: string): CarssNoun<T> {
-
-    return new CarssNoun<T>(this.globals.rest.address + "/" + path, this.http, this.auth);
-
+  public chainNoun<T>(path: string): RestNoun<T> {
+    return new RestNoun<T>(this.globals.rest.address + "/" + path, this.http, this.auth);
   }
 }

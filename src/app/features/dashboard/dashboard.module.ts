@@ -36,6 +36,7 @@ import { DashboardIndexRideComponent } from './dashboard-index/dashboard-index-r
 import { MatMomentDateModule} from '@angular/material-moment-adapter';
 import { MatTimeControlModule } from '../../modules/mat-time-control/mat-time-control.module';
 import { DashboardNewUserComponent } from './dashboard-new-user/dashboard-new-user.component';
+import { BackendModule } from '../../backend/backend.module';
 
 @NgModule({
   imports: [
@@ -74,7 +75,8 @@ import { DashboardNewUserComponent } from './dashboard-new-user/dashboard-new-us
     CommonModule,
     FormsModule,
     DashboardRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    BackendModule
   ],
   declarations: [
     DashboardIndexComponent,

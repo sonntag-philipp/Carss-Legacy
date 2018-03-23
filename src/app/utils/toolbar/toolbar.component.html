@@ -1,6 +1,11 @@
 <mat-toolbar color="primary" style="height: 54px;" *ngIf="!(service.hidden)">
   <a class="toolbar-title" [routerLink]="['/']"> {{ service.title }}</a>
   <div fxFlex="auto"></div>
+  <button mat-icon-button matTooltip="Dashboard" [routerLink]="['/dashboard']">
+    <mat-icon>
+      home
+    </mat-icon>
+  </button>
   <button matTooltip="Profil" mat-icon-button aria-label="" [routerLink]="['/profile', (service.auth.authState | async)?.uid ]">
     <mat-icon>
       account_circle

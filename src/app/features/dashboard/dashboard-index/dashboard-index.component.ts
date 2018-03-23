@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { BackendService } from '../../../services/backend.service';
 import { Observable } from 'rxjs/Observable';
 import { UserModel } from '../../../models/user.model';
+import { BackendService } from '../../../backend/backend.service';
 
 @Component({
   selector: 'carss-dashboard-index',
@@ -19,6 +19,6 @@ export class DashboardIndexComponent implements OnInit {
 
 
   ngOnInit() {
-    this.backend.noun('users').verb(this.auth.auth.currentUser.uid).get();
+    this.backend.chainNoun('users').chainVerb(this.auth.auth.currentUser.uid).get();
   }
 }
