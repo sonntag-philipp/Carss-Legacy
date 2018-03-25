@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToolbarService } from '../../../services/toolbar.service';
+import { UserSessionService } from '../../../services/user-session.service';
 
 @Component({
   selector: 'carss-dashboard',
@@ -8,7 +9,8 @@ import { ToolbarService } from '../../../services/toolbar.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private toolbarService: ToolbarService) {
+  constructor(private toolbarService: ToolbarService,
+              public userSession: UserSessionService) {
   }
 
   ngOnInit() {

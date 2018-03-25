@@ -14,12 +14,9 @@ import {ProfilePresenterComponent} from './profile-presenter/profile-presenter.c
 import {ProfileComponent} from './profile/profile.component';
 import {FormsModule} from '@angular/forms';
 import {ProfileService} from './profile.service';
-import {AgmCoreModule} from '@agm/core';
 import { ProfilePresenterCarComponent } from './profile-presenter/profile-presenter-car/profile-presenter-car.component';
-import { ProfilePresenterMapComponent } from './profile-presenter/profile-presenter-map/profile-presenter-map.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
 import { ProfileEditorCarComponent } from './profile-editor/profile-editor-car/profile-editor-car.component';
-import { ProfileEditorMapComponent } from './profile-editor/profile-editor-map/profile-editor-map.component';
 import { UtilsModule } from '../../utils/utils.module';
 import { BackendModule } from '../../backend/backend.module';
 
@@ -37,10 +34,6 @@ import { BackendModule } from '../../backend/backend.module';
     MatSelectModule,
     MatMenuModule,
     MatSnackBarModule,
-    AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
-      libraries: ["places"]
-    }),
 
     // AngularFire:
     AngularFireAuthModule,
@@ -61,10 +54,8 @@ import { BackendModule } from '../../backend/backend.module';
     ProfilePresenterComponent,
     ProfileComponent,
     ProfilePresenterCarComponent,
-    ProfilePresenterMapComponent,
     ProfileEditorComponent,
-    ProfileEditorCarComponent,
-    ProfileEditorMapComponent
+    ProfileEditorCarComponent
   ]
 })
 export class ProfileModule { }

@@ -1,11 +1,6 @@
 <h1 ngClass.xs="heading-container-xs" class="heading" ngClass="heading-container">
-  Moin, {{ (user | async)?.name }}
+  Moin, {{ userSession.user?.name }} {{ userSession.user?.surname }}
 </h1>
 <div fxLayout="column">
-  <div fxLayout="row" fxLayout.xs="column">
-
-    <carss-dashboard-index-drive fxFlex="50"></carss-dashboard-index-drive>
-    <span style="padding: 8px;"> </span>
-    <carss-dashboard-index-ride fxFlex="50"></carss-dashboard-index-ride>
-  </div>
+  <carss-dashboard-index-drive></carss-dashboard-index-drive>
 </div>

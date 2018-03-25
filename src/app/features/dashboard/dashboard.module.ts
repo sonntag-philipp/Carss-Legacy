@@ -32,11 +32,11 @@ import { DashboardSettingsAccountsComponent } from './dashboard-settings/dashboa
 import { FormsModule} from '@angular/forms';
 import { AgmCoreModule} from '@agm/core';
 import { DashboardIndexDriveComponent } from './dashboard-index/dashboard-index-drive/dashboard-index-drive.component';
-import { DashboardIndexRideComponent } from './dashboard-index/dashboard-index-ride/dashboard-index-ride.component';
 import { MatMomentDateModule} from '@angular/material-moment-adapter';
 import { MatTimeControlModule } from '../../modules/mat-time-control/mat-time-control.module';
 import { DashboardNewUserComponent } from './dashboard-new-user/dashboard-new-user.component';
 import { BackendModule } from '../../backend/backend.module';
+import { UtilsModule } from '../../utils/utils.module';
 
 @NgModule({
   imports: [
@@ -62,10 +62,6 @@ import { BackendModule } from '../../backend/backend.module';
     MatMomentDateModule,
     MatTabsModule,
     MatTimeControlModule,
-    AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
-      libraries: ["places"]
-    }),
 
     // AngularFire:
     AngularFireAuthModule,
@@ -76,7 +72,8 @@ import { BackendModule } from '../../backend/backend.module';
     FormsModule,
     DashboardRoutingModule,
     FlexLayoutModule,
-    BackendModule
+    BackendModule,
+    UtilsModule
   ],
   declarations: [
     DashboardIndexComponent,
@@ -85,7 +82,6 @@ import { BackendModule } from '../../backend/backend.module';
     DashboardSettingsSecurityComponent,
     DashboardSettingsAccountsComponent,
     DashboardIndexDriveComponent,
-    DashboardIndexRideComponent,
     DashboardNewUserComponent
   ],
   providers: [

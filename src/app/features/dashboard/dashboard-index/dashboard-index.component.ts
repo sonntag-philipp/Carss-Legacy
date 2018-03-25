@@ -3,6 +3,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import { UserModel } from '../../../models/user.model';
 import { BackendService } from '../../../backend/backend.service';
+import { UserSessionService } from '../../../services/user-session.service';
 
 @Component({
   selector: 'carss-dashboard-index',
@@ -11,14 +12,8 @@ import { BackendService } from '../../../backend/backend.service';
 })
 export class DashboardIndexComponent implements OnInit {
 
-  public user: Observable<UserModel>;
-
-  constructor(private backend: BackendService,
-              private auth: AngularFireAuth) {
+  constructor(public userSession: UserSessionService) {
   }
 
-
-  ngOnInit() {
-    this.backend.chainNoun('users').chainVerb(this.auth.auth.currentUser.uid).get();
-  }
+  ngOnInit() { }
 }

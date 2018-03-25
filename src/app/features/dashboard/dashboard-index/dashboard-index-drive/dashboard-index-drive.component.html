@@ -5,14 +5,14 @@
   <div class="card-subcontainer">
     <div fxLayout="row">
       <mat-form-field fxFlex="49">
-        <mat-select [(value)]="originSelect" placeholder="Startpunkt" (selectionChange)="originChanged($event);">
-          <mat-option [value]="1">
+        <mat-select #origin [(value)]="originSelect" placeholder="Startpunkt" (selectionChange)="routeChanged($event);">
+          <mat-option [value]="userSession.user.address">
             Meine Adresse
           </mat-option>
-          <mat-option [value]="2">
+          <mat-option value="ChIJG0-toC-yt0cRxAXMiEYhyng">
             BBS Papenburg
           </mat-option>
-          <mat-option [value]="3">
+          <mat-option [value]="newAddress">
             Neue Adresse...
           </mat-option>
         </mat-select>
@@ -21,45 +21,43 @@
         <mat-icon color="accent" style="padding: 4px;">arrow_forward</mat-icon>
       </div>
       <mat-form-field fxFlex="49">
-      <mat-select [(value)]="destinationSelect" placeholder="Ziel" (selectionChange)="destinationChanged($event);">
-        <mat-option [value]="1">
+      <mat-select #destination [(value)]="destinationSelect" placeholder="Ziel" (selectionChange)="routeChanged($event);">
+        <mat-option value="userAddress">
           Meine Adresse
         </mat-option>
-        <mat-option [value]="2">
+        <mat-option value="schoolAddress">
           BBS Papenburg
         </mat-option>
-        <mat-option [value]="3">
+        <mat-option value="newAddress">
           Neue Adresse...
         </mat-option>
       </mat-select>
     </mat-form-field>
     </div>
-    <div style="padding-bottom: 24px;" *ngIf="(originSelect === 3) || (destinationSelect === 3)">
-      <agm-map style="height: 35vh;"></agm-map>
+    <div style="padding-bottom: 24px;" *ngIf="(destination.value === 'newAddress' || origin.value === 'newAddress')">
+
+      <agm-place-map
+        [latitude]="53.0726142"
+        [longitude]="7.4232678"
+        (componentsChange)="componentsChanged($event);"
+        (placeChange)="placeChanged($event);"
+        style="height: 30vh;">
+      </agm-place-map>
       <mat-divider style="margin-top: 16px;"></mat-divider>
     </div>
     <div>
       <div fxLayout="row">
-        <mat-form-field fxFlex="49">
-          <input matInput [matDatepicker]="picker" placeholder="Datum">
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+        <mat-form-field style="width: 100%;">
+          <textarea matInput placeholder="Beschreibung" rows="5"></textarea>
         </mat-form-field>
-        <div fxFlex="auto"></div>
-        <w-mat-timepicker fxFlex="49" color="primary"></w-mat-timepicker>
       </div>
-      <mat-checkbox>Wöchentlich wiederholen</mat-checkbox>
     </div>
   </div>
   <div style="padding: 8px 16px 8px 16px;">
-    <mat-chip-list>
-      <mat-chip>Papenburg</mat-chip>
-      <mat-chip>Bunte</mat-chip>
-      <mat-chip>Papenburg</mat-chip>
-    </mat-chip-list>
+    <carss-tag-container [offline]="true" [(tags)]="tags"  type="rides"></carss-tag-container>
   </div>
   <mat-divider></mat-divider>
   <div style="padding: 8px 0 8px 8px;">
-    <button style="padding-right: 8px;" color="primary" mat-button>Erstellen</button>
+    <button style="padding-right: 8px;" (click)="postRide();" color="primary" mat-button>Erstellen</button>
   </div>
 </mat-card>

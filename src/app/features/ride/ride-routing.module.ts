@@ -1,16 +1,21 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {RideIndexComponent} from './ride-index/ride-index.component';
-import {RideComponent} from './ride/ride.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { RideIndexComponent } from './ride-index/ride-index.component';
+import { RideComponent } from './ride/ride.component';
+import { RideSearchComponent } from './ride-search/ride-search.component';
 
 const appRoutes: Routes = [
   {
-    path: "",
+    path: '',
     component: RideComponent,
     children: [
       {
-        path: "",
+        path: '',
         component: RideIndexComponent
+      },
+      {
+        path: 'search/:query',
+        component: RideSearchComponent
       }
     ]
   }
@@ -24,4 +29,5 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class RideRoutingModule { }
+export class RideRoutingModule {
+}

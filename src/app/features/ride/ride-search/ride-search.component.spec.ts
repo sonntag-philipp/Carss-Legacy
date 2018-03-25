@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfileEditorMapComponent } from './profile-editor-map.component';
+import { RideSearchComponent } from './ride-search.component';
 
-describe('ProfileEditorMapComponent', () => {
-  let component: ProfileEditorMapComponent;
-  let fixture: ComponentFixture<ProfileEditorMapComponent>;
+describe('RideSearchComponent', () => {
+  let component: RideSearchComponent;
+  let fixture: ComponentFixture<RideSearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileEditorMapComponent ]
+      declarations: [ RideSearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProfileEditorMapComponent);
+    fixture = TestBed.createComponent(RideSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

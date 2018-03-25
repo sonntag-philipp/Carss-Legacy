@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { RideModel } from '../../../../models/ride.model';
+import { BackendService } from '../../../../backend/backend.service';
+import { TagModel } from '../../../../models/tag.model';
+import { PlaceModel } from '../../../../models/place.model';
+import { UserSessionService } from '../../../../services/user-session.service';
+import { MatSelect } from '@angular/material';
 
 @Component({
   selector: 'carss-dashboard-index-drive',
@@ -7,26 +13,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardIndexDriveComponent implements OnInit {
 
-  public originSelect = 0;
-  public destinationSelect = 0;
+  private ride: RideModel = {
+    origin: "",
+    destination: "",
+    description: ""
+  };
+  private tags: TagModel[] = [];
+  private newAddress: PlaceModel;
 
-  public originChanged(event: any): void {
-    if (event.value === 1 || event.value === 3) {
-      this.destinationSelect = 2;
-      this.originSelect = event.value;
+
+  public place: PlaceModel = {
+    lat: 0,
+    lng: 0,
+    id: ""
+  };
+
+  @ViewChild('origin')
+  origin: MatSelect;
+
+  @ViewChild('destination')
+  destination: MatSelect;
+
+  public routeChanged(data: any): void {
+
+  }
+
+  constructor(
+    private backend: BackendService,
+    private userSession: UserSessionService
+  ) { }
+
+  public ngOnInit() { }
+
+  public placeChanged(place: PlaceModel) {
+    if (this.destination.value === "newAddress") {
+      this.ride.destination = place.id;
+    }
+    if (this.origin.value === "newAddress") {
+      this.ride.origin = place.id;
     }
   }
 
-  public destinationChanged(event: any): void {
-    if (event.value === 1 || event.value === 3) {
-      this.originSelect = 2;
-      this.destinationSelect = event.value;
+  public componentsChanged(components: string[]) {
+    this.tags = [];
+    for (const item of components) {
+      this.tags.push({name: item});
     }
   }
 
-  constructor() { }
-
-  ngOnInit() {
+  public postRide() {
+    console.log(this.ride);
   }
 
 }

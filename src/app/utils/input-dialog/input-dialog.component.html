@@ -1,9 +1,13 @@
-<h1 mat-dialog-title>{{ data.title }}</h1>
-<mat-dialog-content style="font-family: Roboto;">
-  <mat-form-field>
-    <input matInput #input placeholder="Eingabe" type="text">
-  </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button (click)="btnOkay(input.value);" color="warn">{{ data.button }}</button>
-</mat-dialog-actions>
+<div fxLayout="column">
+  <div fxFlex="initial">
+    <mat-toolbar style="height: 54px;" color="primary">
+      <span>{{ data.title }}</span>
+    </mat-toolbar>
+  </div>
+  <div style="padding: 8px; width: fit-content;">
+    <mat-form-field>
+      <input matInput #input placeholder="{{ data.placeholder }}" type="text">
+    </mat-form-field>
+    <button mat-button (click)="btnOkay(input.value);" color="warn">{{ data.button }}</button>
+  </div>
+</div>

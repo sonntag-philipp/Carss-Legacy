@@ -1,0 +1,10 @@
+<div style="position: relative;">
+  <mat-card style="">
+    <input type="text" style="border: none; width: 100%; outline: none;" agmInput [value]="marker.formattedAddress === undefined ? '' : marker.formattedAddress" (placeChanged)="inputChanged($event);">
+  </mat-card>
+  <agm-map #map [latitude]="latitude" [longitude]="longitude" [zoom]="14" style="height: 30vh;">
+    <agm-marker [markerDraggable]="true" (dragEnd)="dragEnd($event);" [latitude]="latitude" [longitude]="longitude">
+      <agm-info-window>{{ marker.formattedAddress }}</agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

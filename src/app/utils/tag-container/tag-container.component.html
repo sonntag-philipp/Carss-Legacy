@@ -1,13 +1,9 @@
-<div *ngIf="!showCreators" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
-  <mat-chip-list>
-    <mat-chip *ngFor="let item of tags">{{ item.name }}</mat-chip>
+<div fxFlex="row" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
+  <div fxLayoutAlign="center center" fxFlex="initial" style="padding: 4px;">
+    Tags:
+  </div>
+  <mat-chip-list fxFlex="auto">
+    <mat-chip *ngFor="let item of tags" (click)="searchTag(item.name);">{{ item.name }}</mat-chip>
     <mat-chip *ngIf="(mouseOver || tags === undefined || tags.length === 0)" matTooltip="Tag hinzufügen" (click)="addTag()">+</mat-chip>
   </mat-chip-list>
 </div>
-<div *ngIf="showCreators" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
-  <mat-chip-list>
-    <mat-chip *ngFor="let item of tags" matTooltip="Von: {{ item.creator_id }} / {{ item.creation }}">{{ item.name }}</mat-chip>
-    <mat-chip *ngIf="(mouseOver || tags === undefined || tags.length === 0)" matTooltip="Tag hinzufügen" (click)="addTag()">+</mat-chip>
-  </mat-chip-list>
-</div>
-

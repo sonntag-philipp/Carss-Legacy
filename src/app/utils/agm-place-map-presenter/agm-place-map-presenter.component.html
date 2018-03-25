@@ -1,0 +1,6 @@
+
+<agm-map #map [latitude]="latitude" [longitude]="longitude" [zoom]="14" style="height: 30vh;">
+  <agm-marker [latitude]="latitude" [longitude]="longitude">
+    <agm-info-window>{{ marker.formattedAddress }}</agm-info-window>
+  </agm-marker>
+</agm-map>

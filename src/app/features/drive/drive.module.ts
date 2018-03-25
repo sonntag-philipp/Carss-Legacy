@@ -12,7 +12,6 @@ import {
   MatSelectModule,
   MatStepperModule
 } from '@angular/material';
-import {AgmCoreModule} from '@agm/core';
 import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
 
 @NgModule({
@@ -26,10 +25,6 @@ import {GoogleMapsAPIWrapper} from '@agm/core/services/google-maps-api-wrapper';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
-      libraries: ["places"]
-    }),
 
     // AngularFire:
     AngularFireAuthModule,

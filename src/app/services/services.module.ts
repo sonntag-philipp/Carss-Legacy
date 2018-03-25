@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ToolbarService } from './toolbar.service';
 import { GlobalsService } from './globals.service';
 import { AuthGuardService } from './auth-guard.service';
-import { UsersService } from './users.service';
+import { UserSessionService } from './user-session.service';
+import { MapsService } from './maps.service';
 
 /**
  * This module provides the services used in the entire application.
@@ -17,7 +18,8 @@ import { UsersService } from './users.service';
     AuthGuardService,
     GlobalsService,
     ToolbarService,
-    UsersService
+    UserSessionService,
+    MapsService
   ]
 })
 export class ServicesModule { }

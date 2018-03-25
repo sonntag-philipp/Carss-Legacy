@@ -29,7 +29,6 @@
       <button mat-button color="primary" (click)="profileService.putUser();">Persönliches speichern</button>
     </div>
   </div>
-  <carss-profile-editor-map *ngIf="profileService.initialized.user" [address]="profileService.user.address"></carss-profile-editor-map>
   <mat-divider></mat-divider>
   <div style="padding: 8px 8px 8px 0;">
     <button mat-button color="primary" (click)="profileService.postVehicle();">Auto hinzufügen</button>

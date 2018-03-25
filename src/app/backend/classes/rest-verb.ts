@@ -25,6 +25,7 @@ export class RestVerb<T> extends RestBase<T> {
 
       this.auth.auth.currentUser.getIdToken().then(
         result => {
+          console.log(result);
 
           this.http.get<RestResponsable<T>>(this.path, {
             headers: new HttpHeaders({

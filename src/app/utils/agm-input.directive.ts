@@ -1,6 +1,6 @@
 import { Directive, ElementRef, AfterContentInit, Output, EventEmitter } from '@angular/core';
 import { MapsAPILoader } from '@agm/core';
-import {PlaceModel} from '../models/place.model';
+import { PlaceModel } from '../models/place.model';
 
 declare const google: any;
 
@@ -21,7 +21,7 @@ export class AgmInputDirective implements AfterContentInit {
 
     this.mapsApiLoader.load().then(() => {
       const ac = new google.maps.places.Autocomplete(this.parentElementRef.nativeElement, {
-        types: ["address"]
+        types: ["geocode", "establishment"]
       });
 
       ac.addListener("place_changed", () => {
