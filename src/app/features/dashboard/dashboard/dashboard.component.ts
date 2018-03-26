@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.toolbarService.title = 'Dashboard';
+    this.toolbarService.hidden = true;
   }
 
 }

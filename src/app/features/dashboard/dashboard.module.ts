@@ -30,7 +30,6 @@ import { DashboardSettingsSecurityComponent} from './dashboard-settings/dashboar
 import { DashboardRoutingModule} from './dashboard-routing.module';
 import { DashboardSettingsAccountsComponent } from './dashboard-settings/dashboard-settings-accounts/dashboard-settings-accounts.component';
 import { FormsModule} from '@angular/forms';
-import { AgmCoreModule} from '@agm/core';
 import { DashboardIndexDriveComponent } from './dashboard-index/dashboard-index-drive/dashboard-index-drive.component';
 import { MatMomentDateModule} from '@angular/material-moment-adapter';
 import { MatTimeControlModule } from '../../modules/mat-time-control/mat-time-control.module';

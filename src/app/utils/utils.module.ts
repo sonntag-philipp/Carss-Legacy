@@ -10,8 +10,6 @@ import {
   MatTooltipModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FooterComponent } from './footer/footer.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
 import { DescriptionContainerComponent } from './description-container/description-container.component';
 import { ImageContainerComponent } from './image-container/image-container.component';
 import { TagContainerComponent } from './tag-container/tag-container.component';
@@ -50,8 +48,6 @@ import { AgmPlaceMapPresenterComponent } from './agm-place-map-presenter/agm-pla
     InfoDialogComponent,
     AgmDirectionsDirective,
     AgmInputDirective,
-    FooterComponent,
-    ToolbarComponent,
     DescriptionContainerComponent,
     ImageContainerComponent,
     TagContainerComponent,
@@ -68,8 +64,6 @@ import { AgmPlaceMapPresenterComponent } from './agm-place-map-presenter/agm-pla
     InfoDialogComponent,
     AgmDirectionsDirective,
     AgmInputDirective,
-    FooterComponent,
-    ToolbarComponent,
     DescriptionContainerComponent,
     ImageContainerComponent,
     TagContainerComponent,

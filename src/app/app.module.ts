@@ -17,6 +17,7 @@ import { AngularFireModule } from 'angularfire2';
 import { MatButtonModule, MatCardModule, MatDividerModule, MatInputModule, MatSnackBarModule, MatToolbarModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 import { BackendModule } from './backend/backend.module';
+import { FrameModule } from './features/frame/frame.module';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { BackendModule } from './backend/backend.module';
     ServicesModule,
     UtilsModule,
     MatButtonModule,
-    BackendModule
+    BackendModule,
+    FrameModule
   ],
   declarations: [
     AppComponent,

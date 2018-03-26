@@ -1,0 +1,49 @@
+.carss-toolbar {
+  height: 54px;
+  box-shadow: 0 0 4px rgba(0,0,0,.14), 0 4px 8px rgba(0,0,0,.28);
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.carss-toolbar .title {
+  color: white;
+  text-decoration: none;
+}
+
+.carss-toolbar .home-btn {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 16px 0 0;
+}
+
+.carss-toolbar .search-container {
+  width: 100%;
+  background-color: #5566c3;
+  padding: 4px;
+  border-radius: 2px;
+}
+
+.carss-toolbar .search-container:hover {
+  background-color: #6877ca;
+}
+
+.carss-toolbar .search-input {
+  font-weight: normal;
+  font-size: 15pt;
+  width: 100%;
+  border: none;
+  background-color: rgba(0,0,0,0);
+  outline: none;
+  color: white;
+}
+
+.carss-toolbar .search-input::placeholder {
+  color: #cccccc;
+}
+
+.carss-toolbar .search-icon {
+  user-select: none;
+  font-size: 20pt;
+  padding: 0 16px 0 16px;
+}
