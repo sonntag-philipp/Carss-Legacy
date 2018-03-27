@@ -1,15 +1,23 @@
-<div fxLayout="row" fxLayoutAlign="center center" style="padding: 16px; height: 80vh;">
-  <div fxFlex="20">
-    <mat-card style="padding: 0;">
+<div fxLayout="column" fxLayoutAlign="center center">
+  <h1 class="title">Car Sharing Service</h1>
+  <div>
+    <h2 class="subtitle">- Berufsbildende Schulen Papenburg -</h2>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center">
+    <mat-card fxFlex="60" style="padding: 0;">
 
       <div class="card-subcontainer" style="font-size: 12pt;">
-        <h4 class="card-subcontainer-title">Anmeldung per E-Mail:</h4>
+        <h4 class="card-subcontainer-title">Anmeldung</h4>
         <mat-form-field style="width: 100%;">
-          <input matInput placeholder="E-Mail" type="text">
+          <input disabled matInput placeholder="E-Mail" type="text">
         </mat-form-field>
         <mat-form-field style="width: 100%;">
-          <input matInput placeholder="Passwort" type="password">
+          <input disabled matInput placeholder="Passwort" type="password">
         </mat-form-field>
+      </div>
+      <div style="padding: 0 16px 8px 16px;">
+        <button disabled mat-button fxFlex="50" color="primary" style="margin-right: 4px;">Anmelden</button>
+        <button disabled mat-button fxFlex="50" color="accent" style="margin-left: 4px;">Registrieren</button>
       </div>
       <mat-divider></mat-divider>
       <div class="card-subcontainer">

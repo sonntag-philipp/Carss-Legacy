@@ -3,7 +3,7 @@ import { RideModel } from '../../../../models/ride.model';
 import { BackendService } from '../../../../backend/backend.service';
 import { TagModel } from '../../../../models/tag.model';
 import { PlaceModel } from '../../../../models/place.model';
-import { UserSessionService } from '../../../../services/user-session.service';
+import { SessionService } from '../../../../services/session.service';
 import { MatSelect } from '@angular/material';
 
 @Component({
@@ -40,7 +40,7 @@ export class DashboardIndexDriveComponent implements OnInit {
 
   constructor(
     private backend: BackendService,
-    private userSession: UserSessionService
+    private userSession: SessionService
   ) { }
 
   public ngOnInit() { }

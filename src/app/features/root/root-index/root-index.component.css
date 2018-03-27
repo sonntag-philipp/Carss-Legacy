@@ -1,0 +1,11 @@
+.title {
+  font-size: 45pt;
+  font-weight: lighter;
+  margin-bottom: 0px;
+}
+
+.subtitle {
+  font-size: 17pt;
+  font-weight: lighter;
+  color: gray;
+}

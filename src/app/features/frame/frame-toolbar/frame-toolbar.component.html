@@ -1,11 +1,11 @@
-<mat-toolbar color="primary" class="carss-toolbar">
-  <div fxFlex="50" fxLayoutAlign="start center">
-    <button mat-icon-button class="home-btn">
+<mat-toolbar *ngIf="!service.hidden" color="primary" class="carss-toolbar">
+  <div fxFlex="50" fxLayoutAlign="start center" >
+    <button mat-icon-button [routerLink]="['/dashboard']" class="home-btn">
       <mat-icon>
         home
       </mat-icon>
     </button>
-    <span class="title">Dashboard</span>
+    <span class="title" [routerLink]="['/dashboard']">Dashboard</span>
   </div>
   <div fxFlex="50">
     <div class="search-container" fxLayoutAlign="start center">
@@ -16,6 +16,11 @@
     </div>
   </div>
   <div fxFlex="50" fxLayoutAlign="end center">
+    <button mat-icon-button [routerLink]="['/profile', session.user?.id]">
+      <mat-icon>
+        account_circle
+      </mat-icon>
+    </button>
   </div>
 </mat-toolbar>
 

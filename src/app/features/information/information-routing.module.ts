@@ -4,6 +4,7 @@ import {InformationComponent} from './information/information.component';
 import {InformationConditionsComponent} from './information-conditions/information-conditions.component';
 import {InformationContactComponent} from './information-contact/information-contact.component';
 import {InformationSecurityComponent} from './information-security/information-security.component';
+import { InformationFaqComponent } from './information-faq/information-faq.component';
 
 const appRoutes: Routes = [
   {
@@ -21,6 +22,10 @@ const appRoutes: Routes = [
       {
         path: "security",
         component: InformationSecurityComponent
+      },
+      {
+        path: "faq",
+        component: InformationFaqComponent
       }
     ]
   }

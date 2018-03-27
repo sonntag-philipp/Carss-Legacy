@@ -10,6 +10,8 @@
 .carss-toolbar .title {
   color: white;
   text-decoration: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .carss-toolbar .home-btn {

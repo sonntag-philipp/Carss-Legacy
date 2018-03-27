@@ -2,19 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './utils/error/error.component';
 import { AuthGuardService } from './services/auth-guard.service';
-import { IndexComponent } from './index/index.component';
-import { LoginComponent } from './login/login.component';
 
 // Lazy Loading the modules.
 
 const appRoutes: Routes = [
   {
     path: "",
-    component: IndexComponent
-  },
-  {
-    path: "login",
-    component: LoginComponent
+    loadChildren: "./features/root/root.module#RootModule"
   },
   {
     path: "dashboard",

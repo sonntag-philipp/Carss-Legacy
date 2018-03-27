@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ToolbarService } from '../../../services/toolbar.service';
+import { SessionService } from '../../../services/session.service';
 
 @Component({
   selector: 'carss-frame-toolbar',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrameToolbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public service: ToolbarService,
+    public session: SessionService
+  ) { }
 
   ngOnInit() {
   }
