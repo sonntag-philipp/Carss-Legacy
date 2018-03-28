@@ -30,7 +30,7 @@ export class ProfileService {
   private _userTags: TagModel[];
 
 
-  public vehicles: VehicleModel[];
+  public vehicles: VehicleModel[] = [];
 
   /**
    * Loads the profile data into the profile object of the profile service.

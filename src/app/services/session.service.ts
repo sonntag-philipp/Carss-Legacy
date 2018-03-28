@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { UserModel } from '../models/user.model';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { BackendService } from '../backend/backend.service';
-import { MatDialog } from '@angular/material';
-import { InfoDialogComponent } from '../utils/info-dialog/info-dialog.component';
 import { Router } from '@angular/router';
 
 @Injectable()

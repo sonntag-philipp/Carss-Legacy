@@ -3,51 +3,33 @@
     <span>Fahren</span>
   </mat-toolbar>
   <div class="card-subcontainer">
-    <div fxLayout="row">
-      <mat-form-field fxFlex="49">
-        <mat-select #origin [(value)]="originSelect" placeholder="Startpunkt" (selectionChange)="routeChanged($event);">
-          <mat-option [value]="userSession.user.address">
-            Meine Adresse
-          </mat-option>
-          <mat-option value="ChIJG0-toC-yt0cRxAXMiEYhyng">
-            BBS Papenburg
-          </mat-option>
-          <mat-option [value]="newAddress">
-            Neue Adresse...
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <div fxLayoutAlign="center center">
-        <mat-icon color="accent" style="padding: 4px;">arrow_forward</mat-icon>
+    <div style="padding-bottom: 24px;">
+      <carss-choose-map #map (placeIdChange)="placeChanged($event);" placeId="ChIJG0-toC-yt0cRxAXMiEYhyng"></carss-choose-map>
+      <div style="padding-top: 8px;" fxLayout="row" fxLayoutAlign="start center">
+        <p fxFlex="initial">Der ausgewählte Punkt ist mein &nbsp;</p>
+        <mat-form-field fxFlex="initial">
+          <mat-select (valueChange)="directionChange($event);" [value]="destination">
+            <mat-option value="destination">
+              Zielpunkt
+            </mat-option>
+            <mat-option value="origin">
+              Startpunkt
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
-      <mat-form-field fxFlex="49">
-      <mat-select #destination [(value)]="destinationSelect" placeholder="Ziel" (selectionChange)="routeChanged($event);">
-        <mat-option value="userAddress">
-          Meine Adresse
-        </mat-option>
-        <mat-option value="schoolAddress">
-          BBS Papenburg
-        </mat-option>
-        <mat-option value="newAddress">
-          Neue Adresse...
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    </div>
-    <div style="padding-bottom: 24px;" *ngIf="(destination.value === 'newAddress' || origin.value === 'newAddress')">
-      <carss-choose-map placeId="ChIJG0-toC-yt0cRxAXMiEYhyng"></carss-choose-map>
       <mat-divider style="margin-top: 16px;"></mat-divider>
     </div>
     <div>
       <div fxLayout="row">
         <mat-form-field style="width: 100%;">
-          <textarea matInput placeholder="Beschreibung" rows="5"></textarea>
+          <textarea maxlength="512" [(ngModel)]="ride.description" matInput placeholder="Beschreibung" rows="5"></textarea>
         </mat-form-field>
       </div>
     </div>
   </div>
   <div style="padding: 8px 16px 8px 16px;">
-    <carss-tag-container [offline]="true" [(tags)]="tags"  type="rides"></carss-tag-container>
+    <carss-tag-container [offline]="true" [(tags)]="tags" type="rides"></carss-tag-container>
   </div>
   <mat-divider></mat-divider>
   <div style="padding: 8px 0 8px 8px;">

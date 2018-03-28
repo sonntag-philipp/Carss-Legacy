@@ -4,7 +4,8 @@ import { BackendService } from '../../../../backend/backend.service';
 import { TagModel } from '../../../../models/tag.model';
 import { PlaceModel } from '../../../../models/place.model';
 import { SessionService } from '../../../../services/session.service';
-import { MatSelect } from '@angular/material';
+import { MatSelect, MatSnackBar } from '@angular/material';
+import { MapsService } from '../../../../services/maps.service';
 
 @Component({
   selector: 'carss-dashboard-index-drive',
@@ -13,56 +14,79 @@ import { MatSelect } from '@angular/material';
 })
 export class DashboardIndexDriveComponent implements OnInit {
 
+  private direction = "destination";
+
   private ride: RideModel = {
     origin: "",
     destination: "",
     description: ""
   };
+
   private tags: TagModel[] = [];
-  private newAddress: PlaceModel;
-
-
-  public place: PlaceModel = {
-    lat: 0,
-    lng: 0,
-    id: ""
-  };
-
-  @ViewChild('origin')
-  origin: MatSelect;
-
-  @ViewChild('destination')
-  destination: MatSelect;
-
-  public routeChanged(data: any): void {
-
-  }
 
   constructor(
     private backend: BackendService,
-    private userSession: SessionService
+    private userSession: SessionService,
+    private mapsService: MapsService,
+    private snackBar: MatSnackBar
   ) { }
 
   public ngOnInit() { }
 
-  public placeChanged(place: PlaceModel) {
-    if (this.destination.value === "newAddress") {
-      this.ride.destination = place.id;
+  public placeChanged(place: string) {
+    if (this.direction === "destination") {
+      this.ride.destination = place;
+      this.ride.origin = "ChIJG0-toC-yt0cRxAXMiEYhyng";
     }
-    if (this.origin.value === "newAddress") {
-      this.ride.origin = place.id;
+    if (this.direction === "origin") {
+      this.ride.origin = place;
+      this.ride.destination = "ChIJG0-toC-yt0cRxAXMiEYhyng";
     }
+
+
+    this.mapsService.getComponents(place).subscribe(
+      next => {
+        this.tags[1] = {name: next.addressComponents[0]};
+        if (next.addressComponents[1] !== undefined) {
+          this.tags[2] = {name: next.addressComponents[1]};
+        } else {
+          this.tags.splice(2, 1);
+        }
+      }
+    );
   }
 
-  public componentsChanged(components: string[]) {
-    this.tags = [];
-    for (const item of components) {
-      this.tags.push({name: item});
+  public directionChange(value: any) {
+    if (this.direction !== value) {
+      const dest = this.ride.destination;
+      this.ride.destination = this.ride.origin;
+      this.ride.origin = dest;
     }
+    if (this.direction === "destination") {
+      this.tags[0] = {name: "Richtung: Adresse"};
+    }
+    if (this.direction === "origin") {
+      this.tags[0] = {name: "Richtung: Schule"};
+    }
+
+    this.direction = value;
   }
 
   public postRide() {
-    console.log(this.ride);
+    if (this.ride.origin !== "" && this.ride.destination !== "") {
+      this.backend.chainNoun("rides").post(this.ride).subscribe(
+        next => {
+          this.snackBar.open("Die Fahrt wurde gespeichert.", "Okay", {duration: 2500});
+          console.log(next);
+        },
+        err => {
+          this.snackBar.open("Etwas stimmt mit den Server nicht, versuche es später nochmal.", "Okay", {duration: 2500});
+        }
+      );
+    } else {
+      this.snackBar.open("Bitte füll die Felder zuerst aus.", "Okay", {duration: 2500});
+    }
+
   }
 
 }

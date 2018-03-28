@@ -4,6 +4,8 @@ import { MatDialog, MatSnackBar } from '@angular/material';
 import { InputDialogComponent } from '../input-dialog/input-dialog.component';
 import { BackendService } from '../../backend/backend.service';
 import { Router } from '@angular/router';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { SessionService } from '../../services/session.service';
 
 @Component({
   selector: 'carss-tag-container',
@@ -24,7 +26,9 @@ export class TagContainerComponent implements OnInit {
     private dialog: MatDialog,
     private backend: BackendService,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private auth: AngularFireAuth,
+    public sessionService: SessionService
   ) { }
 
 
@@ -53,10 +57,19 @@ export class TagContainerComponent implements OnInit {
         }
 
         if (!this.offline) {
+          console.log(name);
           this.postTag(name);
         } else {
           this.tags.push({name: name});
         }
+      }
+    );
+  }
+
+  public deleteTag(id: number) {
+    this.backend.chainNoun(this.type).chainVerb(this.id).chainNoun<TagModel>("tags").chainVerb(id + "").delete().subscribe(
+      next => {
+        console.log(next);
       }
     );
   }

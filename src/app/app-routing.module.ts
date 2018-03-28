@@ -21,11 +21,6 @@ const appRoutes: Routes = [
     canActivateChild: [AuthGuardService]
   },
   {
-    path: "drive",
-    loadChildren: "./features/drive/drive.module#DriveModule",
-    canActivateChild: [AuthGuardService]
-  },
-  {
     path: "profile",
     loadChildren: "./features/profile/profile.module#ProfileModule",
     canActivateChild: [AuthGuardService]

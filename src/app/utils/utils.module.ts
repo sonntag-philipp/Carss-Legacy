@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ErrorComponent } from './error/error.component';
 import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 import { AgmDirectionsDirective } from './agm-directions.directive';
-import { AgmInputDirective } from './agm-input.directive';
 import { RouterModule } from '@angular/router';
 import {
   MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatIconModule, MatInputModule, MatMenuModule, MatToolbarModule,
@@ -15,7 +14,6 @@ import { ImageContainerComponent } from './image-container/image-container.compo
 import { TagContainerComponent } from './tag-container/tag-container.component';
 import { InputDialogComponent } from './input-dialog/input-dialog.component';
 import { AgmCoreModule } from '@agm/core';
-import { ChooseMapComponent } from './choose-map/choose-map.component';
 
 /**
  * The Utils module contains components and directives that can and should
@@ -43,12 +41,10 @@ import { ChooseMapComponent } from './choose-map/choose-map.component';
     ErrorComponent,
     InfoDialogComponent,
     AgmDirectionsDirective,
-    AgmInputDirective,
     DescriptionContainerComponent,
     ImageContainerComponent,
     TagContainerComponent,
-    InputDialogComponent,
-    ChooseMapComponent
+    InputDialogComponent
   ],
   entryComponents: [
     InputDialogComponent,
@@ -58,7 +54,6 @@ import { ChooseMapComponent } from './choose-map/choose-map.component';
     ErrorComponent,
     InfoDialogComponent,
     AgmDirectionsDirective,
-    AgmInputDirective,
     DescriptionContainerComponent,
     ImageContainerComponent,
     TagContainerComponent

@@ -77,4 +77,37 @@ export class RestBase<T> {
 
     });
   }
+
+  /**
+   * Posts a new item to the chained path.
+   * @param item Item that has to be posted.
+   * @returns {Observable<RestResponsable<T>>} Observable of an RestResponse<T>.
+   */
+  public delete(): Observable<RestResponsable<any>> {
+
+    return Observable.create((observer: Observer<RestResponsable<any>>) => {
+
+      this.auth.auth.currentUser.getIdToken().then(
+        result => {
+
+          this.http.delete<RestResponsable<any>>(this.path, {
+            headers: new HttpHeaders({
+              "Authorization": result
+            })
+          }).subscribe(
+            next => {
+              observer.next(next);
+              observer.complete();
+            },
+            err => {
+              observer.error(err);
+              observer.complete();
+            }
+          );
+
+        }
+      );
+
+    });
+  }
 }
