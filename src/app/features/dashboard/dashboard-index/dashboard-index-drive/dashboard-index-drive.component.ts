@@ -77,7 +77,15 @@ export class DashboardIndexDriveComponent implements OnInit {
       this.backend.chainNoun("rides").post(this.ride).subscribe(
         next => {
           this.snackBar.open("Die Fahrt wurde gespeichert.", "Okay", {duration: 2500});
-          console.log(next);
+
+          for (const item of this.tags) {
+            this.backend.chainNoun("rides").chainVerb(next.body.id + "").chainNoun("tags").post(item).subscribe(
+              next => {
+                console.log(next);
+              }
+            );
+          }
+
         },
         err => {
           this.snackBar.open("Etwas stimmt mit den Server nicht, versuche es später nochmal.", "Okay", {duration: 2500});

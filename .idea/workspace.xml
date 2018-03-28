@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01f8f422-b531-48fa-8b98-9917ba81dfff" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/backend/classes/rest-base.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/backend/classes/rest-base.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive-index/drive-index.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive-index/drive-index.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive-index/drive-index.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive-index/drive-index.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive/drive.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive/drive.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive/drive.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/drive/drive/drive.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/profile/profile-presenter/profile-presenter.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/features/profile/profile-presenter/profile-presenter.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/features/profile/profile.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/features/profile/profile.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/session.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/session.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/agm-input.directive.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/choose-map/choose-map.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/choose-map/choose-map.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/choose-map/choose-map.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/choose-map/choose-map.component.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/utils/utils.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/utils/utils.module.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -40,43 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="dashboard-index-drive.component.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="86" column="54" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard-index.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index.component.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard-index-drive.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="10" column="84" selection-start-line="10" selection-start-column="84" selection-end-line="10" selection-end-column="84" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#mat-card#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ride.model.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/models/ride.model.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -156,7 +96,6 @@
         <option value="$PROJECT_DIR$/src/app/services/session.service.ts" />
         <option value="$PROJECT_DIR$/src/app/backend/classes/rest-base.ts" />
         <option value="$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.html" />
         <option value="$PROJECT_DIR$/src/app/features/profile/profile-presenter/profile-presenter.component.html" />
         <option value="$PROJECT_DIR$/src/app/features/profile/profile.service.ts" />
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
@@ -164,6 +103,7 @@
         <option value="$PROJECT_DIR$/src/app/models/ride.model.ts" />
         <option value="$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.html" />
         <option value="$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.html" />
       </list>
     </option>
   </component>
@@ -198,7 +138,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -222,6 +161,21 @@
               <item name="Carss" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Carss" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Carss" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Carss" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Carss" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -231,33 +185,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="features" type="462c0819:PsiDirectoryNode" />
               <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Carss" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Carss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard-index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Carss" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Carss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard-index" type="462c0819:PsiDirectoryNode" />
-              <item name="dashboard-index-drive" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Carss" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Carss" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="features" type="462c0819:PsiDirectoryNode" />
-              <item name="maps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Carss" type="b2602c69:ProjectViewProjectNode" />
@@ -277,6 +204,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -465,11 +393,12 @@
       <workItem from="1522244634068" duration="2188000" />
       <workItem from="1522246875582" duration="5273000" />
       <workItem from="1522259083884" duration="2061000" />
+      <workItem from="1522261249108" duration="1547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="584987000" />
+    <option name="totallyTimeSpent" value="586534000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -489,8 +418,8 @@
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50208336" side_tool="true" weight="0.32873806" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49791667" weight="0.328125" />
-      <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32916668" />
+      <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.29227558" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -517,6 +446,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/app/models/ride.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -752,13 +688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -806,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/models/ride.model.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -823,15 +745,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/app/models/ride.model.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/utils/tag-container/tag-container.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/features/dashboard/dashboard-index/dashboard-index-drive/dashboard-index-drive.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="86" column="54" selection-start-line="86" selection-start-column="54" selection-end-line="86" selection-end-column="54" />
+        <state relative-caret-position="1241">
+          <caret line="80" column="41" lean-forward="true" selection-start-line="80" selection-start-column="41" selection-end-line="80" selection-end-column="41" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/backend/interfaces/rest-responsable.ts">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
