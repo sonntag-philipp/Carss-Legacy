@@ -21,6 +21,14 @@ export class RootIndexComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const subscribtion = this.auth.authState.subscribe(
+      next => {
+        if (next !== undefined) {
+          subscribtion.unsubscribe();
+          this.router.navigate(['/dashboard']);
+        }
+      }
+    );
   }
 
   public btnGoogle() {

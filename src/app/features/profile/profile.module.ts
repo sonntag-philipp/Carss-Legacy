@@ -19,6 +19,8 @@ import { ProfileEditorComponent } from './profile-editor/profile-editor.componen
 import { ProfileEditorCarComponent } from './profile-editor/profile-editor-car/profile-editor-car.component';
 import { UtilsModule } from '../../utils/utils.module';
 import { BackendModule } from '../../backend/backend.module';
+import { FrameModule } from '../frame/frame.module';
+import { MapsModule } from '../maps/maps.module';
 
 @NgModule({
   imports: [
@@ -45,7 +47,9 @@ import { BackendModule } from '../../backend/backend.module';
     ProfileRoutingModule,
     FlexLayoutModule,
     UtilsModule,
-    BackendModule
+    BackendModule,
+    FrameModule,
+    MapsModule
   ],
   providers: [
     ProfileService

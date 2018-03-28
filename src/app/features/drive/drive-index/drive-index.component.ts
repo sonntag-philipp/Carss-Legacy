@@ -1,8 +1,7 @@
 import { Component, NgModule, NgZone, OnInit, ViewChild, ElementRef, Directive, Input  } from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { BrowserModule } from "@angular/platform-browser";
-import { AgmCoreModule, MapsAPILoader, GoogleMapsAPIWrapper } from "@agm/core";
-import {AgmDirectionsDirective} from '../../../utils/agm-directions.directive';
+import { MapsAPILoader, GoogleMapsAPIWrapper } from "@agm/core";
+import { AgmDirectionsDirective } from '../../../utils/agm-directions.directive';
 
 declare var google: any;
 declare var jQuery: any;

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DashboardNewUserComponent } from './dashboard-new-user.component';
+import { ChooseMapComponent } from './choose-map.component';
 
-describe('DashboardNewUserComponent', () => {
-  let component: DashboardNewUserComponent;
-  let fixture: ComponentFixture<DashboardNewUserComponent>;
+describe('ChooseMapComponent', () => {
+  let component: ChooseMapComponent;
+  let fixture: ComponentFixture<ChooseMapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DashboardNewUserComponent ]
+      declarations: [ ChooseMapComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DashboardNewUserComponent);
+    fixture = TestBed.createComponent(ChooseMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

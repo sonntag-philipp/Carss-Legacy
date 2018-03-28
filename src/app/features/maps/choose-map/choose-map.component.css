@@ -1,0 +1,15 @@
+.search-card {
+  padding: 4px;
+  top: 8px;
+  left: 8px;
+  margin-right: 8px;
+  position: absolute;
+  z-index: 5;
+  width: 65%;
+}
+
+.search-card .input{
+  border: none;
+  width: 100%;
+  outline: none;
+}

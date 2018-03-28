@@ -35,14 +35,7 @@
     </mat-form-field>
     </div>
     <div style="padding-bottom: 24px;" *ngIf="(destination.value === 'newAddress' || origin.value === 'newAddress')">
-
-      <agm-place-map
-        [latitude]="53.0726142"
-        [longitude]="7.4232678"
-        (componentsChange)="componentsChanged($event);"
-        (placeChange)="placeChanged($event);"
-        style="height: 30vh;">
-      </agm-place-map>
+      <carss-choose-map placeId="ChIJG0-toC-yt0cRxAXMiEYhyng"></carss-choose-map>
       <mat-divider style="margin-top: 16px;"></mat-divider>
     </div>
     <div>

@@ -20,7 +20,6 @@
     <carss-tag-container [tags]="profileService.userTags" [id]="profileService.user.address" type="users"></carss-tag-container>
   </div>
   <div class="card-subcontainer">
-    <agm-place-map-presenter [placeId]="profileService.user.address"></agm-place-map-presenter>
   </div>
   <div *ngIf="profileService.initialized.vehicles">
     <carss-profile-presenter-car [vehicle]="item" *ngFor="let item of profileService.vehicles"></carss-profile-presenter-car>

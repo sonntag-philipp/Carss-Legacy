@@ -3,7 +3,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {DashboardIndexComponent} from './dashboard-index/dashboard-index.component';
 import {DashboardSettingsComponent} from './dashboard-settings/dashboard-settings.component';
-import { DashboardNewUserComponent } from './dashboard-new-user/dashboard-new-user.component';
 
 const appRoutes: Routes = [
   {
@@ -17,10 +16,6 @@ const appRoutes: Routes = [
       {
         path: "settings",
         component: DashboardSettingsComponent
-      },
-      {
-        path: "new-user",
-        component: DashboardNewUserComponent
       }
     ]
   }

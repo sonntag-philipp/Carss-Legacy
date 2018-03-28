@@ -19,6 +19,7 @@ import {
 } from '@angular/material';
 import { BackendModule } from './backend/backend.module';
 import { FrameModule } from './features/frame/frame.module';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   imports: [
@@ -42,7 +43,11 @@ import { FrameModule } from './features/frame/frame.module';
     UtilsModule,
     MatButtonModule,
     BackendModule,
-    FrameModule
+    FrameModule,
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
+      libraries: ["places"]
+    })
   ],
   declarations: [
     AppComponent

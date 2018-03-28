@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../profile.service';
 import { VehicleModel } from '../../../models/vehicle.model';
+import { MapsService } from '../../../services/maps.service';
 
 @Component({
   selector: 'carss-profile-editor',
@@ -19,7 +20,8 @@ export class ProfileEditorComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    public profileService: ProfileService
+    public profileService: ProfileService,
+    private mapsService: MapsService
   ) { }
 
   ngOnInit() {
@@ -27,6 +29,16 @@ export class ProfileEditorComponent implements OnInit {
 
     this.profileService.getProfile(this.uid);
     this.vehicles = this.profileService.vehicles;
+  }
+
+  public addressChange(data: string) {
+    this.mapsService.getComponents(data).subscribe(
+      next => {
+        for (const item of next.addressComponents) {
+          this.profileService.userTags.push({name: item});
+        }
+      }
+    );
   }
 
 }

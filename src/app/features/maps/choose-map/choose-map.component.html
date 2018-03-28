@@ -1,0 +1,14 @@
+<div *ngIf="initialized" style="position: relative;">
+  <mat-card class="search-card" style="">
+    <input class="input" type="text" [value]="address.formattedAddress" carssMapsInput (placeChange)="inputChanged($event);">
+  </mat-card>
+  <agm-map #map [latitude]="marker.lat" [longitude]="marker.lng" [zoom]="14" style="height: 30vh;">
+    <agm-marker
+      [markerDraggable]="true"
+      [latitude]="marker.lat"
+      [longitude]="marker.lng"
+      (dragEnd)="dragEnd($event);">
+    </agm-marker>
+  </agm-map>
+</div>
+

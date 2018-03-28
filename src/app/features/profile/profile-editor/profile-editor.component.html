@@ -29,6 +29,9 @@
       <button mat-button color="primary" (click)="profileService.putUser();">Persönliches speichern</button>
     </div>
   </div>
+  <div style="padding: 8px 16px 8px 16px;">
+    <carss-choose-map [placeId]="profileService.user.address" (placeIdChange)="addressChange($event);"></carss-choose-map>
+  </div>
   <mat-divider></mat-divider>
   <div style="padding: 8px 8px 8px 0;">
     <button mat-button color="primary" (click)="profileService.postVehicle();">Auto hinzufügen</button>

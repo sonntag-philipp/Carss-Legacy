@@ -14,9 +14,8 @@ import { DescriptionContainerComponent } from './description-container/descripti
 import { ImageContainerComponent } from './image-container/image-container.component';
 import { TagContainerComponent } from './tag-container/tag-container.component';
 import { InputDialogComponent } from './input-dialog/input-dialog.component';
-import { AgmPlaceMapComponent } from './agm-place-map/agm-place-map.component';
 import { AgmCoreModule } from '@agm/core';
-import { AgmPlaceMapPresenterComponent } from './agm-place-map-presenter/agm-place-map-presenter.component';
+import { ChooseMapComponent } from './choose-map/choose-map.component';
 
 /**
  * The Utils module contains components and directives that can and should
@@ -38,10 +37,7 @@ import { AgmPlaceMapPresenterComponent } from './agm-place-map-presenter/agm-pla
     MatTooltipModule,
     MatCardModule,
     MatInputModule,
-    AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
-      libraries: ["places"]
-    }),
+    AgmCoreModule
   ],
   declarations: [
     ErrorComponent,
@@ -52,8 +48,7 @@ import { AgmPlaceMapPresenterComponent } from './agm-place-map-presenter/agm-pla
     ImageContainerComponent,
     TagContainerComponent,
     InputDialogComponent,
-    AgmPlaceMapComponent,
-    AgmPlaceMapPresenterComponent
+    ChooseMapComponent
   ],
   entryComponents: [
     InputDialogComponent,
@@ -66,9 +61,7 @@ import { AgmPlaceMapPresenterComponent } from './agm-place-map-presenter/agm-pla
     AgmInputDirective,
     DescriptionContainerComponent,
     ImageContainerComponent,
-    TagContainerComponent,
-    AgmPlaceMapComponent,
-    AgmPlaceMapPresenterComponent
+    TagContainerComponent
   ]
 })
 export class UtilsModule { }

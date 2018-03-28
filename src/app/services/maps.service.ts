@@ -59,8 +59,7 @@ export class MapsService {
           }, (results, status) => {
             observer.next({
               lat: results[0].geometry.location.lat(),
-              lng: results[0].geometry.location.lng(),
-              id: id
+              lng: results[0].geometry.location.lng()
             });
             observer.complete();
           });
@@ -79,17 +78,16 @@ export class MapsService {
    * @param {PlaceModel} place
    * @returns {Observable<PlaceModel>}
    */
-  public getComponents(place: PlaceModel): Observable<PlaceModel> {
-    return Observable.create((observer: Observer<PlaceModel>) => {
+  public getComponents(placeId: string): Observable<any> {
+    return Observable.create((observer: Observer<any>) => {
 
       this.mapsApiLoader.load().then(
         () => {
           const geocoder = new google.maps.Geocoder();
           geocoder.geocode({
-            placeId: place.id
+            placeId: placeId
           }, (results, status) => {
-
-            place.formattedAddress = results[0].formatted_address;
+            const returnVals: any = {};
 
             const components = [];
 
@@ -103,13 +101,10 @@ export class MapsService {
               }
             }
 
-            console.log(results);
+            returnVals.formattedAddress = results[0].formatted_address;
+            returnVals.addressComponents = components;
 
-            place.addressComponents = components;
-            place.lat = results[0].geometry.location.lat();
-            place.lng = results[0].geometry.location.lng();
-
-            observer.next(place);
+            observer.next(returnVals);
             observer.complete();
           });
         }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AgmPlaceMapComponent } from './agm-place-map.component';
+import { RouteMapComponent } from './route-map.component';
 
-describe('AgmPlaceMapComponent', () => {
-  let component: AgmPlaceMapComponent;
-  let fixture: ComponentFixture<AgmPlaceMapComponent>;
+describe('RouteMapComponent', () => {
+  let component: RouteMapComponent;
+  let fixture: ComponentFixture<RouteMapComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AgmPlaceMapComponent ]
+      declarations: [ RouteMapComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AgmPlaceMapComponent);
+    fixture = TestBed.createComponent(RouteMapComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

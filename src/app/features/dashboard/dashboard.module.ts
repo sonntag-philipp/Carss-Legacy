@@ -33,9 +33,10 @@ import { FormsModule} from '@angular/forms';
 import { DashboardIndexDriveComponent } from './dashboard-index/dashboard-index-drive/dashboard-index-drive.component';
 import { MatMomentDateModule} from '@angular/material-moment-adapter';
 import { MatTimeControlModule } from '../../modules/mat-time-control/mat-time-control.module';
-import { DashboardNewUserComponent } from './dashboard-new-user/dashboard-new-user.component';
 import { BackendModule } from '../../backend/backend.module';
 import { UtilsModule } from '../../utils/utils.module';
+import { FrameModule } from '../frame/frame.module';
+import { MapsModule } from '../maps/maps.module';
 
 @NgModule({
   imports: [
@@ -72,7 +73,9 @@ import { UtilsModule } from '../../utils/utils.module';
     DashboardRoutingModule,
     FlexLayoutModule,
     BackendModule,
-    UtilsModule
+    UtilsModule,
+    FrameModule,
+    MapsModule
   ],
   declarations: [
     DashboardIndexComponent,
@@ -80,8 +83,7 @@ import { UtilsModule } from '../../utils/utils.module';
     DashboardSettingsComponent,
     DashboardSettingsSecurityComponent,
     DashboardSettingsAccountsComponent,
-    DashboardIndexDriveComponent,
-    DashboardNewUserComponent
+    DashboardIndexDriveComponent
   ],
   providers: [
     {
