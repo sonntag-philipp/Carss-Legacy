@@ -1,4 +1,4 @@
-<div *ngIf="initialized" style="position: relative;">
+<div *ngIf="initialized && !disabled" style="position: relative;">
   <mat-card class="search-card" style="">
     <input class="input" type="text" [value]="address.formattedAddress" carssMapsInput (placeChange)="inputChanged($event);">
   </mat-card>
@@ -11,4 +11,16 @@
     </agm-marker>
   </agm-map>
 </div>
-
+<div *ngIf="initialized && disabled" style="position: relative;">
+  <agm-map #map [latitude]="marker.lat" [longitude]="marker.lng" [zoom]="14" style="height: 30vh;">
+    <agm-marker
+      [markerDraggable]="false"
+      [latitude]="marker.lat"
+      [longitude]="marker.lng"
+      (dragEnd)="dragEnd($event);">
+      <agm-info-window [isOpen]="true">
+        {{ formattedAddress }}
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

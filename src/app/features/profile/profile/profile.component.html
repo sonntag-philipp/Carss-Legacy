@@ -1,7 +1,13 @@
+<carss-frame-toolbar></carss-frame-toolbar>
 <div fxLayout="column">
-  <carss-frame-toolbar></carss-frame-toolbar>
   <div fxFlex="row" fxLayoutAlign="center">
-    <div fxFlex="55" fxFlex.sm="80" fxFlex.md="70" fxFlex.xs="96">
+    <!-- Insert retarded genius meme above -->
+    <div
+      fxFlex.xs="{{ env.fxFlex.xs }}"
+      fxFlex.sm="{{ env.fxFlex.sm }}"
+      fxFlex.md="{{ env.fxFlex.md }}"
+      fxFlex.lg="{{ env.fxFlex.lg }}"
+      fxFlex.xl="{{ env.fxFlex.xl }}">
       <router-outlet></router-outlet>
     </div>
   </div>

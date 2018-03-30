@@ -7,16 +7,6 @@ import { Router } from '@angular/router';
 @Injectable()
 export class SessionService {
 
-  public get initialized(): boolean {
-    return this._initialized;
-  }
-  private _initialized = false;
-
-  public get failed(): boolean {
-    return this._failed;
-  }
-  private _failed = false;
-
   public get user(): UserModel {
     return this._user;
   }
@@ -31,7 +21,6 @@ export class SessionService {
       next => {
 
         if (next === null) {
-          this._initialized = true;
           this.router.navigate(["/"]);
           return;
         }
@@ -39,15 +28,14 @@ export class SessionService {
         this.backend.chainNoun("users").chainVerb<UserModel>(next.uid).get().subscribe(
           next => {
             this._user = next;
-            this._initialized = true;
           },
           err => {
-            this._failed = true;
+            console.error(err);
           }
         );
       },
       err => {
-        this._failed = true;
+        console.error(err);
       }
     );
 

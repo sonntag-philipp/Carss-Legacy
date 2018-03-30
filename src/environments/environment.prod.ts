@@ -10,5 +10,12 @@ export const environment = {
   },
   carssStore: {
     address: "https://api.phildev.me"
+  },
+  fxFlex: {
+    xs: 96,
+    sm: 80,
+    md: 70,
+    lg: 60,
+    xl: 50
   }
 };

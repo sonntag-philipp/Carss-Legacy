@@ -12,11 +12,7 @@
   text-decoration: none;
   outline: none;
   cursor: pointer;
-}
-
-.carss-toolbar .home-btn {
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 16px 0 0;
+  padding-right: 16px;
 }
 
 .carss-toolbar .search-container {

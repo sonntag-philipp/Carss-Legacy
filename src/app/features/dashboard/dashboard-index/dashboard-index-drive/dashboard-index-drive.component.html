@@ -4,8 +4,7 @@
   </mat-toolbar>
   <div class="card-subcontainer">
     <div style="padding-bottom: 24px;">
-      <carss-choose-map #map (placeIdChange)="placeChanged($event);" placeId="ChIJG0-toC-yt0cRxAXMiEYhyng"></carss-choose-map>
-      <div style="padding-top: 8px;" fxLayout="row" fxLayoutAlign="start center">
+      <div fxLayout="row" fxLayoutAlign="start center">
         <p fxFlex="initial">Der ausgewählte Punkt ist mein &nbsp;</p>
         <mat-form-field fxFlex="initial">
           <mat-select (valueChange)="directionChange($event);">
@@ -18,6 +17,7 @@
           </mat-select>
         </mat-form-field>
       </div>
+      <carss-choose-map #map (placeIdChange)="placeChanged($event);" placeId="ChIJG0-toC-yt0cRxAXMiEYhyng"></carss-choose-map>
       <mat-divider style="margin-top: 16px;"></mat-divider>
     </div>
     <div>

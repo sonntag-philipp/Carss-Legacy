@@ -29,7 +29,6 @@ export class ProfileService {
   }
   private _userTags: TagModel[];
 
-
   public vehicles: VehicleModel[] = [];
 
   /**

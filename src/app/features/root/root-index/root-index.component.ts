@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from '../../../models/user.model';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { BackendService } from '../../../backend/backend.service';
 import { MatSnackBar } from '@angular/material';
@@ -13,6 +12,9 @@ import * as firebase from 'firebase';
 })
 export class RootIndexComponent implements OnInit {
 
+  public initialized = false;
+  public loggedin = false;
+
   constructor(
     private auth: AngularFireAuth,
     private backend: BackendService,
@@ -24,9 +26,11 @@ export class RootIndexComponent implements OnInit {
     const subscribtion = this.auth.authState.subscribe(
       next => {
         if (next !== undefined) {
+          this.loggedin = true;
           subscribtion.unsubscribe();
           this.router.navigate(['/dashboard']);
         }
+        this.initialized = true;
       }
     );
   }

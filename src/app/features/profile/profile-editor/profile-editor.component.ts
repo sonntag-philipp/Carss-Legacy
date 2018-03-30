@@ -20,8 +20,7 @@ export class ProfileEditorComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    public profileService: ProfileService,
-    private mapsService: MapsService
+    public profileService: ProfileService
   ) { }
 
   ngOnInit() {
@@ -32,13 +31,7 @@ export class ProfileEditorComponent implements OnInit {
   }
 
   public addressChange(data: string) {
-    this.mapsService.getComponents(data).subscribe(
-      next => {
-        for (const item of next.addressComponents) {
-          this.profileService.userTags.push({name: item});
-        }
-      }
-    );
+    this.profileService.user.address = data;
   }
 
 }

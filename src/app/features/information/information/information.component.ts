@@ -6,7 +6,7 @@ import { environment } from '../../../../environments/environment';
 @Component({
   selector: 'app-information',
   templateUrl: './information.component.html',
-  styleUrls: ['./information.css']
+  styleUrls: ['./information.component.css']
 })
 export class InformationComponent implements OnInit {
 

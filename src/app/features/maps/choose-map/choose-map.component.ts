@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angu
 import { MapsService } from '../../../services/maps.service';
 import { PlaceModel } from '../../../models/place.model';
 import { AgmMap, LatLngLiteral } from '@agm/core';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'carss-choose-map',
@@ -10,6 +9,10 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./choose-map.component.css']
 })
 export class ChooseMapComponent implements OnInit {
+
+  @Input() disabled: boolean;
+
+  public formattedAddress: string;
 
   public initialized = false;
   public address: any = {
@@ -41,8 +44,18 @@ export class ChooseMapComponent implements OnInit {
           lat: next.lat,
           lng: next.lng
         };
-        this.initialized = true;
-        sub.unsubscribe();
+        if (this.disabled) {
+          const sub2 = this.service.getComponents(this.placeId).subscribe(
+            next => {
+              this.formattedAddress = next.formattedAddress;
+              this.initialized = true;
+              sub2.unsubscribe();
+            }
+          );
+        }else {
+          this.initialized = true;
+          sub.unsubscribe();
+        }
       }
     );
   }

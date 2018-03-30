@@ -1,5 +1,5 @@
-<mat-card style="padding: 0; margin-top: 24px; margin-bottom: 24px;">
-  <div *ngIf="profileService.initialized.user">
+<mat-card style="padding: 0; margin-top: 24px; margin-bottom: 24px;" *ngIf="profileService.initialized.user">
+  <div>
     <mat-toolbar class="profile-card-toolbar" color="primary">
       <span>{{ profileService.user?.name }} {{ profileService.user?.surname }}</span>
     </mat-toolbar>
@@ -26,7 +26,7 @@
       <carss-tag-container [tags]="profileService.userTags" [id]="profileService.user.id" type="users"></carss-tag-container>
     </div>
     <div style="padding: 8px 8px 8px 0;">
-      <button mat-button color="primary" (click)="profileService.putUser();">Persönliches speichern</button>
+      <button mat-button color="primary" (click)="profileService.putUser();">Speichern</button>
     </div>
   </div>
   <div style="padding: 8px 16px 8px 16px;">

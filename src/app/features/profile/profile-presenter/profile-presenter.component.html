@@ -19,6 +19,9 @@
   <div style="padding: 8px 16px 8px 16px;">
     <carss-tag-container [tags]="profileService.userTags" [id]="profileService.user.id" type="users"></carss-tag-container>
   </div>
+  <div style="padding: 8px 16px 8px 16px;">
+    <carss-choose-map [disabled]="true" [placeId]="profileService.user.address"></carss-choose-map>
+  </div>
   <div *ngIf="profileService.initialized.vehicles">
     <carss-profile-presenter-car [vehicle]="item" *ngFor="let item of profileService.vehicles"></carss-profile-presenter-car>
   </div>

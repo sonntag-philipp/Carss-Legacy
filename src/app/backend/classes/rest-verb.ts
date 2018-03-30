@@ -26,8 +26,6 @@ export class RestVerb<T> extends RestBase<T> {
       this.auth.auth.currentUser.getIdToken().then(
         result => {
 
-          console.log(result);
-
           this.http.get<RestResponsable<T>>(this.path, {
             headers: new HttpHeaders({
               "Authorization": result
@@ -36,8 +34,6 @@ export class RestVerb<T> extends RestBase<T> {
             next => {
 
               if (next.status !== 200) {
-                console.error("Error-Statuscode: " + next.status);
-                console.error("Error-Message: " + next.msg);
                 observer.error(next);
               } else {
                 observer.next(next.body);

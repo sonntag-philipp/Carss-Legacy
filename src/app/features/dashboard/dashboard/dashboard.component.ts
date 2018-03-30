@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ToolbarService } from '../../../services/toolbar.service';
 import { PlaceModel } from '../../../models/place.model';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'carss-dashboard',
@@ -8,6 +8,8 @@ import { PlaceModel } from '../../../models/place.model';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  public env = environment;
 
   public place: PlaceModel = {
     lat: 4,
