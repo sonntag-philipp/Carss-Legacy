@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
-import {Router} from '@angular/router';
-import {ToolbarService} from '../../../services/toolbar.service';
+import { Router } from '@angular/router';
+import { ToolbarService } from '../../../services/toolbar.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-information',
@@ -10,14 +10,15 @@ import {ToolbarService} from '../../../services/toolbar.service';
 })
 export class InformationComponent implements OnInit {
 
+  public env = environment;
+
   constructor(
-    public fireAuth: AngularFireAuth,
     public router: Router,
     private toolbarService: ToolbarService
   ) { }
 
   ngOnInit() {
-    this.toolbarService.title = "Informationen";
+    this.toolbarService.title = 'Informationen';
   }
 
 }

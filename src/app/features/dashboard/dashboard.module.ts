@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  MAT_DATE_LOCALE,
   MatButtonModule,
   MatCardModule,
   MatCheckboxModule,
@@ -32,7 +31,6 @@ import { DashboardSettingsAccountsComponent } from './dashboard-settings/dashboa
 import { FormsModule} from '@angular/forms';
 import { DashboardIndexDriveComponent } from './dashboard-index/dashboard-index-drive/dashboard-index-drive.component';
 import { MatMomentDateModule} from '@angular/material-moment-adapter';
-import { MatTimeControlModule } from '../../modules/mat-time-control/mat-time-control.module';
 import { BackendModule } from '../../backend/backend.module';
 import { UtilsModule } from '../../utils/utils.module';
 import { FrameModule } from '../frame/frame.module';
@@ -61,7 +59,6 @@ import { MapsModule } from '../maps/maps.module';
     MatDatepickerModule,
     MatMomentDateModule,
     MatTabsModule,
-    MatTimeControlModule,
 
     // AngularFire:
     AngularFireAuthModule,
@@ -84,12 +81,6 @@ import { MapsModule } from '../maps/maps.module';
     DashboardSettingsSecurityComponent,
     DashboardSettingsAccountsComponent,
     DashboardIndexDriveComponent
-  ],
-  providers: [
-    {
-      provide: MAT_DATE_LOCALE,
-      useValue: 'de',
-    }
   ],
   bootstrap: [
     DashboardComponent

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { PlaceModel } from '../models/place.model';
 import { Observer } from 'rxjs/Observer';
@@ -10,7 +10,8 @@ declare const google: any;
 export class MapsService {
 
   constructor(
-    private mapsApiLoader: MapsAPILoader
+    private mapsApiLoader: MapsAPILoader,
+    private ngZone: NgZone
   ) { }
 
   /**
@@ -22,24 +23,30 @@ export class MapsService {
   public getId(lat: number, lng: number): Observable<string> {
     return Observable.create((observer: Observer<string>) => {
 
-      this.mapsApiLoader.load().then(
-        () => {
-          const geocoder = new google.maps.Geocoder();
-          geocoder.geocode({
-            location: {
-              lat: lat,
-              lng: lng
-            }
-          }, (results, status) => {
-            observer.next(results[0].place_id);
-            observer.complete();
-          });
-        }
-      ).catch(
-        err => {
-          console.error("Error while loading Google Maps API!");
-        }
-      );
+      this.ngZone.runOutsideAngular(() => {
+
+        this.mapsApiLoader.load().then(
+          () => {
+
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+              location: {
+                lat: lat,
+                lng: lng
+              }
+            }, (results, status) => {
+              observer.next(results[0].place_id);
+              observer.complete();
+              this.ngZone.run(() => {});
+            });
+          }
+        ).catch(
+          err => {
+            console.error("Error while loading Google Maps API!");
+          }
+        );
+
+      });
     });
   }
 
@@ -51,25 +58,31 @@ export class MapsService {
   public getCoordinates(id: string) {
     return Observable.create((observer: Observer<PlaceModel>) => {
 
-      this.mapsApiLoader.load().then(
-        () => {
-          const geocoder = new google.maps.Geocoder();
-          geocoder.geocode({
-            placeId: id
-          }, (results, status) => {
-            observer.next({
-              lat: results[0].geometry.location.lat(),
-              lng: results[0].geometry.location.lng()
+      this.ngZone.runOutsideAngular(() => {
+
+        this.mapsApiLoader.load().then(
+          () => {
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+              placeId: id
+            }, (results, status) => {
+              observer.next({
+                lat: results[0].geometry.location.lat(),
+                lng: results[0].geometry.location.lng()
+              });
+              observer.complete();
+              this.ngZone.run(() => {});
             });
+          }
+        ).catch(
+          err => {
+            observer.error(err);
             observer.complete();
-          });
-        }
-      ).catch(
-        err => {
-          observer.error(err);
-          observer.complete();
-        }
-      );
+          }
+        );
+
+      });
+
     });
   }
 
@@ -81,39 +94,47 @@ export class MapsService {
   public getComponents(placeId: string): Observable<any> {
     return Observable.create((observer: Observer<any>) => {
 
-      this.mapsApiLoader.load().then(
-        () => {
-          const geocoder = new google.maps.Geocoder();
-          geocoder.geocode({
-            placeId: placeId
-          }, (results, status) => {
-            const returnVals: any = {};
+      this.ngZone.runOutsideAngular(() => {
 
-            const components = [];
+        this.mapsApiLoader.load().then(
+          () => {
+            const geocoder = new google.maps.Geocoder();
+            geocoder.geocode({
+              placeId: placeId
+            }, (results, status) => {
+              const returnVals: any = {};
 
-            // Filter the results for the city and street
-            for (const item of results[0].address_components) {
-              if (item.types.indexOf("locality") > -1) {
-                components.push(item.long_name);
+              const components = [];
+
+              // Filter the results for the city and street
+              for (const item of results[0].address_components) {
+                if (item.types.indexOf("locality") > -1) {
+                  components.push(item.long_name);
+                }
+                if (item.types.indexOf("route") > -1) {
+                  components.push(item.long_name);
+                }
               }
-              if (item.types.indexOf("route") > -1) {
-                components.push(item.long_name);
-              }
-            }
 
-            returnVals.formattedAddress = results[0].formatted_address;
-            returnVals.addressComponents = components;
+              returnVals.formattedAddress = results[0].formatted_address;
+              returnVals.addressComponents = components;
 
-            observer.next(returnVals);
+              observer.next(returnVals);
+              observer.complete();
+              this.ngZone.run(() => {});
+            });
+          }
+        ).catch(
+          err => {
+            observer.error(err);
             observer.complete();
-          });
-        }
-      ).catch(
-        err => {
-          observer.error(err);
-          observer.complete();
-        }
-      );
+            this.ngZone.run(() => {});
+          }
+        );
+
+      });
+
+
     });
   }
 }

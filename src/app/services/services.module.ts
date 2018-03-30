@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ToolbarService } from './toolbar.service';
-import { GlobalsService } from './globals.service';
 import { AuthGuardService } from './auth-guard.service';
 import { SessionService } from './session.service';
 import { MapsService } from './maps.service';
@@ -16,7 +15,6 @@ import { MapsService } from './maps.service';
   ],
   providers: [
     AuthGuardService,
-    GlobalsService,
     ToolbarService,
     SessionService,
     MapsService

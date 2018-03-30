@@ -7,5 +7,8 @@ export const environment = {
     projectId: 'carss-98f51',
     storageBucket: 'carss-98f51.appspot.com',
     messagingSenderId: '627758686180'
+  },
+  carssStore: {
+    address: "https://api.phildev.me"
   }
 };

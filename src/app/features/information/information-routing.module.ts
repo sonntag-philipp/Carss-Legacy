@@ -1,30 +1,35 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {InformationComponent} from './information/information.component';
-import {InformationConditionsComponent} from './information-conditions/information-conditions.component';
-import {InformationContactComponent} from './information-contact/information-contact.component';
-import {InformationSecurityComponent} from './information-security/information-security.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { InformationComponent } from './information/information.component';
+import { InformationConditionsComponent } from './information-conditions/information-conditions.component';
+import { InformationContactComponent } from './information-contact/information-contact.component';
+import { InformationSecurityComponent } from './information-security/information-security.component';
 import { InformationFaqComponent } from './information-faq/information-faq.component';
+import { InformationAboutComponent } from './information-about/information-about.component';
 
 const appRoutes: Routes = [
   {
-    path: "",
+    path: '',
     component: InformationComponent,
     children: [
       {
-        path: "conditions",
+        path: 'conditions',
         component: InformationConditionsComponent
       },
       {
-        path: "contact",
+        path: 'about',
+        component: InformationAboutComponent
+      },
+      {
+        path: 'contact',
         component: InformationContactComponent
       },
       {
-        path: "security",
+        path: 'security',
         component: InformationSecurityComponent
       },
       {
-        path: "faq",
+        path: 'faq',
         component: InformationFaqComponent
       }
     ]
@@ -39,4 +44,5 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
-export class InformationRoutingModule { }
+export class InformationRoutingModule {
+}

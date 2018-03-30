@@ -1,7 +1,9 @@
-<div class="footer-default" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column" ngClass.xs="footer-xs" ngClass="footer">
-  <a [routerLink]="['info', 'faq']" class="footer-text">FAQ</a>
-  <a [routerLink]="['info', 'conditions']" class="footer-text">AGB</a>
-  <a [routerLink]="['info', 'contact']" class="footer-text">Impressum</a>
-  <a [routerLink]="['info', 'security']" class="footer-text">Datenschutzerklärungen</a>
-  <p class="footer-text">© 2018, Phildev.me</p>
+<div fxLayout="row">
+  <div class="footer-default" fxLayout="row" fxLayoutAlign="center center">
+    <a [routerLink]="['/info', 'faq']" class="footer-text">FAQ</a>
+    <a [routerLink]="['/info', 'conditions']" class="footer-text">AGB</a>
+    <a [routerLink]="['/info', 'about']" class="footer-text">About</a>
+    <a [routerLink]="['/info', 'contact']" class="footer-text">Impressum</a>
+    <a [routerLink]="['/info', 'security']" class="footer-text">Datenschutzerklärungen</a>
+  </div>
 </div>

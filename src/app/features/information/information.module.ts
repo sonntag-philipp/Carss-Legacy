@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {InformationRoutingModule} from './information-routing.module';
-import {MatButtonModule, MatCardModule, MatToolbarModule} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatDividerModule, MatIconModule, MatToolbarModule, MatTooltipModule } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {InformationComponent} from './information/information.component';
@@ -9,6 +9,8 @@ import {InformationConditionsComponent} from './information-conditions/informati
 import {InformationContactComponent} from './information-contact/information-contact.component';
 import {InformationSecurityComponent} from './information-security/information-security.component';
 import { InformationFaqComponent } from './information-faq/information-faq.component';
+import { InformationToolbarComponent } from './information-toolbar/information-toolbar.component';
+import { InformationAboutComponent } from './information-about/information-about.component';
 
 @NgModule({
   imports: [
@@ -16,6 +18,9 @@ import { InformationFaqComponent } from './information-faq/information-faq.compo
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatDividerModule,
 
     // AngularFire:
     AngularFireAuthModule,
@@ -30,7 +35,9 @@ import { InformationFaqComponent } from './information-faq/information-faq.compo
     InformationConditionsComponent,
     InformationContactComponent,
     InformationSecurityComponent,
-    InformationFaqComponent
+    InformationFaqComponent,
+    InformationToolbarComponent,
+    InformationAboutComponent
   ],
   bootstrap: [
     InformationComponent

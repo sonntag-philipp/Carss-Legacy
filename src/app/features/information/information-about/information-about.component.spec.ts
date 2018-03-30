@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WTimeComponent } from './w-time.component';
+import { InformationAboutComponent } from './information-about.component';
 
-describe('WTimeComponent', () => {
-  let component: WTimeComponent;
-  let fixture: ComponentFixture<WTimeComponent>;
+describe('InformationAboutComponent', () => {
+  let component: InformationAboutComponent;
+  let fixture: ComponentFixture<InformationAboutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WTimeComponent ]
+      declarations: [ InformationAboutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WTimeComponent);
+    fixture = TestBed.createComponent(InformationAboutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

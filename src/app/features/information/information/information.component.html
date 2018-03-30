@@ -1,1 +1,14 @@
-<router-outlet style="height: 100%;"></router-outlet>
+<carss-information-toolbar></carss-information-toolbar>
+<div fxLayout="column">
+  <div fxFlex="row" fxLayoutAlign="center">
+    <!-- Insert retarded genius meme above -->
+    <div
+      fxFlex.xs="{{ env.fxFlex.xs }}"
+      fxFlex.sm="{{ env.fxFlex.sm }}"
+      fxFlex.md="{{ env.fxFlex.md }}"
+      fxFlex.lg="{{ env.fxFlex.lg }}"
+      fxFlex.xl="{{ env.fxFlex.xl }}">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
