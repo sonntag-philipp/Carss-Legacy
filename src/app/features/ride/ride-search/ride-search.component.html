@@ -1,5 +1,13 @@
-<mat-card style="height: 100%;">
-  <mat-card-title>
-    Ergebnisse für: {{ query }}
-  </mat-card-title>
+<h1 ngClass.xs="heading-container-xs" class="heading" ngClass="heading-container">
+  {{ query }}
+</h1>
+<mat-card *ngIf="searched" style="padding: 0px;">
+  <div *ngFor="let item of results;">
+    <div class="card-subcontainer">
+      <h1 class="card-subcontainer-title">{{ item.name }}</h1>
+      <carss-description-container [content]="item.description"></carss-description-container>
+    </div>
+    <carss-tag-container style="padding: 8px 16px 8px 16px;" [tags]="item.tags | async" [id]="item.ride_id" type="rides"></carss-tag-container>
+    <mat-divider></mat-divider>
+  </div>
 </mat-card>

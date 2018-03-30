@@ -5,6 +5,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FrameFooterComponent } from './frame-footer/frame-footer.component';
 import { FrameToolbarComponent } from './frame-toolbar/frame-toolbar.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   declarations: [
     FrameFooterComponent,

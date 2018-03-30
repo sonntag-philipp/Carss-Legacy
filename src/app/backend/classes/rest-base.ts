@@ -63,6 +63,8 @@ export class RestBase<T> {
             })
           }).subscribe(
             next => {
+
+              console.log(next);
               observer.next(next);
               observer.complete();
             },

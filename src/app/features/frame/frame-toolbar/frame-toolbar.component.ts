@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ToolbarService } from '../../../services/toolbar.service';
 import { SessionService } from '../../../services/session.service';
+import { BackendService } from '../../../backend/backend.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'carss-frame-toolbar',
@@ -9,12 +11,25 @@ import { SessionService } from '../../../services/session.service';
 })
 export class FrameToolbarComponent implements OnInit {
 
+  public searchValue: string;
+
   constructor(
     public service: ToolbarService,
-    public session: SessionService
+    public session: SessionService,
+    private router: Router
   ) { }
 
   ngOnInit() {
+  }
+
+  public search(data: any) {
+    if (this.searchValue !== "") {
+      console.log(this.searchValue);
+
+      this.router.navigate(['/ride', 'search', this.searchValue]);
+
+
+    }
   }
 
 }

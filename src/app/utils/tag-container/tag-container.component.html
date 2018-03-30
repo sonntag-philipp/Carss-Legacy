@@ -1,4 +1,4 @@
-<div fxFlex="row" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
+<div *ngIf="(tags !== null)" fxFlex="row" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
   <div fxLayoutAlign="center center" fxFlex="initial" style="padding: 4px;">
     Tags:
   </div>

@@ -33,9 +33,6 @@
     <carss-choose-map [placeId]="profileService.user.address" (placeIdChange)="addressChange($event);"></carss-choose-map>
   </div>
   <mat-divider></mat-divider>
-  <div style="padding: 8px 8px 8px 0;">
-    <button mat-button color="primary" (click)="profileService.postVehicle();">Auto hinzufügen</button>
-  </div>
   <div *ngIf="profileService.initialized.vehicles">
     <carss-profile-editor-car [vehicle]="item" *ngFor="let item of profileService.vehicles"></carss-profile-editor-car>
   </div>

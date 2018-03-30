@@ -12,7 +12,7 @@
       <mat-icon class="search-icon">
         search
       </mat-icon>
-      <input placeholder="Nach Fahrten suchen..." class="search-input" type="text">
+      <input placeholder="Nach Fahrten suchen..." [(ngModel)]="searchValue" (keyup.enter)="search($event);" class="search-input" type="text">
     </div>
   </div>
   <div fxFlex="50" fxLayoutAlign="end center">

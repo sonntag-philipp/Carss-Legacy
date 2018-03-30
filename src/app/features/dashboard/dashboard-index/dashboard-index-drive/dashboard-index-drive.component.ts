@@ -16,13 +16,13 @@ export class DashboardIndexDriveComponent implements OnInit {
 
   private direction = "destination";
 
-  private ride: RideModel = {
+  public ride: RideModel = {
     origin: "",
     destination: "",
     description: ""
   };
 
-  private tags: TagModel[] = [];
+  public tags: TagModel[] = [];
 
   constructor(
     private backend: BackendService,
@@ -31,7 +31,9 @@ export class DashboardIndexDriveComponent implements OnInit {
     private snackBar: MatSnackBar
   ) { }
 
-  public ngOnInit() { }
+  public ngOnInit() {
+    this.tags[0] = {name: "Zielpunkt BBS"};
+  }
 
   public placeChanged(place: string) {
     if (this.direction === "destination") {
@@ -63,10 +65,10 @@ export class DashboardIndexDriveComponent implements OnInit {
       this.ride.origin = dest;
     }
     if (this.direction === "destination") {
-      this.tags[0] = {name: "Richtung: Adresse"};
+      this.tags[0] = {name: "Zielpunkt BBS"};
     }
     if (this.direction === "origin") {
-      this.tags[0] = {name: "Richtung: Schule"};
+      this.tags[0] = {name: "Startpunkt BBS"};
     }
 
     this.direction = value;
