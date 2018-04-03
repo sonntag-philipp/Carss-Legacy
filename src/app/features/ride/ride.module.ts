@@ -19,6 +19,7 @@ import { FormsModule } from '@angular/forms';
 import { RideSearchComponent } from './ride-search/ride-search.component';
 import { FrameModule } from '../frame/frame.module';
 import { UtilsModule } from '../../utils/utils.module';
+import { RidePresenterComponent } from './ride-presenter/ride-presenter.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { UtilsModule } from '../../utils/utils.module';
   declarations: [
     RideIndexComponent,
     RideComponent,
-    RideSearchComponent
+    RideSearchComponent,
+    RidePresenterComponent
   ]
 })
 export class RideModule {

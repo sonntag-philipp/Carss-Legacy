@@ -25,12 +25,14 @@ export class RideSearchComponent implements OnInit {
 
     this.backend.chainNoun<any>("search/rides/" + this.query).get().subscribe(
       next => {
-        console.log(next);
         this.results = next;
 
         for (const item of next) {
           item.tags = this.backend.chainNoun("rides").chainVerb(item.ride_id).chainNoun("tags").get();
+          item.driver = this.backend.chainNoun("users").chainVerb(item.creator_id).get();
         }
+
+        console.log(next);
 
 
 

@@ -3,11 +3,17 @@
 </h1>
 <mat-card *ngIf="searched" style="padding: 0px;">
   <div *ngFor="let item of results;">
-    <div class="card-subcontainer">
-      <h1 class="card-subcontainer-title">{{ item.name }}</h1>
-      <carss-description-container [content]="item.description"></carss-description-container>
+    <div fxFlex="auto" fxLayout="column">
+      <carss-tag-container style="padding: 8px 16px 8px 16px;" [tags]="item.tags | async" [id]="item.ride_id" type="rides"></carss-tag-container>
+      <div class="card-subcontainer" fxLayout="row">
+        <div>
+          <carss-description-container [content]="item.description"></carss-description-container>
+        </div>
+      </div>
     </div>
-    <carss-tag-container style="padding: 8px 16px 8px 16px;" [tags]="item.tags | async" [id]="item.ride_id" type="rides"></carss-tag-container>
+    <div fxFlex="initial" class="card-subcontainer">
+      <button mat-button color="primary" [routerLink]="['/profile', (item.driver | async)?.id]">{{ (item.driver | async)?.name + " " + (item.driver | async)?.surname }}</button>
+    </div>
     <mat-divider></mat-divider>
   </div>
 </mat-card>

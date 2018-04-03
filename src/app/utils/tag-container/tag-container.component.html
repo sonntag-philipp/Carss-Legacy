@@ -1,7 +1,4 @@
 <div *ngIf="(tags !== null)" fxFlex="row" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
-  <div fxLayoutAlign="center center" fxFlex="initial" style="padding: 4px;">
-    Tags:
-  </div>
   <mat-chip-list fxFlex="auto">
     <mat-chip style="padding: 0;" *ngFor="let item of tags"  fxLayout="row" fxLayoutAlign="start center">
       <div style="margin: 7px 12px 7px 12px;" (click)="searchTag(item.name);">

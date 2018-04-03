@@ -29,7 +29,9 @@ export class TagContainerComponent implements OnInit {
     private router: Router,
     private auth: AngularFireAuth,
     public sessionService: SessionService
-  ) { }
+  ) {
+    router.routeReuseStrategy.shouldReuseRoute = () => false;
+  }
 
 
 
@@ -69,7 +71,12 @@ export class TagContainerComponent implements OnInit {
   public deleteTag(id: number) {
     this.backend.chainNoun(this.type).chainVerb(this.id).chainNoun<TagModel>("tags").chainVerb(id + "").delete().subscribe(
       next => {
-        console.log(next);
+        for (let i = 0; i < this.tags.length; i++) {
+          if (this.tags[i].id === id) {
+            console.log(this.tags[i]);
+            this.tags.splice(i, 1);
+          }
+        }
       }
     );
   }

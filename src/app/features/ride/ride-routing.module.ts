@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RideIndexComponent } from './ride-index/ride-index.component';
 import { RideComponent } from './ride/ride.component';
 import { RideSearchComponent } from './ride-search/ride-search.component';
+import { RidePresenterComponent } from './ride-presenter/ride-presenter.component';
 
 const appRoutes: Routes = [
   {
@@ -16,6 +17,10 @@ const appRoutes: Routes = [
       {
         path: 'search/:query',
         component: RideSearchComponent
+      },
+      {
+        path: ':id',
+        component: RidePresenterComponent
       }
     ]
   }
