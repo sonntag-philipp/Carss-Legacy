@@ -11,6 +11,7 @@ import {InformationSecurityComponent} from './information-security/information-s
 import { InformationFaqComponent } from './information-faq/information-faq.component';
 import { InformationToolbarComponent } from './information-toolbar/information-toolbar.component';
 import { InformationAboutComponent } from './information-about/information-about.component';
+import { MarkdownModule } from 'angular2-markdown';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { InformationAboutComponent } from './information-about/information-about
     // Miscellaneous:
     CommonModule,
     InformationRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MarkdownModule
   ],
   declarations: [
     InformationComponent,

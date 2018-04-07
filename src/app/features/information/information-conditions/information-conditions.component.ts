@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BackendService } from '../../../backend/backend.service';
+import { Observable } from 'rxjs/Observable';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-information-conditions',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationConditionsComponent implements OnInit {
 
-  constructor() { }
+  public env = environment;
+
+  public conditions: Observable<string>;
+
+  constructor(
+    private backendService: BackendService
+  ) { }
 
   ngOnInit() {
+    this.conditions = this.backendService.chainNoun("info").chainVerb<string>("conditions.md").get();
   }
 
 }

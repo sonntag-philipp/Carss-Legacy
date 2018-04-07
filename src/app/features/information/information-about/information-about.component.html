@@ -1,10 +1,8 @@
 <h1 role="heading" ngClass.xs="heading-container-xs" class="heading" ngClass="heading-container">
   Über Carss
 </h1>
-<mat-card>
+<mat-card style="padding: 4px 16px 4px 16px;">
   <mat-card-content>
-    <div class="card-subcontainer-paragraph">
-      Carss ist eine
-    </div>
+    <markdown path="{{ env.carssStore.address }}/info/about.md"></markdown>
   </mat-card-content>
 </mat-card>

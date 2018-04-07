@@ -1,8 +1,8 @@
 <h1 role="heading" ngClass.xs="heading-container-xs" class="heading" ngClass="heading-container">
-  FAQ
+  FAQ - Häufig gestellte Fragen
 </h1>
-<mat-card>
-  <mat-card-subtitle>Student Software Corporation - SSC</mat-card-subtitle>
+<mat-card style="padding: 4px 16px 4px 16px;">
   <mat-card-content>
+    <markdown path="{{ env.carssStore.address }}/info/faq.md"></markdown>
   </mat-card-content>
 </mat-card>

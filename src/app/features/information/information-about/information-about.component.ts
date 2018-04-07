@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'carss-information-about',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./information-about.component.css']
 })
 export class InformationAboutComponent implements OnInit {
+
+  public env = environment;
 
   constructor() { }
 

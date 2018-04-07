@@ -20,6 +20,7 @@ import {
 import { BackendModule } from './backend/backend.module';
 import { FrameModule } from './features/frame/frame.module';
 import { AgmCoreModule } from '@agm/core';
+import { MarkdownModule } from 'angular2-markdown';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import { AgmCoreModule } from '@agm/core';
     MatButtonModule,
     BackendModule,
     FrameModule,
+    MarkdownModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyDif4IdA1F5l4jDiuEDv-xlAG3d-NnsJl8",
       libraries: ["places"]

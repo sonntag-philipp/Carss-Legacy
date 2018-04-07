@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-information-contact',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./information-contact.component.css']
 })
 export class InformationContactComponent implements OnInit {
+
+  public env = environment;
 
   constructor() { }
 
