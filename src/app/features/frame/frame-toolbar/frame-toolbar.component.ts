@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToolbarService } from '../../../services/toolbar.service';
 import { SessionService } from '../../../services/session.service';
-import { BackendService } from '../../../backend/backend.service';
 import { Router } from '@angular/router';
 
 @Component({

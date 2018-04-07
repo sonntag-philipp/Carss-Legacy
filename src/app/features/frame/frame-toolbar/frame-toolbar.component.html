@@ -21,6 +21,16 @@
         account_circle
       </mat-icon>
     </button>
+    <button mat-icon-button [matMenuTriggerFor]="moreMenu">
+      <mat-icon>
+        more_vert
+      </mat-icon>
+    </button>
+    <mat-menu #moreMenu="matMenu">
+      <button mat-menu-item (click)="session.logout();" fxLayout="row" fxLayoutAlign="center center">
+        <mat-icon>exit_to_app</mat-icon>Abmelden
+      </button>
+    </mat-menu>
   </div>
 </mat-toolbar>
 

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule, MatIconModule, MatInputModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatIconModule, MatInputModule, MatMenuModule, MatToolbarModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FrameFooterComponent } from './frame-footer/frame-footer.component';
 import { FrameToolbarComponent } from './frame-toolbar/frame-toolbar.component';
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatButtonModule,
     MatIconModule,
+    MatMenuModule,
     RouterModule,
     FormsModule
   ],

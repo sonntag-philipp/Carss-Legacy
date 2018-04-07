@@ -59,7 +59,7 @@ export class ProfileService {
   public putUser() {
     this.backend.chainNoun("users").chainVerb(this.user.id).put(this.user).subscribe(
       next => {
-        this.snackBar.open("Nutzerdaten erfolgreich abgespeichert!", "Okay");
+        this.snackBar.open("Nutzerdaten erfolgreich abgespeichert!", "Okay", {duration: 1500});
       }
     );
   }

@@ -3,6 +3,7 @@ import { UserModel } from '../models/user.model';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { BackendService } from '../backend/backend.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Injectable()
 export class SessionService {
@@ -15,7 +16,8 @@ export class SessionService {
   constructor(
     private backend: BackendService,
     private auth: AngularFireAuth,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
     this.auth.authState.subscribe(
       next => {
@@ -40,5 +42,17 @@ export class SessionService {
     );
 
 
+  }
+
+  public logout(): void {
+    this.auth.auth.signOut().then(
+      () => {
+        this.router.navigate(["/"]);
+      }
+    ).catch(
+      () => {
+        this.snackBar.open("Du konntest nicht abgemeldet werden...", "Okay", {duration: 2500});
+      }
+    );
   }
 }
