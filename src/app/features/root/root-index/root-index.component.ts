@@ -37,6 +37,32 @@ export class RootIndexComponent implements OnInit {
     );
   }
 
+  public btnLogin(mail: string, password: string) {
+    this.auth.auth.signInWithEmailAndPassword(mail, password).then(
+      user => {
+        console.log(user);
+      }
+    )
+      .catch(
+        error => {
+          this.snackBar.open(error.message, "Okay", {duration: 3500});
+        }
+      );
+  }
+
+  public btnRegister(mail: string, password: string) {
+    this.auth.auth.createUserWithEmailAndPassword(mail, password).then(
+      user => {
+        console.log(user);
+      }
+    )
+    .catch(
+      error => {
+        this.snackBar.open(error.message, "Okay", {duration: 3500});
+      }
+    );
+  }
+
   public btnGoogle() {
     const authProvider = new firebase.auth.GoogleAuthProvider();
 
@@ -71,7 +97,17 @@ export class RootIndexComponent implements OnInit {
   }
 
   public btnFacebook() {
-    this.auth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+    this.auth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider()).then(
+      result => {
+        // This has to be done so this doesn't get changed.
+        this.afterLogin(result);
+      }
+    ).catch(
+      err => {
+        console.error(err);
+        this.snackBar.open("Da lief Etwas schief, versuch's nochmal.", "Okay", {duration: 3500});
+      }
+    );
   }
 
   private afterLogin(result: any) {
