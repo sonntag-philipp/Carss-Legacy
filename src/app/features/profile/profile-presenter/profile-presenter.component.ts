@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../profile.service';
+import { SessionService } from '../../../services/session.service';
 
 declare const google: any;
 
@@ -18,7 +19,8 @@ export class ProfilePresenterComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    public profileService: ProfileService
+    public profileService: ProfileService,
+    public session: SessionService
   ) { }
 
   ngOnInit() {

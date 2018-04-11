@@ -6,6 +6,7 @@ import { RootIndexComponent } from './root-index/root-index.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule, MatCardModule, MatChipsModule, MatDividerModule, MatInputModule, MatToolbarModule } from '@angular/material';
 import { RootNewUserComponent } from './root-new-user/root-new-user.component';
+import { RootLoginCardComponent } from './root-login-card/root-login-card.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { RootNewUserComponent } from './root-new-user/root-new-user.component';
   declarations: [
     RootComponent,
     RootIndexComponent,
-    RootNewUserComponent
+    RootNewUserComponent,
+    RootLoginCardComponent
   ],
   bootstrap: [
     RootIndexComponent

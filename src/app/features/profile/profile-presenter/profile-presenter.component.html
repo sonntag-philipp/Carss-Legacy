@@ -2,7 +2,7 @@
   <mat-toolbar class="profile-card-toolbar" color="primary">
     <span>{{ profileService.user?.name }} {{ profileService.user?.surname }}</span>
     <div fxFlex="auto"></div>
-    <button mat-icon-button [routerLink]="['edit']" matTooltip="Profil bearbeiten">
+    <button *ngIf="(session.user.id === uid)" mat-icon-button [routerLink]="['edit']" matTooltip="Profil bearbeiten">
       <mat-icon>edit</mat-icon>
     </button>
   </mat-toolbar>

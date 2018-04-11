@@ -1,36 +1,20 @@
-<div *ngIf="(!loggedin && initialized)" fxLayout="column" fxLayoutAlign="center center">
-  <h1 class="title">Car Sharing Service</h1>
-  <div>
-    <h2 class="subtitle">- Berufsbildende Schulen Papenburg -</h2>
-  </div>
-  <div fxLayout="row" fxLayoutAlign="center">
-    <mat-card fxFlex="60" style="padding: 0;">
+<div *ngIf="(!loggedin && initialized)" fxLayout="row" fxLayoutAlign="center center">
 
-      <div class="card-subcontainer" style="font-size: 12pt;">
-        <h4 class="card-subcontainer-title">Anmeldung</h4>
-        <mat-form-field style="width: 100%;">
-          <input #mail matInput placeholder="E-Mail" type="text">
-        </mat-form-field>
-        <mat-form-field style="width: 100%;">
-          <input #password matInput placeholder="Passwort" type="password">
-        </mat-form-field>
-      </div>
-      <div style="padding: 0 16px 8px 16px;">
-        <button (click)="btnLogin(mail.value, password.value);" mat-button fxFlex="50" color="primary" style="margin-right: 4px;">Anmelden</button>
-        <button (click)="btnRegister(mail.value, password.value);" mat-button fxFlex="50" color="accent" style="margin-left: 4px;">Registrieren</button>
-      </div>
-      <mat-divider></mat-divider>
-      <div class="card-subcontainer">
-        <button mat-raised-button (click)="btnGoogle();" style="width: 100%; margin-bottom: 8px;" color="warn">
-          Anmelden über Google
-        </button>
-        <button mat-raised-button (click)="btnFacebook();" style="width: 100%; margin-bottom: 8px;" color="primary">
-          Anmelden über Facebook
-        </button>
-        <button mat-raised-button (click)="btnGitHub();" style="width: 100%;">
-          Anmelden über GitHub
-        </button>
-      </div>
-    </mat-card>
+  <div fxFlex="20" fxLayoutAlign="end" fxHide.gt-md="false" fxHide="true">
+    <img src="{{ env.carssStore.address }}/assets/carss_logo.png" alt="">
+  </div>
+
+  <div fxFlex="auto" fxLayout="column" fxLayoutAlign="center center">
+    <h1 class="title">Car Sharing Service</h1>
+    <div>
+      <h2 class="subtitle">- Berufsbildende Schulen Papenburg -</h2>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center">
+      <carss-root-login-card fxFlex.gt-md="60" fxFlex="100"></carss-root-login-card>
+    </div>
+  </div>
+
+  <div fxFlex="20" fxLayoutAlign="start" fxHide.gt-md="false" fxHide="true">
+    <img src="{{ env.carssStore.address }}/assets/bbs_logo.png" alt="">
   </div>
 </div>

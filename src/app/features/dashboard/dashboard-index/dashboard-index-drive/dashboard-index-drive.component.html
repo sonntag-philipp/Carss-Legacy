@@ -32,7 +32,8 @@
     <carss-tag-container [offline]="true" [(tags)]="tags" type="rides"></carss-tag-container>
   </div>
   <mat-divider></mat-divider>
-  <div style="padding: 8px 0 8px 8px;">
+  <div style="padding: 8px 0 8px 8px;" fxLayout="row">
     <button style="padding-right: 8px;" (click)="postRide();" color="primary" mat-button>Erstellen</button>
+    <button style="padding-right: 8px;" (click)="openChargeList();" color="warn" mat-button>Preisliste öffnen</button>
   </div>
 </mat-card>

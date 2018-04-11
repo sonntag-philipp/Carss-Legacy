@@ -7,10 +7,10 @@
 }
 
 .footer-default {
-  border-radius: 0 3px 0 0;
+  border-radius: 3px 0 0 0;
   position: fixed;
   bottom: 0px;
-  left: 0px;
+  right: 0px;
   background-color: rgba(54, 59, 178, 0.9);
   font-family: 'Roboto', sans-serif;
   -webkit-box-shadow: 4px -4px 45px -8px rgba(0,0,0,0.72);

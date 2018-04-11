@@ -4,8 +4,9 @@ import { BackendService } from '../../../../backend/backend.service';
 import { TagModel } from '../../../../models/tag.model';
 import { PlaceModel } from '../../../../models/place.model';
 import { SessionService } from '../../../../services/session.service';
-import { MatSelect, MatSnackBar } from '@angular/material';
+import { MatDialog, MatSelect, MatSnackBar } from '@angular/material';
 import { MapsService } from '../../../../services/maps.service';
+import { DashboardIndexChargeMapComponent } from '../dashboard-index-charge-map/dashboard-index-charge-map.component';
 
 @Component({
   selector: 'carss-dashboard-index-drive',
@@ -28,7 +29,8 @@ export class DashboardIndexDriveComponent implements OnInit {
     private backend: BackendService,
     private userSession: SessionService,
     private mapsService: MapsService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   public ngOnInit() {
@@ -56,6 +58,10 @@ export class DashboardIndexDriveComponent implements OnInit {
         }
       }
     );
+  }
+
+  public openChargeList(): void {
+    this.dialog.open(DashboardIndexChargeMapComponent);
   }
 
   public directionChange(value: any) {

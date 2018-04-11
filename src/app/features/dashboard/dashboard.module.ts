@@ -35,6 +35,7 @@ import { BackendModule } from '../../backend/backend.module';
 import { UtilsModule } from '../../utils/utils.module';
 import { FrameModule } from '../frame/frame.module';
 import { MapsModule } from '../maps/maps.module';
+import { DashboardIndexChargeMapComponent } from './dashboard-index/dashboard-index-charge-map/dashboard-index-charge-map.component';
 
 @NgModule({
   imports: [
@@ -80,7 +81,11 @@ import { MapsModule } from '../maps/maps.module';
     DashboardSettingsComponent,
     DashboardSettingsSecurityComponent,
     DashboardSettingsAccountsComponent,
-    DashboardIndexDriveComponent
+    DashboardIndexDriveComponent,
+    DashboardIndexChargeMapComponent
+  ],
+  entryComponents: [
+    DashboardIndexChargeMapComponent
   ],
   bootstrap: [
     DashboardComponent
