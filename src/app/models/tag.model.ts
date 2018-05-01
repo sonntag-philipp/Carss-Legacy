@@ -3,5 +3,6 @@ export interface TagModel {
   foreign_id?: string;
   creator_id?: string;
   creation?: string;
+  highlighted?: boolean;
   name: string;
 }

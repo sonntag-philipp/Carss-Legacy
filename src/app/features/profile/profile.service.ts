@@ -5,6 +5,7 @@ import { TagModel } from '../../models/tag.model';
 import { MatSnackBar } from '@angular/material';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BackendService } from '../../backend/backend.service';
+import { RideModel } from '../../models/ride.model';
 
 @Injectable()
 export class ProfileService {
@@ -19,10 +20,16 @@ export class ProfileService {
   public initialized: any = {
     vehicles: false,
     user: false,
-    tags: false
+    tags: false,
+    rides: false
   };
 
   public user: UserModel;
+
+  public rides: {
+    ride: RideModel,
+    tags: TagModel[]
+  }[] = [];
 
   get userTags(): TagModel[] {
     return this._userTags;
@@ -37,6 +44,11 @@ export class ProfileService {
    * @returns {boolean} Returns false if the profile could not be loaded.
    */
   public getProfile(uid: string) {
+
+    this.rides = [];
+    this.initialized.rides = false;
+    this.initialized.user = false;
+    this.initialized.tags = false;
 
     this.backend.chainNoun("users").chainVerb<UserModel>(uid).get().subscribe(
       next => {
@@ -54,6 +66,37 @@ export class ProfileService {
         this.initialized.tags = true;
       }
     );
+
+    this.backend.chainNoun("users").chainVerb(uid).chainNoun<RideModel>("rides").get().subscribe(
+      next => {
+        console.log(next);
+
+
+        for (const item of next) {
+          const lel: any = {};
+
+          lel.tags = this.backend.chainNoun("rides").chainVerb(item.id + "").chainNoun("tags").get();
+          lel.ride = item;
+          this.rides.push(lel);
+        }
+        if (this.rides.length > 0) {
+          this.initialized.rides = true;
+        }
+
+      }
+    );
+  }
+
+  public deleteRide(ride: RideModel) {
+    for (const item of this.rides) {
+      if (item.ride === ride) {
+        this.rides.splice(this.rides.indexOf(item), 1);
+      }
+    }
+
+    if (this.rides.length === 0) {
+      this.initialized.rides = false;
+    }
   }
 
   public putUser() {

@@ -1,7 +1,7 @@
-<mat-toolbar *ngIf="!service.hidden" color="primary" class="carss-toolbar">
+<mat-toolbar color="primary" class="carss-toolbar">
   <div fxFlex="50" fxLayoutAlign="start center" >
-    <span class="title" [routerLink]="['/dashboard']">Dashboard</span>
-    <button mat-icon-button [routerLink]="['/dashboard']">
+    <span class="title" [routerLink]="['/dashboard']">Carss</span>
+    <button mat-icon-button [routerLink]="['/dashboard']" matTooltip="Dashboard">
       <mat-icon>
         home
       </mat-icon>
@@ -16,7 +16,7 @@
     </div>
   </div>
   <div fxFlex="50" fxLayoutAlign="end center">
-    <button mat-icon-button [routerLink]="['/profile', session.user?.id]">
+    <button mat-icon-button [routerLink]="['/profile', session.user?.id]" matTooltip="Dein Profil">
       <mat-icon>
         account_circle
       </mat-icon>

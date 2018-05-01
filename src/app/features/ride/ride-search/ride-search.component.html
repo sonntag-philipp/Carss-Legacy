@@ -1,6 +1,7 @@
 <h1 ngClass.xs="heading-container-xs" class="heading" ngClass="heading-container">
   {{ query }}
 </h1>
+
 <mat-card *ngIf="searched" style="padding: 0px;">
   <div *ngFor="let item of results;">
     <div fxFlex="auto" fxLayout="column">
@@ -12,7 +13,7 @@
       </div>
     </div>
     <div fxFlex="initial" class="card-subcontainer">
-      <button mat-button color="primary" [routerLink]="['/profile', (item.driver | async)?.id]">{{ (item.driver | async)?.name + " " + (item.driver | async)?.surname }}</button>
+      <button mat-button color="primary" [routerLink]="['/profile', (item.driver | async)?.id]">Fahrer kontaktieren</button>
     </div>
     <mat-divider></mat-divider>
   </div>

@@ -22,7 +22,14 @@
   <div style="padding: 8px 16px 8px 16px;">
     <carss-choose-map [disabled]="true" [placeId]="profileService.user.address"></carss-choose-map>
   </div>
-  <div *ngIf="profileService.initialized.vehicles">
-    <carss-profile-presenter-car [vehicle]="item" *ngFor="let item of profileService.vehicles"></carss-profile-presenter-car>
+  <div *ngIf="profileService.initialized.rides">
+    <mat-divider></mat-divider>
+    <h1 class="card-subcontainer-title card-subcontainer" style="padding-bottom: 0;">Fahrten:</h1>
+    <div *ngFor="let item of profileService.rides;" >
+      <div style="padding: 0px 16px 0 16px;">
+        <carss-ride-container [ride]="item.ride" [tags]="item.tags"></carss-ride-container>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
   </div>
 </mat-card>

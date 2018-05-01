@@ -1,0 +1,9 @@
+<div style="padding: 16px 16px 8px 0px;">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <carss-tag-container fxFlex="auto"  [tags]="tags | async" [id]="ride.id" type="rides"></carss-tag-container>
+    <button mat-icon-button (click)="deleteRide();" matTooltip="Fahrt löschen" color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+  <carss-description-container [content]="ride.description"></carss-description-container>
+</div>

@@ -14,7 +14,7 @@ export const environment = {
     messagingSenderId: '627758686180'
   },
   carssStore: {
-    address: "http://localhost:3000"
+    address: "https://api.phildev.me"
   },
   fxFlex: {
     xs: 96,

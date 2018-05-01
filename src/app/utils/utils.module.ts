@@ -14,6 +14,7 @@ import { ImageContainerComponent } from './image-container/image-container.compo
 import { TagContainerComponent } from './tag-container/tag-container.component';
 import { InputDialogComponent } from './input-dialog/input-dialog.component';
 import { AgmCoreModule } from '@agm/core';
+import { RideContainerComponent } from './ride-container/ride-container.component';
 
 /**
  * The Utils module contains components and directives that can and should
@@ -44,7 +45,8 @@ import { AgmCoreModule } from '@agm/core';
     DescriptionContainerComponent,
     ImageContainerComponent,
     TagContainerComponent,
-    InputDialogComponent
+    InputDialogComponent,
+    RideContainerComponent
   ],
   entryComponents: [
     InputDialogComponent,
@@ -56,7 +58,8 @@ import { AgmCoreModule } from '@agm/core';
     AgmDirectionsDirective,
     DescriptionContainerComponent,
     ImageContainerComponent,
-    TagContainerComponent
+    TagContainerComponent,
+    RideContainerComponent
   ]
 })
 export class UtilsModule { }

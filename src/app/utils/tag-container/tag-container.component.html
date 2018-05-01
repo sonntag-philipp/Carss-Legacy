@@ -1,11 +1,12 @@
-<div *ngIf="(tags !== null)" fxFlex="row" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
+<div *ngIf="(tags !== null)" fxLayout="row" fxLayoutAlign="start center" class="tag-container" (mouseenter)="mouseOver = true;" (mouseleave)="mouseOver = false;">
+  <h1 fxFlex="initial" style="margin: 0; font-weight: normal; font-size: 13pt; padding-right: 4px;">Tags:</h1>
   <mat-chip-list fxFlex="auto">
     <mat-chip style="padding: 0;" *ngFor="let item of tags"  fxLayout="row" fxLayoutAlign="start center">
       <div style="margin: 7px 12px 7px 12px;" (click)="searchTag(item.name);">
         {{ item.name }}
       </div>
       <div *ngIf="item !== undefined">
-        <div *ngIf="item.creator_id === sessionService.user.id" style="background-color: rgba(0, 0, 0, 0.2); border-radius: 50%; height: 18px; width: 18px; margin-right: 7px;">
+        <div *ngIf="item.creator_id === sessionService.user?.id" style="background-color: rgba(0, 0, 0, 0.2); border-radius: 50%; height: 18px; width: 18px; margin-right: 7px;">
           <mat-icon (click)="deleteTag(item.id);" style="font-size: 18px;" color="warn" matTooltip="Tag entfernen">
             remove
           </mat-icon>
